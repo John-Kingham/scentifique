@@ -94,3 +94,13 @@ Also, the user story numbers are taken from the related [GitHub Project](https:/
 
 [NOTE ANY USER STORIES THAT DIDN'T MAKE IT INTO THE DEPLOYED SITE]
 
+## Structure Plane
+
+In the structure plane, we begin to outline the solution at a high level. The diagram below shows how the site's interface is structured into pages and sections.
+
+![Site structure diagram](./docs/images/wireframes/page-structure-diagram.png)
+
+Each section helps to fulfill one or more user stories, and the relationship between webpage sections and user stories is explained in the Features section below.
+
+[NOTE ANY PAGES THAT DIDN'T MAKE IT INTO THE DEPLOYED SITE]
+
