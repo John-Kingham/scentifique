@@ -150,7 +150,9 @@ examples of which are available at sites like [Wall passion](https://www.wallpas
 
 - Red - #A15355
 - Green - #4A764B
-- Blue - #4F696A
+- Blue - #323E50
+
+![Colour palette](./docs/images/colour-palette.png)
 
 ### Custom Fonts
 
