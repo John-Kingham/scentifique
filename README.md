@@ -102,5 +102,41 @@ In the structure plane, we begin to outline the solution at a high level. The di
 
 Each section helps to fulfill one or more user stories, and the relationship between webpage sections and user stories is explained in the Features section below.
 
+At this stage, I also started to think about the structure of the database, and this is detailed in the Data Model section below.
+
 [NOTE ANY PAGES THAT DIDN'T MAKE IT INTO THE DEPLOYED SITE]
+
+## Skeleton Plane
+
+In the skeleton plane, we add detail to the structure developed in the structure plane.
+
+In this case, I used wireframes to add further detail to each web page.
+
+### Mobile Wireframes
+
+<details>
+<summary>Mobile wireframes</summary>
+
+![Mobile wireframes](./docs/images/wireframes/mobile-wireframes.png)
+
+</details>
+
+### Tablet Wireframes
+
+<details>
+<summary>Tablet wireframes</summary>
+
+![Tablet wireframes](./docs/images/wireframes/tablet-wireframes.png)
+
+</details>
+
+### Desktop Wireframes
+
+<details>
+<summary>Desktop wireframes</summary>
+
+![Desktop wireframes](./docs/images/wireframes/desktop-wireframes.png)
+
+</details>
+
 
