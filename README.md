@@ -158,7 +158,7 @@ examples of which are available at sites like [Wall passion](https://www.wallpas
 
 The site uses two custom fonts from Google Fonts.
 
-- Headings - [Smythe](https://fonts.google.com/specimen/Smythe)
+- Headings - [Quintessential](https://fonts.google.com/specimen/Quintessential)
 - Body - [Nunito](https://fonts.google.com/specimen/Nunito)
 
 ### Content

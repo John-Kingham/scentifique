@@ -1,0 +1,45 @@
+@import url("https://fonts.googleapis.com/css2?family=Quintessential&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap");
+
+/* CSS variables */
+:root {
+  --font-heading: "Quintessential", Georgia, "Times New Roman", Times, serif;
+  --font-body: "Nunito", Arial, Helvetica, sans-serif;
+  --colour-first: #A15355;
+  --colour-second: #4A764B;
+  --colour-third: #323E50;
+  --bold: 700;
+}
+
+/* Global styles */
+
+html {
+  min-height: 100vh;
+}
+
+body {
+  background: center/cover no-repeat url(/media/scentifique-candles.jpg);
+  font-family: var(--font-body);
+}
+
+h1,
+h2 {
+  font-family: var(--font-heading);
+  color: #FFF;
+}
+
+#site-nav, #site-nav-dropdown {
+    background-color: var(--colour-first);
+}
+
+#site-nav-dropdown .dropdown-item:hover {
+    color: #000;
+}
+
+#site-nav * {
+    color: #FFF;
+}
+
+#hero-message {
+    background-color: var(--colour-second);
+}
