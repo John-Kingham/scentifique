@@ -184,3 +184,36 @@ and fields were to be decided during the iterative development phase.
 
 [LIST THE IMPLEMENTED SCHEMA IN TABLE FORMAT]
 
+## Technologies Used
+
+### Languages
+
+- [CSS](https://developer.mozilla.org/en-US/docs/Web/HTML)
+- [HTML](https://developer.mozilla.org/en-US/docs/Web/HTML)
+- [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
+- [Python](https://www.python.org/)
+
+### Frameworks & Libraries
+
+- [Bootstrap](https://getbootstrap.com/)
+- [Django](https://www.djangoproject.com/)
+- [JQuery](https://jquery.com/)
+
+### Databases
+
+- [SQLite3](https://sqlite.org/) - Django's default database, used for development
+- [PostgreSQL](https://www.postgresql.org/) - Supplied by Code Institute for the deployed site
+
+### External Storage
+
+- [AWS S3](https://aws.amazon.com/)
+
+### Hosting
+
+- [Heroku](https://www.heroku.com/)
+
+### Installed Python Libraries
+
+- [django](https://pypi.org/project/Django/)
+- [django-allauth](https://pypi.org/project/django-allauth/)
+- Required dependencies for the above libraries (installed automatically by `pip`)
