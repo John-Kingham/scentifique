@@ -5,9 +5,11 @@
 :root {
   --font-heading: "Quintessential", Georgia, "Times New Roman", Times, serif;
   --font-body: "Nunito", Arial, Helvetica, sans-serif;
-  --colour-first: #A15355;
-  --colour-second: #4A764B;
-  --colour-third: #323E50;
+  --colour-first: #a15355;
+  --colour-second: #4a764b;
+  --colour-third: #323e50;
+  --colour-white: #fff;
+  --colour-black: #000;
   --bold: 700;
 }
 
@@ -25,21 +27,29 @@ body {
 h1,
 h2 {
   font-family: var(--font-heading);
-  color: #FFF;
-}
-
-#site-nav, #site-nav-dropdown {
-    background-color: var(--colour-first);
-}
-
-#site-nav-dropdown .dropdown-item:hover {
-    color: #000;
-}
-
-#site-nav * {
-    color: #FFF;
+  color: var(--colour-white);
 }
 
 #hero-message {
-    background-color: var(--colour-second);
+  background-color: var(--colour-second);
+}
+
+#main-nav {
+  background-color: var(--colour-first);
+}
+
+#main-nav * {
+  color: var(--colour-white);
+}
+
+#site-header {
+  background-color: var(--colour-first);
+}
+
+#site-header * {
+  color: var(--colour-white);
+}
+
+#account-dropdown * {
+  color: var(--colour-black);
 }
