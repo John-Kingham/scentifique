@@ -53,3 +53,10 @@ h2 {
 #account-dropdown * {
   color: var(--colour-black);
 }
+
+@media screen {
+  
+}
+.fa-user, .fa-shopping-bag {
+
+}
