@@ -25,7 +25,8 @@ body {
 }
 
 h1,
-h2 {
+h2,
+h3 {
   font-family: var(--font-heading);
   color: var(--colour-white);
 }
@@ -38,11 +39,13 @@ h2 {
   background-color: var(--colour-first);
 }
 
-#main-nav * {
+#main-nav *,
+#contact-details {
   color: var(--colour-white);
 }
 
-#site-header {
+#site-header,
+#contact-details {
   background-color: var(--colour-first);
 }
 
@@ -54,9 +57,7 @@ h2 {
   color: var(--colour-black);
 }
 
-@media screen {
-  
-}
-.fa-user, .fa-shopping-bag {
-
+.social-link {
+  color: var(--colour-white);
+  padding: 0.5rem;
 }

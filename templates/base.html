@@ -37,7 +37,7 @@
 
         <title>Scentifique</title>
     </head>
-    <body>
+    <body class="d-flex flex-column min-vh-100">
         <header>
 
             <!-- Site header with logo, Account and Cart -->
@@ -95,6 +95,47 @@
             {% block content %}
             {% endblock content %}
         </main>
+        <footer class="mt-auto pt-2" id="contact-details">
+            <div class="container">
+                <div class="row justify-content-center">
+
+                    <!-- location -->
+                    <div id="location" class="col-12 col-md-6 col-lg-4">
+                        <strong>Scentifique</strong>, 123 Candle Road, Candle Town<br>
+                        <i class="fa-solid fa-phone mr-1"></i>01234 567 890<br />
+                        <i class="fa-solid fa-envelope mr-1"></i>hello@example.com
+                    </div>
+
+                    <!-- Social media links -->
+                    <div id="socials" class="col-12 d-flex justify-content-center">
+                        <a
+                            class="social-link"
+                            href="https://bsky.app/"
+                            target="_blank"
+                            aria-label="Visit our BlueSky social media page (opens in a new tab)"
+                        >
+                            <i class="fa-brands fa-bluesky"></i>
+                        </a>
+                        <a
+                            class="social-link"
+                            href="https://www.tiktok.com/"
+                            target="_blank"
+                            aria-label="Visit our TikTok social media page (opens in a new tab)"
+                        >
+                            <i class="fa-brands fa-tiktok"></i>
+                        </a>
+                        <a
+                            class="social-link"
+                            href="https://www.facebook.com/"
+                            target="_blank"
+                            aria-label="Visit our Facebook social media page (opens in a new tab)"
+                        >
+                            <i class="fa-brands fa-facebook-f"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </footer>
         {% block postloadjs %}
         {% endblock postloadjs %}
     </body>
