@@ -217,6 +217,7 @@ and fields were to be decided during the iterative development phase.
 - [django](https://pypi.org/project/Django/)
 - [django-allauth](https://pypi.org/project/django-allauth/)
 - [django-summernote](https://pypi.org/project/django-summernote/)
+- [Pillow](https://pypi.org/project/pillow/)
 - Required dependencies for the above libraries (installed automatically by `pip`)
 
 ## Features

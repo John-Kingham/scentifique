@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     "about",
     "django_summernote",
     "home",
+    "products",
 ]
 
 MIDDLEWARE = [

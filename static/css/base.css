@@ -20,7 +20,8 @@ html {
 }
 
 body {
-  background: center/cover no-repeat url(/media/scentifique-candles.jpg);
+  background: center/cover no-repeat
+    url(/media/scentifique-homepage-candles.jpg);
   font-family: var(--font-body);
 }
 

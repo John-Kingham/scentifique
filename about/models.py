@@ -2,9 +2,7 @@ from django.db import models
 
 
 class About(models.Model):
-    """
-    Content for the About page.
-    """
+    """Content for the About page."""
 
     title = models.CharField(max_length=200, unique=True)
     content = models.TextField(blank=True)
