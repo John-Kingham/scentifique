@@ -218,3 +218,54 @@ and fields were to be decided during the iterative development phase.
 - [django-allauth](https://pypi.org/project/django-allauth/)
 - [django-summernote](https://pypi.org/project/django-summernote/)
 - Required dependencies for the above libraries (installed automatically by `pip`)
+
+## Features
+
+### Implemented Features
+
+#### Header Navigation
+
+#### Homepage Hero
+
+#### Contact Details
+
+#### [LIST OTHER FEATURE NODES]
+
+#### Error Pages
+
+### Future Features
+
+#### [LIST UNCOMPLETED FEATURES AND OTHER FUTURE FEATURE IDEAS]
+
+## Project Management
+
+I used Scrum to manage the development phase. You can see the full details of 
+each user story in the related [GitHub Project](https://github.com/users/John-Kingham/projects/15).
+
+### Sprint 1
+
+![Sprint 1 screenshot](./docs/images/sprint-1.png)
+
+#### Sprint Goal
+
+Create the Home and About pages
+
+#### User Stories
+
+- #1 Have a good user experience
+- #2 Learn about Scentifique
+
+### Sprint 2
+
+
+
+### Sprint 3
+
+### Unfinished Product Backlog Items
+
+## Testing
+
+[LINK TO TESTING.MD]
+
+## Deployment
+
