@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <!-- About content -->
+    <div class="overlay"></div>
+    <div class="container p-3">
+        <article class="row justify-content-center">
+            <div class="col-md-10 col-lg-8">
+                <h2 class="content-heading">{{ about.title }}</h2>
+                <div class="my-3">{{ about.content | safe }}</div>
+            </div>
+        </article>
+    </div>
+{% endblock content %}

@@ -1,4 +1,5 @@
 {% load static %}
+{% url "about"  as about_url %}
 
 <!doctype html>
 <html lang="en">
@@ -80,6 +81,12 @@
                         <a
                             href="/"
                             class="nav-link {% if request.path == "/" %}nav-active" aria-current="page{% endif %}">Home</a
+                        >
+                        </li>
+                        <li class="nav-item">
+                        <a
+                            href="{% url 'about' %}"
+                            class="nav-link {% if request.path == "/" %}nav-active" aria-current="page{% endif %}">About</a
                         >
                         </li>
                     </ul>
