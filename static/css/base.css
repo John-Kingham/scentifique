@@ -35,6 +35,10 @@ h3 {
   color: var(--colour-black);
 }
 
+.nav-active {
+  font-weight: var(--bold);
+}
+
 .overlay {
   height: 100%;
   width: 100%;
