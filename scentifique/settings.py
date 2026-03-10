@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     "allauth.account",
     "allauth.socialaccount",
     "about",
+    "cart",
     "django_summernote",
     "home",
     "products",
