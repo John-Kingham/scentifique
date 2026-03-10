@@ -78,6 +78,7 @@ TEMPLATES = [
                 "django.template.context_processors.request",  # For AllAuth
                 "django.contrib.auth.context_processors.auth",
                 "django.contrib.messages.context_processors.messages",
+                "cart.contexts.cart_contents",
             ],
         },
     },
@@ -174,3 +175,5 @@ ACCOUNT_SIGNUP_EMAIL_ENTER_TWICE = True
 ACCOUNT_USERNAME_MIN_LENGTH = 4
 LOGIN_URL = "/accounts/login/"
 LOGIN_REDIRECT_URL = "/"
+
+DELIVERY_FEE = 3.99
