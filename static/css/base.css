@@ -29,7 +29,6 @@ h1,
 h2,
 h3 {
   font-family: var(--font-heading);
-  color: var(--colour-white);
 }
 
 .content-heading {
@@ -52,6 +51,7 @@ h3 {
 
 #hero-message {
   background-color: var(--colour-second);
+  color: var(--colour-white);
 }
 
 #main-nav {

@@ -1,5 +1,6 @@
 {% load static %}
 {% url "about"  as about_url %}
+{% url "products"  as products_url %}
 
 <!doctype html>
 <html lang="en">
@@ -87,6 +88,12 @@
                         <a
                             href="{{ about_url }}"
                             class="nav-link {% if request.path == about_url %}nav-active" aria-current="page{% endif %}">About</a
+                        >
+                        </li>
+                        <li class="nav-item">
+                        <a
+                            href="{{ products_url }}"
+                            class="nav-link {% if request.path == products_url %}nav-active" aria-current="page{% endif %}">Products</a
                         >
                         </li>
                     </ul>
