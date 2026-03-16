@@ -13,10 +13,25 @@
         {% if cart_items %}
             {% for cart_item in cart_items %}
                 <div class="row my-2">
-                    <div class="col-12">
-                        <p>Cart Item: {{ cart_item }}</p>
+                    <div class="col-12 col-md-4">
+                        {% if cart_item.product.image %}
+                            <img src="{{ cart_item.product.image.url }}" class="rounded w-100 my-4" alt="{{ cart_item.product.name }}">
+                        {% else %}
+                            <img src="{{ MEDIA_URL }}noimage.png" class="rounded w-100 my-4" alt="{{ cart_item.product.name }}">
+                        {% endif %}
+                        <h2>{{ cart_item.product.name }}</h2>
+                        <p class="small">Price: £{{ cart_item.product.price }}</p>
                     </div>
-                </div>            
+                    <div class="col-12 col-md-4">
+                        <p>Colour: {{ cart_item.colour.name }}</p>
+                        <p>Fragrance: {{ cart_item.fragrance.name }}</p>
+                        <p>Quantity: {{ cart_item.quantity }}</p>
+                    </div>
+                    <div class="col-12 col-md-4">
+                        <p>Subtotal: £ NOT DONE YET!</p>
+                    </div>
+                </div>
+                <hr class="w-50">
             {% endfor %}
         {% else %}
             <div class="row my-2">
@@ -26,6 +41,13 @@
                 </div>
             </div>
         {% endif %}
+        <div class="row my-2 text-right">
+            <div class="col-12">
+                <p>Delivery: £{{ delivery|floatformat:2 }}</p>
+                <p>Grand Total: £{{ grand_total|floatformat:2 }}</p>
+                <div><a href="" class="btn btn-dark">Checkout</a></div>
+            </div>
+
         </div>
     </div>
 {% endblock content %}
