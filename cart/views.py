@@ -1,9 +1,17 @@
+from django.conf import settings
 from django.shortcuts import redirect, render
+
+from products.models import Colour, Fragrance
 
 
 def view_cart(request):
     """A view for the shopping cart page."""
-    return render(request, "cart/cart.html")
+    context = {
+        "colours": Colour.objects.all(),
+        "fragrances": Fragrance.objects.all(),
+        "quantities": range(1, settings.MAX_LINE_ITEM_QUANTITY+1)
+    }
+    return render(request, "cart/cart.html", context)
 
 
 def add_to_cart(request, product_id):

@@ -17,7 +17,7 @@ def product_detail(request, product_id):
     product = get_object_or_404(Product, pk=product_id)
     colours = Colour.objects.all()
     fragrances = Fragrance.objects.all()
-    quantities = range(1, settings.MAX_ORDER_LINE_ITEM_QUANTITY+1)
+    quantities = range(1, settings.MAX_LINE_ITEM_QUANTITY+1)
     context = {
         "colours": colours,
         "fragrances": fragrances,

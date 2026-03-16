@@ -1,4 +1,3 @@
-from decimal import Decimal
 from django.conf import settings
 from django.shortcuts import get_object_or_404
 
@@ -19,6 +18,7 @@ def cart_contents(request):
         total += product.price * quantity
         cart_items.append(
             {
+                "key": cart_item_key,
                 "product": product,
                 "colour": colour,
                 "fragrance": fragrance,
