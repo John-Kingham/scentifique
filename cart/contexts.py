@@ -7,12 +7,12 @@ def cart_contents(request):
 
     cart_items = []
     delivery = settings.DELIVERY_FEE
-    subtotal = 0
-    grand_total = subtotal + delivery
+    total = 0
+    grand_total = total + delivery
     context = {
         "cart_items": cart_items,
         "delivery": delivery,
-        "subtotal": subtotal,
+        "total": total,
         "grand_total": grand_total,
-    }
+      }
     return context

@@ -1,6 +1,6 @@
 from django.shortcuts import get_object_or_404, render
 
-from .models import Product
+from .models import Colour, Fragrance, Product
 
 
 def all_products(request):
@@ -14,5 +14,13 @@ def product_detail(request, product_id):
     """A view to show the details of one product."""
 
     product = get_object_or_404(Product, pk=product_id)
-    context = {"product": product}
+    colours = Colour.objects.all()
+    fragrances = Fragrance.objects.all()
+    quantities = range(1, 12+1)
+    context = {
+        "colours": colours,
+        "fragrances": fragrances,
+        "quantities": quantities,
+        "product": product,
+    }
     return render(request, "products/product_detail.html", context)

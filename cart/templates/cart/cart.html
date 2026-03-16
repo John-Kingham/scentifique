@@ -13,14 +13,14 @@
         {% if cart_items %}
             {% for item in cart_items %}
                 <div class="row my-2">
-                    <div class="col">
+                    <div class="col-12">
                         <p>Item: {{ item }}</p>
                     </div>
                 </div>            
             {% endfor %}
         {% else %}
             <div class="row my-2">
-                <div class="col">
+                <div class="col-12">
                     <p>Your shopping cart is empty.</p>
                     <div><a href="{% url 'products' %}" class="btn btn-dark">Continue shopping</a></div>
                 </div>
