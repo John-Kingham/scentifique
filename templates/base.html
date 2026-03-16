@@ -64,7 +64,7 @@
                                 {% endif %}
                             </div>
                         </li>
-                        <li class="nav-item">        
+                        <li class="nav-item {% if cart_items %}font-weight-bold{% endif %}">        
                             <a class="nav-link" href="{% url 'view_cart' %}">
                                 <i class="fa-solid fa-bag-shopping d-none d-sm-inline"></i>
                                 Cart

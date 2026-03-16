@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
+from decimal import Decimal
 import os
 from pathlib import Path
 
@@ -176,4 +177,5 @@ ACCOUNT_USERNAME_MIN_LENGTH = 4
 LOGIN_URL = "/accounts/login/"
 LOGIN_REDIRECT_URL = "/"
 
-DELIVERY_FEE = 3.99
+DELIVERY_FEE = Decimal(3.99)
+MAX_ORDER_LINE_ITEM_QUANTITY = 12

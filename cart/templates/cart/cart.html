@@ -11,10 +11,10 @@
             </div>
         </div>
         {% if cart_items %}
-            {% for item in cart_items %}
+            {% for cart_item in cart_items %}
                 <div class="row my-2">
                     <div class="col-12">
-                        <p>Item: {{ item }}</p>
+                        <p>Cart Item: {{ cart_item }}</p>
                     </div>
                 </div>            
             {% endfor %}
