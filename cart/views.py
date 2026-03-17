@@ -1,11 +1,12 @@
 from http import HTTPStatus
 
 from django.conf import settings
+from django.contrib import messages
 from django.http import HttpResponse
 from django.shortcuts import redirect, render
 from django.urls import reverse
 
-from products.models import Colour, Fragrance
+from products.models import Colour, Fragrance, Product
 
 
 def view_cart(request):
@@ -32,6 +33,8 @@ def add_to_cart(request, product_id):
     else:
         cart[cart_item_key] = quantity
     request.session["cart"] = cart
+    product = Product.objects.get(pk=product_id)
+    messages.success(request, f"{quantity} x {product.name} added to cart.")
     return redirect(request.POST.get("redirect_url"))
 
 

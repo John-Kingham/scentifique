@@ -102,7 +102,19 @@
         </header>
         <main>
             {% if messages %}
-                <div class="message-container">Message container</div>
+                <div class="message-container d-flex justify-content-center">
+                    {% for message in messages %}
+                        {% if message.level == 40 %}
+                            {% include "includes/toasts/toast_error.html" %}
+                        {% elif message.level == 30 %}
+                            {% include "includes/toasts/toast_warning.html" %}
+                        {% elif message.level == 25 %}
+                            {% include "includes/toasts/toast_success.html" %}
+                        {% else %}
+                            {% include "includes/toasts/toast_info.html" %}
+                        {% endif %}
+                    {% endfor %}
+                </div>
             {% endif %}
             {% block page_header %}
             {% endblock page_header %}
@@ -151,6 +163,9 @@
             </div>
         </footer>
         {% block postloadjs %}
+            <script type="text/javascript">
+                $(".toast").toast("show");
+            </script>
         {% endblock postloadjs %}
     </body>
 </html>
