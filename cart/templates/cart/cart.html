@@ -5,22 +5,23 @@
     <!-- Shopping cart content -->
     <div class="overlay"></div>
     <div class="container h-100">
-        <div class="row my-4">
-            <div class="col-12">
+        <div class="row my-4 justify-content-center">
+            <div class="col-12 col-md-8">
                 <h1 class="content-heading">Shopping Cart</h1>
             </div>
         </div>
         {% if cart_items %}
             {% for cart_item in cart_items %}
-                <div class="row my-2">
+                <div class="row my-2 justify-content-center">
                     <div class="col-12 col-md-4">
                         {% if cart_item.product.image %}
-                            <img src="{{ cart_item.product.image.url }}" class="rounded w-100 my-4" alt="{{ cart_item.product.name }}">
+                        <img src="{{ cart_item.product.image.url }}" class="rounded w-100 my-4" alt="{{ cart_item.product.name }}">
                         {% else %}
-                            <img src="{{ MEDIA_URL }}noimage.png" class="rounded w-100 my-4" alt="{{ cart_item.product.name }}">
+                        <img src="{{ MEDIA_URL }}noimage.png" class="rounded w-100 my-4" alt="{{ cart_item.product.name }}">
                         {% endif %}
                         <h2>{{ cart_item.product.name }}</h2>
-                        <p class="small">Price: £{{ cart_item.product.price }}</p>
+                        <p class="small">Price per candle: £{{ cart_item.product.price }}</p>
+                        <p class="small">Subtotal: £{{ cart_item.sub_total }}</p>
                     </div>
                     <div class="col-12 col-md-4">
                         <form class="form update-form" action="{% url 'update_cart' cart_item.key %}" method="POST">
@@ -55,22 +56,19 @@
                             </div>
                         </form>
                     </div>
-                    <div class="col-12 col-md-4">
-                        <p>Subtotal: £ NOT DONE YET!</p>
-                    </div>
                 </div>
                 <hr class="w-50">
             {% endfor %}
-            <div class="row my-2 text-right">
-                <div class="col-12">
+            <div class="row my-2 justify-content-center">
+                <div class="col-12 col-md-8">
                     <p>Delivery: £{{ delivery|floatformat:2 }}</p>
                     <p>Grand Total: £{{ grand_total|floatformat:2 }}</p>
                     <div><a href="" class="btn btn-dark">Checkout</a></div>
                 </div>
             </div>
         {% else %}
-            <div class="row my-2">
-                <div class="col-12">
+            <div class="row my-2 justify-content-center">
+                <div class="col-12 col-md-8">
                     <p>Your shopping cart is empty.</p>
                     <div><a href="{% url 'products' %}" class="btn btn-dark">Continue shopping</a></div>
                 </div>

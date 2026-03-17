@@ -16,7 +16,8 @@ def cart_contents(request):
         product = get_object_or_404(Product, pk=product_id)
         colour = get_object_or_404(Colour, pk=colour_id)
         fragrance = get_object_or_404(Fragrance, pk=fragrance_id)
-        total += product.price * quantity
+        sub_total = product.price * quantity
+        total += sub_total
         cart_items.append(
             {
                 "key": cart_item_key,
@@ -24,6 +25,7 @@ def cart_contents(request):
                 "colour": colour,
                 "fragrance": fragrance,
                 "quantity": quantity,
+                "sub_total": sub_total,
             }
         )
 
