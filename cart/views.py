@@ -3,7 +3,7 @@ from http import HTTPStatus
 from django.conf import settings
 from django.contrib import messages
 from django.http import HttpResponse
-from django.shortcuts import redirect, render
+from django.shortcuts import get_object_or_404, redirect, render
 from django.urls import reverse
 
 from products.models import Colour, Fragrance, Product
@@ -33,7 +33,7 @@ def add_to_cart(request, product_id):
     else:
         cart[cart_item_key] = quantity
     request.session["cart"] = cart
-    product = Product.objects.get(pk=product_id)
+    product = get_object_or_404(Product, pk=product_id)
     messages.success(request, f"{quantity} x {product.name} added to cart.")
     return redirect(request.POST.get("redirect_url"))
 
@@ -60,6 +60,7 @@ def update_cart(request, cart_item_key):
         cart.pop(cart_item_key)
 
     request.session["cart"] = cart
+    messages.success(request, "Shopping cart updated.")
     return redirect(reverse("view_cart"))
 
 
@@ -69,4 +70,5 @@ def remove_from_cart(request, cart_item_key):
     cart = request.session.get("cart", {})
     cart.pop(cart_item_key, None)
     request.session["cart"] = cart
+    messages.success(request, "Item removed from shopping cart.")
     return HttpResponse(status=HTTPStatus.OK)
