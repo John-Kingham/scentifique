@@ -23,7 +23,7 @@
                         <p class="small">Price: £{{ cart_item.product.price }}</p>
                     </div>
                     <div class="col-12 col-md-4">
-                        <form class="form update-form" action="{% url 'add_to_cart' cart_item.product.id %}" method="POST">
+                        <form class="form update-form" action="{% url 'update_cart' cart_item.key %}" method="POST">
                             {% csrf_token %}
                             <div class="form-row">
                                 <div class="col-12 mb-3">
@@ -50,8 +50,8 @@
                                         {% endfor %}
                                     </select>
                                 </div>
-                                <input type="submit" class="update-btn btn btn-dark mt-5 mr-3" value="Update">
-                                <input id="remove_{{ cart_item.key }}" type="submit" class="remove-btn btn btn-danger mt-5" value="Remove">
+                                <button type="button" class="update-btn btn btn-dark mt-5 mr-3">Update</button>
+                                <button id="remove_{{ cart_item.key }}" type="button" class="remove-btn btn btn-danger mt-5">Remove</button>
                             </div>
                         </form>
                     </div>
@@ -83,19 +83,18 @@
     {{ block.super }}
     <script type="text/javascript">
         // Update line item 
-        $(".update-btn").on("click", () => {
-            let form = $(this).prev(".update-form");
-            form.submit();
+        $(".update-btn").on("click", function() {
+            $(this).closest("form").submit();
         });
 
         // Remove line item
-        $(".remove-btn").on("click", () => {
+        $(".remove-btn").on("click", function() {
             let itemKey = $(this).attr("id").split("remove_")[1];
             let url = `/cart/remove/${itemKey}/`;
             let data = {
                 "csrfmiddlewaretoken": "{{ csrf_token }}",
             };
-            $.post(url, data).done(() => {
+            $.post(url, data).done(function() {
                 location.reload();
             });
         });

@@ -10,6 +10,7 @@ def cart_contents(request):
     total = 0
     cart_items = []
     cart = request.session.get("cart", {})
+
     for cart_item_key, quantity in cart.items():
         [product_id, colour_id, fragrance_id] = cart_item_key.split("_")
         product = get_object_or_404(Product, pk=product_id)
