@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     "about",
     "cart",
     "checkout",
+    "crispy_forms",
     "django_summernote",
     "home",
     "products",
@@ -81,6 +82,10 @@ TEMPLATES = [
                 "django.contrib.auth.context_processors.auth",
                 "django.contrib.messages.context_processors.messages",
                 "cart.contexts.cart_contents",
+            ],
+            "builtins": [
+                "crispy_forms.templatetags.crispy_forms_tags",
+                "crispy_forms.templatetags.crispy_forms_field",
             ],
         },
     },
@@ -180,3 +185,5 @@ LOGIN_REDIRECT_URL = "/"
 
 DELIVERY_FEE = Decimal(3.99)
 MAX_LINE_ITEM_QUANTITY = 12
+
+CRISPY_TEMPLATE_PACK = "bootstrap4"

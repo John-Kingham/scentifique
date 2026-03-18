@@ -22,7 +22,6 @@ class OrderForm(forms.ModelForm):
 
         super().__init__(*args, **kwargs)
         placeholders = self._placeholders()
-        self.fields["full_name"].widget.attrs["autofocus"] = True
         for field_name, field in self.fields.items():
             field.widget.attrs["class"] = "stripe-style-input"
             field.label = False
@@ -39,9 +38,10 @@ class OrderForm(forms.ModelForm):
             "full_name": "Full Name",
             "email": "Email Address",
             "phone_number": "Phone Number",
-            "postcode": "Postal Code",
-            "town_or_city": "Town or City",
             "street_address1": "Street Address 1",
             "street_address2": "Street Address 2",
+            "town_or_city": "Town or City",
             "county": "County, State or Locality",
+            "postcode": "Postal Code",
+            "country": "Country",
         }

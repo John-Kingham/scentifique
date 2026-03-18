@@ -63,7 +63,7 @@
                 <div class="col-12 col-md-8">
                     <p>Delivery: £{{ delivery|floatformat:2 }}</p>
                     <p>Grand Total: £{{ grand_total|floatformat:2 }}</p>
-                    <div><a href="" class="btn btn-dark">Checkout</a></div>
+                    <div><a href="{% url 'checkout' %}" class="btn btn-dark">Checkout</a></div>
                 </div>
             </div>
         {% else %}
