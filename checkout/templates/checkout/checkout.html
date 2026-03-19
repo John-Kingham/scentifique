@@ -59,7 +59,7 @@
             <div class="col-12 col-md-8 col-lg-6 mb-3">
                 <h2>Delivery Details</h2>
                 <p class="text-muted">Please enter your delivery details</p>
-                <form action="{% url 'checkout' %}" method="POST" id="payment-form" class="">
+                <form action="{% url 'checkout' %}" method="POST" id="payment-form">
                     {% csrf_token %}
                     <fieldset class="rounded px-3 mb-3 fieldset-checkout">
                         <legend class="fieldset-legend small px-2 w-auto">Customer details</legend>
