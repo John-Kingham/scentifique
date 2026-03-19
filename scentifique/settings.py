@@ -14,6 +14,10 @@ from decimal import Decimal
 import os
 from pathlib import Path
 
+# Import development environment variables
+if os.path.isfile("env.py"):
+    import env  # noqa: F401 - Ignore "unreferenced import" warning
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -27,7 +31,7 @@ SECRET_KEY = (
 )
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = "DEVELOPMENT" in os.environ
 
 ALLOWED_HOSTS = []
 
@@ -162,7 +166,7 @@ MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
-# Scentifique-specific globals
+# Scentifique globals
 
 AUTHENTICATION_BACKENDS = [
     # Needed to login by username in Django admin, regardless of `allauth`
@@ -187,3 +191,8 @@ DELIVERY_FEE = Decimal(3.99)
 MAX_LINE_ITEM_QUANTITY = 12
 
 CRISPY_TEMPLATE_PACK = "bootstrap4"
+
+STRIPE_CURRENCY = "gbp"
+STRIPE_PUBLIC_KEY = os.getenv("STRIPE_PUBLIC_KEY", "")
+STRIPE_SECRET_KEY = os.getenv("STRIPE_SECRET_KEY", "")
+STRIPE_WH_SECRET = os.getenv("STRIPE_WH_SECRET", "")

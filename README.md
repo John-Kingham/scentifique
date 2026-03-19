@@ -218,7 +218,8 @@ and fields were to be decided during the iterative development phase.
 - [django-allauth](https://pypi.org/project/django-allauth/)
 - [django-crispy-forms](https://pypi.org/project/django-crispy-forms/)
 - [django-summernote](https://pypi.org/project/django-summernote/)
-- [Pillow](https://pypi.org/project/pillow/)
+- [pillow](https://pypi.org/project/pillow/)
+- [stripe](https://pypi.org/project/stripe/)
 - Required dependencies for the above libraries (installed automatically by `pip`)
 
 ## Features
