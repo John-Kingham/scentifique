@@ -23,7 +23,6 @@ class OrderForm(forms.ModelForm):
         super().__init__(*args, **kwargs)
         placeholders = self._placeholders()
         for field_name, field in self.fields.items():
-            field.widget.attrs["class"] = "stripe-style-input"
             field.label = False
             placeholder = placeholders.get(field_name)
             if placeholder:

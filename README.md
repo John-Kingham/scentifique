@@ -260,8 +260,8 @@ Create the Home and About pages
 ### Sprint 2
 
 
-
 ### Sprint 3
+
 
 ### Unfinished Product Backlog Items
 
@@ -271,3 +271,6 @@ Create the Home and About pages
 
 ## Deployment
 
+## Credits 
+
+- I used [temp-mail.org](https://temp-mail.org/) to create a temporary email for Stripe.

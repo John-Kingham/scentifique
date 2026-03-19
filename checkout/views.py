@@ -14,5 +14,12 @@ def checkout(request):
         return redirect(reverse("products"))
     template = "checkout/checkout.html"
     order_form = OrderForm()
-    context = {"order_form": order_form}
+    context = {
+        "order_form": order_form,
+        "stripe_public_key": (
+            "pk_test_51TCdcpGtQSzblww04CfnJuoWHCbL2jdZipJKGHNr1SdfJvvYQ7J1TM"
+            "nltHYcwLL6FPWIUK14A6nNiR3CNpvSr8s300bmr72TAD"
+        ),
+        "client_secret": "TEST CLIENT SECRET",
+    }
     return render(request, template, context)
