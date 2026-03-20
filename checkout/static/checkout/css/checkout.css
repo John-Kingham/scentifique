@@ -30,7 +30,7 @@
   font-weight: bold;
 }
 
-.fieldset-checkout {
+.checkout-border {
     border: solid black 1px;
     border-color: #CED4DA;
 }

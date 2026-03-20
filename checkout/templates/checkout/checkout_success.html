@@ -9,15 +9,56 @@
     <div class="overlay"></div>
     <div class="container">
         <div class="row my-4 justify-content-center">
+            <!-- Order confirmation -->
             <div class="col-12 col-md-8 col-lg-6">
                 <h1 class="content-heading">Order Confirmation</h1>
                 <p>Thank you for placing an order with us.</p>
                 <p>An order confirmation email has been sent to <strong>{{ order.email }}</strong>.</p>
-                <p>Your order number is: {{ order.order_number }}</p> 
+                <!-- Order summary -->
+                <h2 class="mt-4">Order details</h2>
+                <p class="my-0"><strong>Order number</strong>: {{ order.order_number }}</p>
+                <p class="my-0"><strong>Order date</strong>: {{ order.date|date:"F j, Y" }}</p>
+                <h2 class="mt-4">Items ordered</h2>
+                {% for item in order.lineitems.all %}
+                    <div class="row my-3">
+                        <div class="col-3">
+                            <a href="{% url 'product_detail' item.product.id %}">
+                                {% if item.product.image %}
+                                    <img class="w-100" src="{{ item.product.image.url }}" alt="{{ product.name }}">
+                                {% else %}
+                                    <img class="w-100" src="{{ MEDIA_URL }}noimage.png" alt="{{ product.name }}">
+                                {% endif %}
+                            </a>
+                        </div>
+                        <div class="col-9">
+                            <p class="my-0 mb-2"><strong>{{ item.product.name }}</strong></p>
+                            <p class="my-0 small text-muted">Colour: {{ item.colour }}</p>
+                            <p class="my-0 small text-muted">Fragrance: {{ item.fragrance }}</p>
+                            <p class="my-0 small text-muted mb-2">Quantity: {{ item.quantity }}</p>
+                            <p class="my-0 small">Subtotal: £{{ item.total }}</p>
+                        </div>
+                    </div>
+                {% endfor %}
+                <h2 class="mt-4">Delivery details</h2>
+                <p class="my-0"><strong>Full name</strong>: {{ order.full_name }}</p>
+                <p class="my-0"><strong>Address line 1</strong>: {{ order.street_address1 }}</p>
+                {% if order.street_address2 %}
+                    <p class="my-0"><strong>Address line 2</strong>: {{ order.street_address2 }}</p>            
+                {% endif %}
+                <p class="my-0"><strong>Town or city</strong>: {{ order.town_or_city }}</p>
+                {% if order.county %}
+                    <p class="my-0"><strong>County</strong>: {{ order.county }}</p>
+                {% endif %}
+                {% if order.postcode %}
+                <p class="my-0"><strong>Post code</strong>: {{ order.postcode }}</p>
+                {% endif %}
+                <p class="my-0"><strong>Country</strong>: {{ order.country }}</p>
+                <p class="my-0"><strong>Phone number</strong>: {{ order.phone_number }}</p>
+                <h2 class="mt-4">Billing details</h2>
+                <p class="my-0">Subtotal: £{{ order.lineitems_total }}</p>
+                <p class="my-0">Delivery fee</strong>: £{{ order.delivery }}</p>
+                <p class="my-0"><strong>Grand total: £{{ order.grand_total }}</strong></p>
             </div>
-        </div>
-        <div class="row my-4 justify-content-center">
-            <div class="col-12 col-md-8 col-lg-6"></div>
         </div>
         <div class="row my-4 justify-content-center">
             <div class="col-12 col-md-8 col-lg-6">
