@@ -1,6 +1,11 @@
+from http import HTTPStatus
+import json
+
 from django.contrib import messages
+from django.http import HttpResponse
 from django.shortcuts import get_object_or_404, redirect, render
 from django.urls import reverse
+from django.views.decorators.http import require_POST
 
 import stripe
 
@@ -109,3 +114,28 @@ def checkout_success(request, order_number):
     order = get_object_or_404(Order, order_number=order_number)
     context = {"order": order}
     return render(request, template, context)
+
+
+@require_POST
+def cache_checkout_data(request):
+    """Add checkout data to the Stripe payment intent."""
+
+    try:
+        client_secret = request.POST.get("client_secret")
+        payment_intent_id = client_secret.split("_secret")[0]
+        stripe.api_key = settings.STRIPE_SECRET_KEY
+        stripe.PaymentIntent.modify(
+            payment_intent_id,
+            metadata={
+                "cart": json.dumps(request.session.get("cart", {})),
+                "save_info": request.POST.get("save_info"),
+                "username": request.user,
+            },
+        )
+        return HttpResponse(status=HTTPStatus.OK)
+    except Exception as e:
+        messages.error(
+            request,
+            "We were unable to process your order. Please try again later.",
+        )
+        return HttpResponse(content=e, status=HTTPStatus.BAD_REQUEST)

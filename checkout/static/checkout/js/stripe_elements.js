@@ -24,7 +24,7 @@ card.addEventListener("change", function (event) {
   }
 });
 
-// Handle form submission
+// Handle form submission event
 let paymentForm = document.getElementById("payment-form");
 paymentForm.addEventListener("submit", function (event) {
   // Disable inputs
@@ -34,29 +34,69 @@ paymentForm.addEventListener("submit", function (event) {
   $("#payment-form").fadeToggle(200);
   $("#loading-overlay").fadeToggle(200);
 
-  // Attept card confirmation
-  stripe
-    .confirmCardPayment(clientSecret, {
-      payment_method: {
-        card: card,
-      },
-    })
-    .then(function (result) {
-      if (result.error) {
-        // Display error message
-        let cardErrorsDiv = document.getElementById("card-errors");
-        $(cardErrorsDiv).html(errorMessageHtml(result.error.message));
+  // Call cache_checkout_data view to add checkout data to the payment intent.
+  let saveInfo = Boolean($("#id-save-info").attr("checked"));
+  let csrfToken = $(`input[name="csrfmiddlewaretoken"]`).val();
+  let postData = {
+    csrfmiddlewaretoken: csrfToken,
+    client_secret: clientSecret,
+    save_info: saveInfo,
+  };
+  $.post("/checkout/cache_checkout_data/", postData)
+    .done(() => {
+      // Attept card confirmation
+      stripe
+        .confirmCardPayment(clientSecret, {
+          payment_method: {
+            card: card,
+            billing_details: {
+              name: $.trim(paymentForm.full_name.value),
+              phone: $.trim(paymentForm.phone_number.value),
+              email: $.trim(paymentForm.email.value),
+              address: {
+                line1: $.trim(paymentForm.street_address1.value),
+                line2: $.trim(paymentForm.street_address2.value),
+                city: $.trim(paymentForm.town_or_city.value),
+                state: $.trim(paymentForm.county.value),
+                country: $.trim(paymentForm.country.value),
+              },
+            },
+          },
+          shipping: {
+            name: $.trim(paymentForm.full_name.value),
+            phone: $.trim(paymentForm.phone_number.value),
+            address: {
+              line1: $.trim(paymentForm.street_address1.value),
+              line2: $.trim(paymentForm.street_address2.value),
+              city: $.trim(paymentForm.town_or_city.value),
+              state: $.trim(paymentForm.county.value),
+              postal_code: $.trim(paymentForm.postcode.value),
+              country: $.trim(paymentForm.country.value),
+            },
+          },
+        })
+        .then(function (result) {
+          if (result.error) {
+            // Display error message
+            let cardErrorsDiv = document.getElementById("card-errors");
+            $(cardErrorsDiv).html(errorMessageHtml(result.error.message));
 
-        // Re-enable inputs so user can fix error
-        card.update({ disabled: false });
-        $("#submit-button").attr("disabled", false);
-        $("#payment-form").fadeToggle(200);
-        $("#loading-overlay").fadeToggle(200);
-      } else {
-        if (result.paymentIntent.status === "succeeded") {
-          paymentForm.submit();
-        }
-      }
+            // Re-enable inputs so user can fix error
+            card.update({ disabled: false });
+            $("#submit-button").attr("disabled", false);
+            $("#payment-form").fadeToggle(200);
+            $("#loading-overlay").fadeToggle(200);
+          } else {
+            if (result.paymentIntent.status === "succeeded") {
+              // Everything was okay so submit the payment form.
+              paymentForm.submit();
+            }
+          }
+        });
+    })
+    .fail(() => {
+      // The cache_checkout_data view failed, so reload the page.
+      location.reload();
     });
 });
 
