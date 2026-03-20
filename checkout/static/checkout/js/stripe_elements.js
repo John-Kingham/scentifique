@@ -14,7 +14,6 @@ let style = {
 // Mount the card
 let card = elements.create("card", { style: style });
 card.mount("#card-element");
-
 // Handle card validation errors
 card.addEventListener("change", function (event) {
   let cardErrorDiv = document.getElementById("card-errors");
@@ -26,13 +25,14 @@ card.addEventListener("change", function (event) {
 });
 
 // Handle form submission
-let form = document.getElementById("payment-form");
-form.addEventListener("submit", function (event) {
-
+let paymentForm = document.getElementById("payment-form");
+paymentForm.addEventListener("submit", function (event) {
   // Disable inputs
   event.preventDefault();
   card.update({ disabled: true });
   $("#submit-button").attr("disabled", true);
+  $("#payment-form").fadeToggle(200);
+  $("#loading-overlay").fadeToggle(200);
 
   // Attept card confirmation
   stripe
@@ -43,7 +43,6 @@ form.addEventListener("submit", function (event) {
     })
     .then(function (result) {
       if (result.error) {
-
         // Display error message
         let cardErrorsDiv = document.getElementById("card-errors");
         $(cardErrorsDiv).html(errorMessageHtml(result.error.message));
@@ -51,10 +50,11 @@ form.addEventListener("submit", function (event) {
         // Re-enable inputs so user can fix error
         card.update({ disabled: false });
         $("#submit-button").attr("disabled", false);
-
+        $("#payment-form").fadeToggle(200);
+        $("#loading-overlay").fadeToggle(200);
       } else {
         if (result.paymentIntent.status === "succeeded") {
-          form.submit();
+          paymentForm.submit();
         }
       }
     });
