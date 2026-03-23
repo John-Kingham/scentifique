@@ -80,3 +80,12 @@ h3 {
   color: var(--colour-white);
   padding: 0.5rem;
 }
+
+/* AllAuth styles */
+
+.allauth-form {
+  margin-top: 1.5rem;
+}
+.allauth-form label:not([for="id_remember"]) {
+  display: none;
+}

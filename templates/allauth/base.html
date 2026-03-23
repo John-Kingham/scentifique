@@ -24,9 +24,9 @@
                 <ul>
                     {% if user.is_authenticated %}
                         <li><a href="{% url 'account_email' %}">Change e-mail</a></li>
-                        <li><a href="{% url 'account_logout' %}">Log out</a></li>
+                        <li><a href="{% url 'account_logout' %}">Sign out</a></li>
                     {% else %}
-                        <li><a href="{% url 'account_login' %}">Log in</a></li>
+                        <li><a href="{% url 'account_login' %}">Sign in</a></li>
                         <li><a href="{% url 'account_signup' %}">Sign up</a></li>
                     {% endif %}
                 </ul>
