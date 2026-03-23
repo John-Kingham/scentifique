@@ -53,7 +53,6 @@ def _view_checkout(request):
 def _save_order(request):
     """Save an order to the database."""
 
-    cart = request.session.get("cart", {})
     form_data = {
         "full_name": request.POST["full_name"],
         "email": request.POST["email"],
@@ -67,7 +66,14 @@ def _save_order(request):
     }
     order_form = OrderForm(form_data)
     if order_form.is_valid():
-        order = order_form.save()
+        # Save the order
+        order = order_form.save(commit=False)
+        stripe_pi_id = request.POST.get("client_secret").split("_secret")[0]
+        order.stripe_pi_id = stripe_pi_id
+        cart = request.session.get("cart", {})
+        order.original_cart = json.dumps(cart)
+        order.save()
+        # Save the order's line items
         for lineitem_key, quantity in cart.items():
             [product_id, colour_id, fragrance_id] = lineitem_key.split("_")
             try:

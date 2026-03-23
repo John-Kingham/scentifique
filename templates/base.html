@@ -39,8 +39,15 @@
         {% block extra_js %}
         {% endblock extra_js %}
 
+        <!-- Favicon.io links -->
+        <link rel="apple-touch-icon" sizes="180x180" href="{% static 'favicons/apple-touch-icon.png' %}">
+        <link rel="icon" type="image/png" sizes="32x32" href="{% static 'favicons/favicon-32x32.png' %}">
+        <link rel="icon" type="image/png" sizes="16x16" href="{% static 'favicons/favicon-16x16.png' %}">
+        <link rel="manifest" href="{% static 'favicons/site.webmanifest' %}">    
+
         <title>Scentifique</title>
     </head>
+
     <body class="d-flex flex-column min-vh-100">
         <header>
 
