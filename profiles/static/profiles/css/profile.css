@@ -1,0 +1,6 @@
+/* Country selector placeholder styling */
+
+select[value=""],
+select option[value=""] {
+  color: grey;
+}

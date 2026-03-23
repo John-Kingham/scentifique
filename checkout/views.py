@@ -13,6 +13,8 @@ from cart.contexts import cart_contents
 from checkout.forms import OrderForm
 from checkout.models import Order, OrderLineItem
 from products.models import Colour, Fragrance, Product
+from profiles.forms import UserProfileForm
+from profiles.models import UserProfile
 from scentifique import settings
 
 
@@ -115,10 +117,35 @@ def _save_order(request):
 def checkout_success(request, order_number):
     """Handle a successful checkout."""
 
+    # Clear the cart, ready for the user's next order.
     request.session.pop("cart")
-    template = "checkout/checkout_success.html"
+
     order = get_object_or_404(Order, order_number=order_number)
+    if request.user.is_authenticated:
+        # Attach the user's profile to the order.
+        profile = UserProfile.objects.get(user=request.user)
+        order.user_profile = profile
+        order.save()
+        if request.session.get("save_info"):
+            # Save the user's info.
+            profile_data = {
+                "default_phone_number": order.phone_number,
+                "default_street_address1": order.street_address1,
+                "default_street_address2": order.street_address2,
+                "default_town_or_city": order.town_or_city,
+                "default_county": order.county,
+                "default_postcode": order.postcode,
+                "default_country": order.country,
+            }
+            user_profile_form = UserProfileForm(profile_data, instance=profile)
+            if user_profile_form.is_valid():
+                user_profile_form.save()
+            else:
+                error_msg = "User profile data invalid! Please contact us."
+                messages.error(request, error_msg)
+    # Render the checkout sucess page.
     context = {"order": order}
+    template = "checkout/checkout_success.html"
     return render(request, template, context)
 
 
