@@ -37,7 +37,7 @@ def add_product(request):
     """A view for adding products from the front-end."""
 
     if not request.user.is_superuser:
-        messages.error(request, "Sorry, only administrators can add products.")
+        messages.error(request, "Sorry, only admins can add products.")
         return redirect(reverse("home"))
     if request.method == "POST":
         form = ProductForm(request.POST, request.FILES)
@@ -48,10 +48,38 @@ def add_product(request):
         else:
             messages.error(
                 request,
-                f"Failed to add {product.name}. Check that the form is valid.",
+                "Failed to add product. Check that the form is valid.",
             )
     else:
         form = ProductForm()
     template = "products/add_product.html"
     context = {"form": form}
+    return render(request, template, context)
+
+
+@login_required
+def edit_product(request, product_id):
+    """A view for editing a product."""
+
+    if not request.user.is_superuser:
+        messages.error(request, "Sorry, only admins can edit products.")
+        return redirect(reverse("home"))
+
+    product = get_object_or_404(Product, pk=product_id)
+    if request.method == "POST":
+        form = ProductForm(request.POST, request.FILES, instance=product)
+        if form.is_valid():
+            form.save()
+            messages.success(request, f"Updated {product.name}.")
+            return redirect(reverse("product_detail", args=[product.id]))
+        else:
+            messages.error(
+                request,
+                "Failed to update product. Check that the form is valid.",
+            )
+    else:
+        form = ProductForm(instance=product)
+
+    template = "products/edit_product.html"
+    context = {"form": form, "product": product}
     return render(request, template, context)
