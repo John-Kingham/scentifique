@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 
 from decimal import Decimal
 import os
+import dj_database_url
 from pathlib import Path
 
 # Import development environment variables
@@ -26,9 +27,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = (
-    "django-insecure-0zhdcs-p#gy60@*8d43o%&xsv#2ovmd*k3@tmh0y&7nn0%to2g"
-)
+SECRET_KEY = os.environ.get("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = "DEVELOPMENT" in os.environ
@@ -36,6 +35,7 @@ DEBUG = "DEVELOPMENT" in os.environ
 ALLOWED_HOSTS = [
     "127.0.0.1",
     "localhost",
+    "scentifique-f390ca153bd2.herokuapp.com",
 ]
 
 
@@ -105,12 +105,26 @@ WSGI_APPLICATION = "scentifique.wsgi.application"
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
-DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": BASE_DIR / "db.sqlite3",
+# DATABASES = {
+#     "default": {
+#         "ENGINE": "django.db.backends.sqlite3",
+#         "NAME": BASE_DIR / "db.sqlite3",
+#     }
+# }
+
+if "DATABASE_URL" in os.environ:
+    # Use production database
+    DATABASES = {
+        "default": dj_database_url.parse(os.environ.get("DATABASE_URL"))
     }
-}
+else:
+    # Use development database
+    DATABASES = {
+        "default": {
+            "ENGINE": "django.db.backends.sqlite3",
+            "NAME": BASE_DIR / "db.sqlite3",
+        }
+    }
 
 
 # Password validation
