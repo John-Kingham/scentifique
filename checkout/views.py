@@ -30,25 +30,48 @@ def checkout(request):
 def _view_checkout(request):
     """Return the checkout page for a get request."""
 
-    # Set up Stripe payment intent
+    # Send error message if cart is empty.
+    cart = request.session.get("cart", {})
+    if not cart:
+        messages.error(request, "Your shopping cart is empty!")
+        return redirect(reverse("products"))
+
+    # Set up Stripe payment intent.
     grand_total_pence = round(cart_contents(request)["grand_total"] * 100)
     stripe.api_key = settings.STRIPE_SECRET_KEY
     payment_intent = stripe.PaymentIntent.create(
         amount=grand_total_pence, currency=settings.STRIPE_CURRENCY
     )
 
-    # Set up context
-    cart = request.session.get("cart", {})
-    if not cart:
-        messages.error(request, "Your shopping cart is empty!")
-        return redirect(reverse("products"))
-    template = "checkout/checkout.html"
-    order_form = OrderForm()
+    # Initialise order from.
+    if request.user.is_authenticated:
+        try:
+            profile = UserProfile.objects.get(user=request.user)
+            order_form = OrderForm(
+                initial={
+                    "full_name": profile.user.get_full_name(),
+                    "email": profile.user.email,
+                    "phone_number": profile.default_phone_number,
+                    "street_address1": profile.default_street_address1,
+                    "street_address2": profile.default_street_address2,
+                    "town_or_city": profile.default_town_or_city,
+                    "county": profile.default_county,
+                    "postcode": profile.default_postcode,
+                    "country": profile.default_country,
+                }
+            )
+        except UserProfile.DoesNotExist:
+            order_form = OrderForm()
+    else:
+        order_form = OrderForm()
+
+    # Return the rendered checkout page.
     context = {
         "order_form": order_form,
         "stripe_public_key": settings.STRIPE_PUBLIC_KEY,
         "client_secret": payment_intent.client_secret,
     }
+    template = "checkout/checkout.html"
     return render(request, template, context)
 
 
