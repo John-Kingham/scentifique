@@ -88,14 +88,14 @@ paymentForm.addEventListener("submit", function (event) {
             $("#loading-overlay").fadeToggle(200);
           } else {
             if (result.paymentIntent.status === "succeeded") {
-              // Everything was okay so submit the payment form.
+              // Everything was okay, so submit the payment form
               paymentForm.submit();
             }
           }
         });
     })
     .fail(() => {
-      // The cache_checkout_data view failed, so reload the page.
+      // The cache_checkout_data view failed, so reload the page
       location.reload();
     });
 });

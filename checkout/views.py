@@ -185,7 +185,7 @@ def cache_checkout_data(request):
             metadata={
                 "cart": json.dumps(request.session.get("cart", {})),
                 "save_info": request.POST.get("save_info"),
-                "username": request.user,
+                "username": request.user.username,
             },
         )
         return HttpResponse(status=HTTPStatus.OK)

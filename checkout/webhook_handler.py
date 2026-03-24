@@ -7,6 +7,7 @@ import stripe
 
 from checkout.models import Order, OrderLineItem
 from products.models import Colour, Fragrance, Product
+from profiles.models import UserProfile
 
 
 class StripeWebhookHandler:
@@ -35,10 +36,22 @@ class StripeWebhookHandler:
         shipping_details = payment_intent.shipping
         grand_total = round(stripe_charge.amount / 100, 2)
 
-        # fix blank shipping details
+        # Fix blank shipping details.
         for field_name, value in shipping_details.address.items():
             if value == "":
                 shipping_details.address[field_name] = None
+
+        # Update user profile for logged in users
+        username = payment_intent.metadata.username
+
+        print("username:", username)
+
+        user_is_authenticated = username != "AnonymousUser"
+        profile = None
+        if user_is_authenticated:
+            profile = UserProfile.objects.get(user__username=username)
+            if payment_intent.metadata.save_info:
+                self._update_user_profile(profile, shipping_details)
 
         # Check if order already exists
         attempt = 1
@@ -59,6 +72,7 @@ class StripeWebhookHandler:
                     original_cart=original_cart,
                     stripe_pi_id=stripe_pi_id,
                 )
+                # Order exist, so return success response
                 response_message = (
                     f"Webhook received: {event["type"]} | "
                     "SUCCESS: Verified order is in database"
@@ -76,6 +90,7 @@ class StripeWebhookHandler:
         try:
             order = Order.objects.create(
                 full_name=shipping_details.name,
+                user_profile=profile,
                 email=billing_details.email,
                 phone_number=shipping_details.phone,
                 street_address1=shipping_details.address.line1,
@@ -119,6 +134,18 @@ class StripeWebhookHandler:
             ),
             status=HTTPStatus.OK,
         )
+
+    def _update_user_profile(self, profile, shipping_details):
+        """Update the user profile for logged-in users."""
+
+        profile.default_phone_number = shipping_details.phone
+        profile.default_street_address1 = shipping_details.address.line1
+        profile.default_street_address2 = shipping_details.address.line2
+        profile.default_town_or_city = shipping_details.address.city
+        profile.default_postcode = shipping_details.address.postal_code
+        profile.default_county = shipping_details.address.state
+        profile.default_country = shipping_details.address.country
+        profile.save()
 
     def handle_payment_failed(self, event):
         """Handle payment_intent.payment_failed event."""
