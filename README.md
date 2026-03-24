@@ -214,12 +214,15 @@ and fields were to be decided during the iterative development phase.
 
 ### Installed Python Libraries
 
+- [boto3](https://pypi.org/project/boto3/)
 - [django](https://pypi.org/project/Django/)
 - [django-allauth](https://pypi.org/project/django-allauth/)
 - [django-countries](https://pypi.org/project/django-countries/)
 - [django-crispy-forms](https://pypi.org/project/django-crispy-forms/)
+- [django-storages](https://pypi.org/project/django-storages/)
 - [django-summernote](https://pypi.org/project/django-summernote/)
 - [dj_database_url](https://pypi.org/project/dj-database-url/)
+- [gunicorn](https://pypi.org/project/gunicorn/)
 - [pillow](https://pypi.org/project/pillow/)
 - [psycopg2](https://pypi.org/project/psycopg2/)
 - [setuptools](https://pypi.org/project/setuptools/)
