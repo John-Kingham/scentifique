@@ -242,6 +242,10 @@ and fields were to be decided during the iterative development phase.
 
 #### [LIST UNCOMPLETED FEATURES AND OTHER FUTURE FEATURE IDEAS]
 
+- Blog
+- Order history visible from user profile page
+- Sending confirmation emails for orders and user sign-ups
+
 ## Project Management
 
 I used Scrum to manage the development phase. You can see the full details of 

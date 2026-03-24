@@ -58,7 +58,7 @@
                         <h2 id="header-title" class="m-0">Scentifique</h2>
                     </a>
                     <ul class="navbar-nav">
-                        <li class="nav-item dropdown">
+                        <li class="nav-item dropdown {% if request.user.is_authenticated %}font-weight-bold{% endif %}">
                             <a id="account" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-expanded="false">
                                 <i class="fa-solid fa-user d-none d-sm-inline"></i>
                                 Account
