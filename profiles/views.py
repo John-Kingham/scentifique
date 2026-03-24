@@ -1,10 +1,12 @@
 from django.contrib import messages
+from django.contrib.auth.decorators import login_required
 from django.shortcuts import get_object_or_404, render
 
 from profiles.forms import UserProfileForm
 from profiles.models import UserProfile
 
 
+@login_required
 def profile(request):
     """Display the user profile page."""
 
