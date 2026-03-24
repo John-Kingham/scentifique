@@ -15,7 +15,13 @@
                         <img src="{{ product.image.url }}" class="card-img my-4" alt="{{ product.name }}">
                     {% else %}
                         <img src="{{ MEDIA_URL }}noimage.png" class="card-img my-4" alt="{{ product.name }}">
-                    {% endif %}            
+                    {% endif %}
+                    {% if request.user.is_superuser %}
+                        <div class="my-4">
+                            <a class="btn btn-dark" href="{% url 'edit_product' product.id %}">Update Product</a>
+                            <a class="btn btn-danger" href="{% url 'delete_product' product.id %}">Delete Product</a>
+                        </div>
+                    {% endif %}
                     <h2 class="card-title">{{ product.name }}</h2>
                     <p class="small">£{{ product.price }}</p>
                     <p>{{ product.description }}</p>
