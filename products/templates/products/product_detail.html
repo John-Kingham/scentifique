@@ -18,8 +18,8 @@
                     {% endif %}
                     {% if request.user.is_superuser %}
                         <div class="my-4">
-                            <a class="btn btn-dark" href="{% url 'edit_product' product.id %}">Update Product</a>
-                            <a class="btn btn-danger" href="{% url 'delete_product' product.id %}">Delete Product</a>
+                            <a class="btn btn-dark" href="{% url 'edit_product' product.id %}">Edit product</a>
+                            <a class="btn btn-danger" href="{% url 'delete_product' product.id %}">Delete product</a>
                         </div>
                     {% endif %}
                     <h2 class="card-title">{{ product.name }}</h2>
