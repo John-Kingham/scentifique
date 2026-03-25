@@ -2,18 +2,12 @@
 {% load static %}
 {% block content %}
     <div class="container h-100">
-        <div class="row h-100">
-            <div class="col-7 col-md-6 my-auto">
-                <h1 class="display-4 text-dark">
-                    The page you are looking for doesn't exist.
-                </h1>
-                <div class="my-5">
-                    <h4>
-                        <a href="{% url 'products' %}" 
-                            class="btn btn-dark btn-lg py-3">
-                                Continue shopping
-                        </a>
-                    </h4>
+        <div class="row h-100 justify-content-center">
+            <div class="col-12 col-sm-8 col-md-6 m-4 m-lg-5 p-4 p-lg-5" id="hero-message">
+                <h1>Error!</h1>
+                <p>The page you were looking for doesn't exist.</p>
+                <div>
+                    <a href="{% url 'products' %}" class="btn btn-dark">Continue shopping</a>
                 </div>
             </div>
         </div>
