@@ -60,7 +60,7 @@
                     <ul class="navbar-nav">
                         <li class="nav-item dropdown {% if request.user.is_authenticated %}font-weight-bold{% endif %}">
                             <a id="account" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-expanded="false">
-                                <i class="fa-solid fa-user d-none d-sm-inline"></i>
+                                <i class="fa-solid fa-user d-none d-sm-inline {% if request.user.is_authenticated %}text-warning{% endif %}"></i>
                                 Account
                             </a>
                             <div aria-labelledby="account" class="dropdown-menu" id="account-dropdown">
@@ -78,7 +78,7 @@
                         </li>
                         <li class="nav-item {% if cart_items %}font-weight-bold{% endif %}">        
                             <a class="nav-link" href="{% url 'view_cart' %}">
-                                <i class="fa-solid fa-bag-shopping d-none d-sm-inline"></i>
+                                <i class="fa-solid fa-bag-shopping d-none d-sm-inline {% if cart_items %}text-warning{% endif %}"></i>
                                 Cart
                             </a>
                         </li>

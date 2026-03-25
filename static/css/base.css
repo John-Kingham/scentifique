@@ -91,3 +91,9 @@ h3 {
 .allauth-form label:not([for="id_remember"]) {
   display: none;
 }
+
+@media (max-width: 320px) {
+  #header-title {
+    font-size: 1.5rem;
+  }
+}
