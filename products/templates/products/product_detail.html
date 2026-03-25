@@ -30,32 +30,34 @@
                     <form class="form" action="{% url 'add_to_cart' product.id %}" method="POST">
                         {% csrf_token %}
                         <div class="form-row">
-                            <div class="col-12 mb-3">
+                            <div class="col-12 col-sm-8 mb-3">
                                 <p><strong>Colour:</strong></p>
-                                <select name="colour_id" class="form-control w-50">
+                                <select name="colour_id" class="form-control">
                                     {% for colour in colours %}
                                         <option value="{{ colour.id }}">{{ colour.name }}</option>                            
                                     {% endfor %}
                                 </select>
                             </div>
-                            <div class="col-12 mb-3">
+                            <div class="col-12 col-sm-8 mb-3">
                                 <p><strong>Fragrance:</strong></p>
-                                <select name="fragrance_id" class="form-control w-50">
+                                <select name="fragrance_id" class="form-control">
                                     {% for fragrance in fragrances %}
                                         <option value="{{ fragrance.id }}">{{ fragrance.name }}</option>                            
                                     {% endfor %}
                                 </select>
                             </div>
-                            <div class="col-12">
+                            <div class="col-12 col-sm-8">
                                 <p><strong>Quantity:</strong></p>
-                                <select name="quantity" class="form-control w-50">
+                                <select name="quantity" class="form-control">
                                     {% for quantity in quantities %}
                                         <option value="{{ quantity }}">{{ quantity }}</option>                            
                                     {% endfor %}
                                 </select>
                             </div>
-                            <input type="submit" class="btn btn-dark mt-5" value="Add to Bag">
-                            <input type="hidden" name="redirect_url" value="{{ request.path }}">
+                            <div class="col-12">
+                                <input type="submit" class="btn btn-dark mt-4" value="Add to Bag">
+                                <input type="hidden" name="redirect_url" value="{{ request.path }}">
+                            </div>
                         </div>
                     </form>
                 </div>
