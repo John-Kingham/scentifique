@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: /accounts/
+Disallow: /cart/
+Disallow: https://scentifique-f390ca153bd2.herokuapp.com/sitemap.xml
