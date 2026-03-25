@@ -130,28 +130,31 @@
                     {% endfor %}
                 </div>
             {% endif %}
-            {% block page_header %}
-            {% endblock page_header %}
             {% block content %}
             {% endblock content %}
         </main>
-        <footer class="mt-auto pt-2" id="contact-details">
+        <footer class="mt-auto py-4" id="contact-details">
             <div class="container">
                 <div class="row justify-content-center">
-
-                    <!-- location -->
-                    <div id="location" class="col-12 col-md-6 col-lg-4 mb-3">
-                        <strong>Scentifique</strong>, 123 Candle Road, Candle Town<br>
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <!-- Contact details -->
+                        <p><strong>Contact details:</strong></p>
+                        Scentifique, 123 Candle Road, Candle Town<br>
                         <i class="fa-solid fa-phone mr-1"></i>01234 567 890<br />
                         <i class="fa-solid fa-envelope mr-1"></i>hello@example.com
-                    </div>
-
-                    <!-- Association memberships -->
-                    <div id="associations" class="col-12 col-md-6 col-lg-4">
+                        <!-- Associations -->
                         <p>Members of the <a href="https://www.britishcandles.org/" target="_blank">British Candle Makers Federation</a></p>
                     </div>
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <!-- Newsletter signup -->
+                        <strong>Sign up to our email newsletter:</strong>
+                        <script 
+                            async src="https://eomail6.com/form/6edd1aae-2866-11f1-8924-d39dc1cef6d2.js"
+                            data-form="6edd1aae-2866-11f1-8924-d39dc1cef6d2">
+                        </script>
+                    </div>
                     <!-- Social media links -->
-                    <div id="socials" class="col-12 d-flex justify-content-center">
+                    <div class="col-12 d-flex justify-content-center">
                         <a
                             class="social-link"
                             href="https://bsky.app/"

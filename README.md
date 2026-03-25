@@ -283,6 +283,18 @@ Create the Home and About pages
 
 ## Deployment
 
+## Marketing Strategy
+
+### Search Engine Optimisation
+
+- Keywords
+
+### Social Media Marketing
+
+- Facebook page
+
+![Facebook Mockup](./docs/images/facebook-mockup.png)
+
 ## Credits 
 
 - I used [temp-mail.org](https://temp-mail.org/) to create a temporary email for Stripe.

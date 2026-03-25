@@ -3,12 +3,12 @@
 {% block content %}
     <!-- About content -->
     <div class="overlay"></div>
-    <div class="container p-3">
-        <article class="row justify-content-center">
+    <div class="container p-3 mb-5">
+        <div class="row justify-content-center">
             <article class="col-md-10 col-lg-8">
                 <h1 class="content-heading my-4">{{ about.title }}</h2>
                 <div class="my-3">{{ about.content | safe }}</div>
             </article>
-        </article>
+        </div>
     </div>
 {% endblock content %}
