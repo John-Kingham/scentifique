@@ -26,6 +26,11 @@ body {
   font-family: var(--font-body);
 }
 
+footer a {
+  color: var(--colour-white);
+  text-decoration: underline;
+}
+
 h1,
 h2,
 h3 {
@@ -95,5 +100,11 @@ h3 {
 @media (max-width: 320px) {
   #header-title {
     font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 426px) {
+  footer {
+    font-size: 0.8rem;
   }
 }
