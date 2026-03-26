@@ -10,6 +10,7 @@
   --colour-second: #4a764b;
   --colour-white: #fff;
   --colour-black: #000;
+  --colour-grey: #ddd;
   --bold: 700;
 }
 
@@ -24,10 +25,6 @@ body {
     url(/media/scentifique-homepage-candles.jpg);
   font-family: var(--font-body);
 }
-
-/* main {
-  min-height: 1000px;
-} */
 
 footer a {
   color: var(--colour-white);
@@ -73,6 +70,11 @@ h3 {
   color: var(--colour-white);
 }
 
+#main-nav *:hover,
+#site-header *:hover {
+  color: var(--colour-grey);
+}
+
 #site-header,
 #contact-details {
   background-color: var(--colour-first);
@@ -82,7 +84,8 @@ h3 {
   color: var(--colour-white);
 }
 
-#account-dropdown * {
+#account-dropdown *,
+#account-dropdown *:hover {
   color: var(--colour-black);
 }
 

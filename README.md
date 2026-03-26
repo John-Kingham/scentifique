@@ -318,13 +318,134 @@ Note: The BlogPost table didn't make it into the final design, as the blog funct
 
 #### Header Navigation
 
+![Header navigation feature](./docs/images/features/header-nav.png)
+
+- Each page contains a header navigation section.
+- This section contains the site's title in the custom headings font. All text in this section is white by default and light-grey on hover.
+- This section also contains an Account drop-down. Clicking reveals a drop-down menu with options to sign up or sign in. The drop-down menu has a white background with black text. The menu item background colour changes on hover to provide visual feedback. When a user is logged in, the menu items are user-profile and sign-out and the Account icon turns gold. When an admin is logged in, the menu includes an add-product item.
+- This section also contains a link to the user's shopping cart. When the cart isn't empty the icon turns gold.
+- This section also contains a navigation bar, with links to the site's top-level pages (Home, About, Products). These links are bold when the user is on the related page.
+- This section is useful to users for several reasons. It provides a consistent look-and-feel at the start of each page, it enables users to sign in and out, it lets users know if they're logged in or if they hve items in their cart, and it helps users navigate around the site.
+
+#### Messages
+
+![Messages feature](./docs/images/features/messages-feature.png)
+
+- This section displays messages to users, providing additional feedback for certain activities. These include signing in and out, and updating the cart by adding or removing items.
+
 #### Homepage Hero
+
+![Homepage hero feature](./docs/images/features/homepage-hero.png)
+
+- This section contains an image of some luxury candles, a brief description of what the site offers and a link to the products page.
+- The text-box background uses the site's custom green colour and text is in white, using the site's custom headings font.
+- The button has white text and uses Bootstrap's default `btn-dark` colour, which changes its shade on hover to provide visual feedback.
+- This section is useful to users because it helps them quickly understand what the site is about and what it offers, so they can decide whether to continue browsing the site or exit. It also provides a clear link to the e-commerce part of the site, which could improve revenues.
 
 #### Contact Details
 
-#### [LIST OTHER FEATURE NODES]
+![Contact details feature](./docs/images/features/contact-details.png)
 
-#### Error Pages
+- The footer of each page contains the company's contact details.
+- The footer uses the custom red colour for its background and all text is in white (except some text in the newsletter form which it outside our control).
+- Contact details include the company's postal address, phone number, email and main social media links.
+- Each social media icon links to its respective social media platform.
+- This section is useful to users because it enables them to contact the company in various ways.
+
+#### Newsletter Form
+
+- The footer contains a newsletter sign-up form. See the Contact Details section above for an image of the newsletter sign-up form.
+- Styling for this form was mostly out of my control, as the form is copied directly from code supplied by [Email Octopus](https://emailoctopus.com/), a UK-based alternative to MailChimp.
+- This section is useful to users as it allows them to subscribe to Scentifique's regular e-newsletter, which contains educational and entertaining updates, as well as event-based offers (e.g. Mothers Day).
+
+#### Product List
+
+![Product list feature](./docs/images/features/product-list.png)
+
+- The product page contains a page heading and a list of all products.
+- This section's main heading uses the site's custom heading font and is in black.
+- Individual products are shown in a "card" format, with each card containing the product's image, title, price, description and a button to view the product details page.
+- This section lacks pagination, but the site currently has relatively few products so this isn't a major issue. Pagination can easily be added in a future release.
+- This section is useful to users as it allows them to quickly scan through all products on the site, so they can quickly learn more about and (hopefully) purchase their perfect candle.
+
+#### Product Detail
+
+![Product detail feature](./docs/images/features/product-detail.png)
+
+- This section has a page title and shows the product's image, name, price and description.
+- The page title and product name use the site's custom heading font.
+- This section also contains select elements where users can choose the colour, fragrance and quantity for their product.
+- The page also contains an add-to-cart button, where users can add their chosen product to their shopping cart.
+- This section is useful to users because it's where they'll find detailed informative about each product, and where they can customise their handmade candles and add them to their cart.
+
+#### Product Admin (add)
+
+![Product add feature](./docs/images/features/product-add.png)
+
+- Logged-in admins can use the Account drop-down in the site header to navigate to an add-product page. 
+- This section has a page title and a form where admins can submit details for a new product.
+- The page title is in black and uses the site's custom heading font.
+- The form mostly uses Bootstrap's default styling for forms.
+- The form has two buttons. The cancel button uses Bootstrap's default `btn-outline-dark` style, while the add-product button uses Bootstrap's default `btn-dark` style. Both buttons change their shade on hover.
+- This section is useful to admins because it allows them to add new products from the front end, so they don't have to navigate to the admin dashboard to add new products.
+
+#### Product Admin (edit)
+
+![Product edit-delete feature](./docs/images/features/product-edit-delete-buttons.png)
+
+![Product edit feature](./docs/images/features/product-edit.png)
+
+- Logged-in admins can see edit-product and delete-product buttons on the Product Detail page. The edit-product button links to the Edit Product page. The delete-product button immediately deletes the product and returns the user to the products page.
+- This section has a page title and a form where admins can edit details for an existing product.
+- The page title is in black and uses the site's custom heading font.
+- The form mostly uses Bootstrap's default styling for forms.
+- The form has two buttons. The cancel button uses Bootstrap's default `btn-outline-dark` style, while the update-product button uses Bootstrap's default `btn-dark` style. Both buttons change their shade on hover.
+- This section is useful to admins because it allows them to edit existing products from the front end, so they can do it without having to navigate to the admin dashboard.
+
+#### About
+
+![About feature](./docs/images/features/about.png)
+
+- This section contains information about Scentifique.
+- It includes a title (using the site-wide custom heading) and relevant written content.
+- The content uses the site's custom body font for body text and the custom heading font for headings.
+- This section is useful to users as they can learn more about the company behind the site and how it makes its candles, which will help build their trust in the company and its products, and (hopefully) make them more likely to purcase products from the store.
+
+#### Shopping Basket
+
+![Shopping cart empty feature](./docs/images/features/shopping-cart-empty.png)
+
+![Shopping cart full feature](./docs/images/features/shopping-cart-full.png)
+
+- This section is where users can find a list of items in their cart, as well as sub-totals, delivery fees, a grand total and a checkout button.
+- The page header uses the site's custom heading font.
+- When the cart is empty, this section displays a message telling users their cart is empty, along with a continue-shopping button which links back to the product page. The button uses Bootstrap's `btn-dark` style.
+- When the cart contains products, each product is listed separately. For each product in the cart, the name, image and price are shown, along with the customer's chosen colour, fragrance and quantity.
+- The colour, fragrance and quantity are editable select elements, so users can update their cart if they want.
+- Each product also has update and remove buttons, which users can click to either update the item (to save changes to the colour, fragrance or quantity) or to delete it. The update button uses Bootstrap's `btn-dark` style and the remove button uses Bootstrap's `btn-danger` style.
+- Below the list of products, users can see a subtotal for all items, the delivery fee and a grand total. The grand total is bolded and horizontal lines are used to separate it from other figures.
+- Below the grand total there is a checkout button, which uses Bootstrap's `btn-dark` style. This button takes users to the checkout page.
+- This section is useful for users because it allows them to see all of the items in their cart, and to update or remove them. Users can also see the total cost of their cart along with the delivery fee. Users can also navigate to the checkout page, where they'll be able to purchase the items in their cart.
+
+#### Checkout
+
+![Checkout order summary feature](./docs/images/features/checkout-order-summary.png)
+
+![Checkout delivery details feature](./docs/images/features/checkout-delivery-details.png)
+
+- This section contains a page title, a summary of the order, a form for entering customer details, delivery details and payment details, an option to save user details and a pay-now button.
+- The page title uses the site's custom heading font.
+- The order summary section has a heading and shows the image, product name, colour, fragrance, quantity and subtotal of each item in the cart. It also shows an overall subtotal, the delivery fee and the cart's grand total.
+- The delivery details section has a heading and has separate sub-sections for customer details, delivery address details and payment details. Each of these sections has a border with a sub-title. Each form field has a placeholder with the field's name and an asterisk if the field is mandatory.
+- The payment details section includes a Stripe form. This form uses Stripe's default style as much as possible, to leverage user's familiarity with Stripe payment forms used on other sites. The payment details form includes all relevant payment card validation.
+- The pay-now button uses Bootstrap's `btn-dark` style to remain consistent with the rest of the site. Below the pay-now button is a message, notifying users of the amount that will be charged to their card.
+- This section is useful to users as it allows them to purchase Scentifique's handmade candles online, so they don't have to visit a craft fair in person.
+
+#### Sign Up/In/Out
+
+#### User Profile
+
+#### 404 Error
 
 ### Future Features
 

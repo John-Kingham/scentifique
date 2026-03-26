@@ -67,13 +67,13 @@
                             </a>
                             <div aria-labelledby="account" class="dropdown-menu" id="account-dropdown">
                                 {% if request.user.is_authenticated %}
-                                {% if request.user.is_superuser %}
-                                    <a class="dropdown-item" href="{% url 'add_product' %}">Add product</a>
-                                {% endif %}
-                                    <a class="dropdown-item" href="{% url 'profile' %}">User profile</a>
-                                    <a class="dropdown-item" href="{% url 'account_logout' %}">Log out</a>
+                                    {% if request.user.is_superuser %}
+                                        <a class="dropdown-item" href="{% url 'add_product' %}">Add product</a>
+                                    {% endif %}
+                                        <a class="dropdown-item" href="{% url 'profile' %}">User profile</a>
+                                        <a class="dropdown-item" href="{% url 'account_logout' %}">Sign out</a>
                                 {% else %}
-                                    <a class="dropdown-item" href="{% url 'account_signup' %}">Register</a>
+                                    <a class="dropdown-item" href="{% url 'account_signup' %}">Sign up</a>
                                     <a class="dropdown-item" href="{% url 'account_login' %}">Sign in</a>
                                 {% endif %}
                             </div>
@@ -143,7 +143,7 @@
                         <i class="fa-solid fa-phone mr-1"></i>01234 567 890<br />
                         <i class="fa-solid fa-envelope mr-1"></i>hello@example.com
                         <!-- Associations -->
-                        <p>Members of the <a href="https://www.britishcandles.org/" target="_blank">British Candle Makers Federation</a></p>
+                        <p>A member of the <a href="https://www.britishcandles.org/" target="_blank">British Candle Makers Federation</a></p>
                     </div>
                     <div class="col-12 col-md-6 col-lg-4">
                         <!-- Newsletter signup -->
