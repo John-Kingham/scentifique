@@ -304,12 +304,13 @@ Note: The BlogPost table didn't make it into the final design, as the blog funct
 - [django-storages](https://pypi.org/project/django-storages/)
 - [django-summernote](https://pypi.org/project/django-summernote/)
 - [dj_database_url](https://pypi.org/project/dj-database-url/)
+- [flake8](https://pypi.org/project/flake8/)
 - [gunicorn](https://pypi.org/project/gunicorn/)
 - [pillow](https://pypi.org/project/pillow/)
 - [psycopg2](https://pypi.org/project/psycopg2/)
 - [setuptools](https://pypi.org/project/setuptools/)
 - [stripe](https://pypi.org/project/stripe/)
-- Required dependencies for the above libraries (installed automatically by `pip`)
+- Required dependencies of the above libraries
 
 ## Features
 
