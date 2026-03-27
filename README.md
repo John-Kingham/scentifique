@@ -701,7 +701,9 @@ After some initial brainstorming and research, I came up with an initial short-l
   - eco‑friendly soy candle
   - custom colour and fragrance candle
 
-Some of the short-tail keywords were included in the site's static content. The plan is that longer-tail keywords will be embedded within future blog posts, and a blog is one of the most important features for the next phase of development. Blog posts are also an easy way to add dozens or hundreds of pages of content covering very specific bottom-of-funnel topics.
+Some of the short-tail keywords were included in the site's static content while some of the longer keywords were included in product descriptions.
+
+The plan is that more longer-tail keywords will be embedded within future blog posts, as a blog is one of the most important features for the next phase of development. Blog posts are also an easy way to add dozens or hundreds of pages of content covering very specific bottom-of-funnel topics.
 
 #### Sitemap and robot.txt files
 
@@ -713,6 +715,72 @@ Converting visitors into leads and leads into customers is one of the most cost-
 
 The newsletter form comes from [Email Octopus](https://emailoctopus.com/), which is a UK-based alternative to MailChimp. You can see this form in the Features section above.
 
+Leads will be sent regular email updates, with the aim being to nurture them into becoming new customers and, eventually, into being raving fans who promote the business to their friends and family. 
+
 ## Credits 
 
-- I used [temp-mail.org](https://temp-mail.org/) to create a temporary email for Stripe.
+### Project Management
+
+- I managed the design phase using the 5-Planes method, as detailed in [The Elements of User Experience](https://uk.bookshop.org/p/books/elements-of-user-experience-the-user-centered-design-for-the-web-and-beyond-jesse-james-garrett/e232e0c9869653bd?ean=9780321683687&next=t&next=t).
+- I managed the construction phase using [Scrum](https://www.scrum.org/).
+
+### Strategy Plane
+
+- I used [Google Docs](https://docs.google.com/) to record business and user goals.
+
+### Scope Plane
+
+- I used [Google Docs](https://docs.google.com/) to record epics and [GitHub Projects](https://github.com/users/John-Kingham/projects/14) to record user stories and tasks.
+
+### Structure Plane
+
+- I used [Mermaid Chart](https://www.mermaidchart.com/) to create high-level structure diagrams for database tables and the user interface.
+
+### Skeleton Plane
+
+- I used [Mermaid Chart](https://www.mermaidchart.com/) to create detailed entity relationship diagrams for the database.
+- I used [Balsamiq](https://balsamiq.com/) to create wireframes for the user interface.
+
+### Surface Plane
+
+#### Colour Palette
+
+- I used Microsoft Paint to exctract colours from images of William Morris wallpaper on [Wall Passion](https://www.wallpassion.co.uk/william-morris).
+- I used the default [Bootstrap](https://getbootstrap.com/) colours for some elements, such as buttons and messages.
+
+#### Content
+
+- I used [Microsoft Co-Pilot](https://copilot.microsoft.com/) to generate data for the Product, Colour and Fragrance database tables, and for the About page.
+
+#### Favicons
+
+- I used [Gauger.io](https://gauger.io/fonticon/) to create a favicon image.
+- I used [Favicon.io](https://favicon.io/) to convert the favicon into multiple favicon formats.
+
+#### Fonts
+
+- I used custom fonts from [Google Fonts](https://fonts.google.com/).
+
+#### Icons
+
+- I used [Font Awesome](https://fontawesome.com/) for social media, Account and Cart icons.
+
+#### Images
+
+- I used [UnSplash](https://unsplash.com/) for the site's static images and product images.
+
+### Scrum Development Phase
+
+- I used [Visual Studio Code](https://code.visualstudio.com/) as the development environment.
+- I mostly used [Ecosia Search](https://www.ecosia.org/), [W3Schools](https://www.w3schools.com/), [Code Institute](https://codeinstitute.net/), [MDN](https://developer.mozilla.org/) and [Microsoft Copilot](https://copilot.microsoft.com/) for general research.
+- I read parts of [The Epic Guide to Agile](https://www.davetodarobooks.com/) for additional information about Scrum.
+
+### Documentation
+
+- I used [Code Institute's README.md template](https://github.com/Code-Institute-Solutions/readme-template/blob/master/README.md) as the starting point for this document.
+- I used [Am I Responsive](https://ui.dev/amiresponsive) to generate the multi-screen image at the start of this document.
+- I used [Grammarly](https://www.grammarly.com/) to check spelling and grammar in README.md and TESTING.md.
+
+## People
+
+- I would like to thank my Code Institute mentor, [Simen Daehlin](https://github.com/Eventyret).
