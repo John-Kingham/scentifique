@@ -53,3 +53,18 @@ Messages were testing during each of the relevant testing sections below.
 |Edit-product button|When clicked by a logged-in admin, the admin is taken to the edit product page|Clicked|As expected|![Product detail add-to-cart success](./images/testing/product-detail-edit-delete-buttons.png)|
 |Delete button|When clicked by a logged-in admin, the product is deleted and the admin is taken to the products page|Clicked|As expected|![Product detail delete success](./images/testing/product-detail-delete-success.png)|
 
+## Add Product
+
+|Feature|Expect|Action|Result|Image|
+|---|---|---|---|---|
+|Validation|If the form is submitted with blank mandatory fields, submission fails and a validation error is shown|Clicked|As expected|![Product add mandatory error](./images/testing/product-add-mandatory-error.png)|
+|Add product button|If the form is submitted with valid data, a product is created, the admin is redirected to the product detail page for the new product, and a success message is shown|Clicked|As expected|![Product add success](./images/testing/product-add-success.png)|
+|Authentication|If a logged in non-admin user visits the add product page, they are redirected to the home page and an error message is displayed|Clicked|As expected|![Product add authentication](./images/testing/product-add-authentication.png)|
+
+## Edit Product
+
+|Feature|Expect|Action|Result|Image|
+|---|---|---|---|---|
+|Validation|If the form is submitted with blank mandatory fields, submission fails and a validation error is shown|Clicked|As expected|![Product edit mandatory error](./images/testing/product-edit-mandatory-error.png)|
+|Update product button|If the form is submitted with valid data, the product is updated, the admin is redirected to the product's detail page and a success message is shown|Clicked|As expected|![Product edit success](./images/testing/product-edit-success.png)|
+|Authentication|If a logged in non-admin user visits the edit product page, they are redirected to the home page and an error message is displayed|Clicked|As expected|![Product add authentication](./images/testing/product-edit-authentication.png)|

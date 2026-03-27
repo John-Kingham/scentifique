@@ -380,7 +380,7 @@ Note: The BlogPost table didn't make it into the final design, as the blog funct
 - Logged in admins can also see edit-product and delete buttons, for editing or deleting products.
 - This section is useful to users because it's where they'll find detailed informative about each product, and where they can customise their handmade candles and add them to their cart. It's also useful to admins as it allows them to edit or delete products from the front-end.
 
-#### Product Admin (add)
+#### Add Product
 
 ![Product add feature](./docs/images/features/product-add.png)
 
@@ -391,7 +391,7 @@ Note: The BlogPost table didn't make it into the final design, as the blog funct
 - The form has two buttons. The cancel button uses Bootstrap's default `btn-outline-dark` style, while the add-product button uses Bootstrap's default `btn-dark` style. Both buttons change their shade on hover.
 - This section is useful to admins because it allows them to add new products from the front end, so they don't have to navigate to the admin dashboard to add new products.
 
-#### Product Admin (edit)
+#### Edit Product
 
 ![Product edit-delete feature](./docs/images/features/product-edit-delete-buttons.png)
 
