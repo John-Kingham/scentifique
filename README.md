@@ -665,6 +665,54 @@ The production version of the site has been deployed using [Heroku](https://www.
 
 These steps require knowledge of Heroku that is beyond the scope of this document. If you need additional information to set up your Heroku deployment, read the official [Heroku documentation](https://devcenter.heroku.com/).
 
+## Marketing Strategy
+
+To maximise revenues and profits from this e-commerce website, Scentifique has a marketing strategy that involves a combination of social media marketing, search engine optimisation and conversion rate optimisation.
+
+### Social Media Marketing
+
+To maximise the number of ideal prospects entering the top of the sales funnel, Scentifique is looking to set up a Facebook page where it will post regular updates relating to luxury scented candles and handmade candles. These updates will have links to the e-commerce site, which will hopefully funnel lots of Facebook users to the site.
+
+#### Mock-up of proposed Facebook page
+
+![Facebook Mockup](./docs/images/facebook-mockup.png)
+
+### Search Engine Optimisation
+
+Search engines like Google and Ecosia are another important source of traffic and, more importantly, potential customers. 
+
+#### Keywords
+
+To rank well on search engines, sites need to contain a range of keywords that target the top, middle and bottom of the sales funnel.
+
+After some initial brainstorming and research, I came up with an initial short-list of potential keywords:
+
+- Short‑Tail (top of the funnel)
+  - handmade candles
+  - scented candles UK
+  - soy wax candles
+  - luxury candles
+- Mid‑Tail (middle of the funnel)
+  - relaxing scented candles
+  - personalised candle gift
+  - aromatherapy candles UK
+- Long‑Tail (bottom of the funnel)
+  - handmade candles for relaxation
+  - eco‑friendly soy candle
+  - custom colour and fragrance candle
+
+Some of the short-tail keywords were included in the site's static content. The plan is that longer-tail keywords will be embedded within future blog posts, and a blog is one of the most important features for the next phase of development. Blog posts are also an easy way to add dozens or hundreds of pages of content covering very specific bottom-of-funnel topics.
+
+#### Sitemap and robot.txt files
+
+The site also has sitemap.xml and robot.txt files, as these are important ways to manage a site's relationship with search engines.
+
+### Conversion Rate Optimisation
+
+Converting visitors into leads and leads into customers is one of the most cost-effective ways to grow e-commerce revenues and profits. To support this, the site has an e-newsletter embedded within the footer of each page.
+
+The newsletter form comes from [Email Octopus](https://emailoctopus.com/), which is a UK-based alternative to MailChimp. You can see this form in the Features section above.
+
 ## Credits 
 
 - I used [temp-mail.org](https://temp-mail.org/) to create a temporary email for Stripe.
