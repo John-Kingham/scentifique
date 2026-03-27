@@ -14,7 +14,7 @@
                     {% if product.image %}
                         <img src="{{ product.image.url }}" class="card-img my-4" alt="{{ product.name }}">
                     {% else %}
-                        <img src="{{ MEDIA_URL }}noimage.png" class="card-img my-4" alt="{{ product.name }}">
+                        <img src="{{ MEDIA_URL }}/noimage.png" class="card-img my-4" alt="{{ product.name }}">
                     {% endif %}
                     {% if request.user.is_superuser %}
                         <div class="my-4">

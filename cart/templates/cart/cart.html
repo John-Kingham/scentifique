@@ -17,7 +17,7 @@
                         {% if cart_item.product.image %}
                         <img src="{{ cart_item.product.image.url }}" class="rounded w-100 my-4" alt="{{ cart_item.product.name }}">
                         {% else %}
-                        <img src="{{ MEDIA_URL }}noimage.png" class="rounded w-100 my-4" alt="{{ cart_item.product.name }}">
+                        <img src="{{ MEDIA_URL }}/noimage.png" class="rounded w-100 my-4" alt="{{ cart_item.product.name }}">
                         {% endif %}
                         <h2>{{ cart_item.product.name }}</h2>
                         <p class="small">Price per candle: £{{ cart_item.product.price }}</p>
