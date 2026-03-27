@@ -20,3 +20,36 @@
 |About link|When the user is on the About page, the text is bold|Viewed from About page|As expected|![About page nav](./images/testing/about-nav.png)|
 |Products link|When clicked, the user is taken to the Products page|Clicked|As expected|None|
 |Products link|When the user is on the Products page, the text is bold|Viewed from Products page|As expected|![Products page nav](./images/testing/products-nav.png)|
+
+## Messages
+
+Messages were testing during each of the relevant testing sections below.
+
+## Homepage Hero
+
+|Feature|Expect|Action|Result|Image|
+|---|---|---|---|---|
+|Shop now button|When clicked, the user is taken to the products page|Clicked|As expected|None|
+
+## Contact Details
+
+|Feature|Expect|Action|Result|Image|
+|---|---|---|---|---|
+|Social media icons|When clicked, the user is taken to the relevant social media platform|Clicked|As expected|None|
+
+## Product List
+
+|Feature|Expect|Action|Result|Image|
+|---|---|---|---|---|
+|Product image|When clicked, the user is taken to the product details page for that product|Clicked|As expected|None|
+|View button|When clicked, the user is taken to the product details page for that product|Clicked|As expected|None|
+
+## Product Detail
+
+|Feature|Expect|Action|Result|Image|
+|---|---|---|---|---|
+|Colour, Fragrance and Quantity selectors|When clicked, the user is able to select a colour, fragrance or quantity|Clicked|As expected|![Product detail selector](./images/testing/product-detail-selector.png)|
+|Add-to-cart button|When clicked, the product is added to the cart, the user remains on the product detail page and a relevant message is displayed|Clicked|As expected|![Product detail add-to-cart success](./images/testing/product-detail-add-to-cart-success.png)|
+|Edit-product button|When clicked by a logged-in admin, the admin is taken to the edit product page|Clicked|As expected|![Product detail add-to-cart success](./images/testing/product-detail-edit-delete-buttons.png)|
+|Delete button|When clicked by a logged-in admin, the product is deleted and the admin is taken to the products page|Clicked|As expected|![Product detail delete success](./images/testing/product-detail-delete-success.png)|
+

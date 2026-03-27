@@ -377,7 +377,8 @@ Note: The BlogPost table didn't make it into the final design, as the blog funct
 - The page title and product name use the site's custom heading font.
 - This section also contains select elements where users can choose the colour, fragrance and quantity for their product.
 - The page also contains an add-to-cart button, where users can add their chosen product to their shopping cart.
-- This section is useful to users because it's where they'll find detailed informative about each product, and where they can customise their handmade candles and add them to their cart.
+- Logged in admins can also see edit-product and delete buttons, for editing or deleting products.
+- This section is useful to users because it's where they'll find detailed informative about each product, and where they can customise their handmade candles and add them to their cart. It's also useful to admins as it allows them to edit or delete products from the front-end.
 
 #### Product Admin (add)
 
