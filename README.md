@@ -571,21 +571,99 @@ By the project deadline, there were several could-have and should-have user stor
 
 ## Testing
 
-[LINK TO TESTING.MD]
+The website was thoroughly tested, with all tests documented in [TESTING.md](./docs/TESTING.md).
 
 ## Deployment
 
-## Marketing Strategy
+This repository can be cloned to make a copy on your local machine or forked to make a copy in your GitHub account.
 
-### Search Engine Optimisation
+### Cloning
 
-- Keywords
+You can clone the repository using these steps:
 
-### Social Media Marketing
+1. Go to the [GitHub repository](https://github.com/John-Kingham/scentifique).
+2. Click on the green Code button near the top.
+3. Select whether to clone using HTTPS, SSH, or GitHub CLI, and copy the URL to your clipboard.
+4. On your local machine, open your terminal (or Git Bash, depending on your operating system).
+5. Change the current working directory to the location where you want the cloned directory.
+6. In your terminal, type the following command to clone the repository:
+	- `git clone https://github.com/John-Kingham/scentifique`
+7. Press Enter to create your local clone.
 
-- Facebook page
+### Forking
 
-![Facebook Mockup](./docs/images/facebook-mockup.png)
+By forking the GitHub repository, you can make a copy of the original repository on your GitHub account to view and/or make changes without affecting the original repository. You can fork this repository using the following steps:
+
+1. Log in to GitHub and go to the [GitHub repository](https://github.com/John-Kingham/scentifique).
+2. Find the Fork button at the top of the page and click it.
+3. You should now have a copy of the repository in your own GitHub account.
+
+### Database
+
+The local site uses Django's default sqlite3 database. The deployed site uses a PostgreSQL database.
+
+Creating a PostgreSQL database is beyond the scope of this document. Please refer to the [PostgreSQL documentation](https://www.postgresql.org/docs/) for more information on creating and managing a PostgreSQL database.
+
+### Media and Static File Hosting
+
+The local version of this site stores media and static files locally. The deployed site uses [Amazon Web Services (AWS)](https://aws.amazon.com/) to store media and static files.
+
+Creating and setting up AWS is beyond the scope of this document. Please refer to the official [AWS documentation](https://docs.aws.amazon.com/?nc2=h_rsc_lrn_docs) for more information on creating and setting up an AWS account.
+
+### Stripe
+
+The local and deployed versions of the site use Stripe for payment processing.
+
+Creating and setting up a Stripe account is beyond the scope of this document. Please refer to the official [Stripe documentation](https://docs.stripe.com/) for more information on creating and setting up a Stripe account.
+
+### Site Hosting
+
+The site has been deployed using [Heroku](https://www.heroku.com/). The deployment instructions below assume you have a suitable Heroku account.
+
+### Local Deployment
+
+To run the site locally, you will need use the steps below:
+
+1. Clone the remote repository to your local machine using the instructions above.
+1. Start a Python virtual environment of your choice (to avoid loading required libraries into your global environment).
+1. Run `pip install -r requirements.txt` to install required libraries.
+1. Create a file in the root directory called `env.py` (in the remote repository this file is in `.gitignore`, so it wasn't cloned to your local repository).
+1. In `env.py`, set the following environment variable defaults:
+    - `DEVELOPMENT` - Set it any non-blank value. This puts only the development environment into debug mode.
+    - `SECRET_KEY` - Set it to be a suitably secure secret key.
+    - `STRIPE_PUBLIC_KEY` - In your Stripe account, go to the Developers/API Keys page and copy/paste your publishable key.
+    - `STRIPE_SECRET_KEY` - In your Stripe account, go to the Developers/API Keys page and copy/paste your secret key.
+    - `STRIPE_WH_SECRET` - Create this secret key using the local Stripe CLI (which you'll need to install).
+      - Run the site's server locally using `py manage.py runserver`.
+      - In a second terminal, run `stripe listen --forward-to localhost:8000/checkout/webhook/`. Stripe will give you a secret key which you should copy into the environment variable.
+1. Run `python manage.py migrate` to create built-in and site-specific database tables.
+1. Run `python manage.py createsuperuser` to create an admin account. Admins can log into the site using the `/admin/` path.
+1. Run `python manage.py collectstatic`. This copies static files into a directory called `staticfiles` which enables static files to be loaded correctly when running the site locally.
+1. Run `python manage.py runserver` to launch the site locally using Django's built-in server.
+1. Click the link in the terminal where it says `Starting development server at <your-local-url>` and the site should launch correctly.
+
+### Deployment to Heroku
+
+The production version of the site has been deployed using [Heroku](https://www.heroku.com/). To deploy a copy of the site to Heroku, following these steps:
+
+1. Fork or clone this repository using the instructions above.
+1. If you cloned this repository, push your clone up to a remote repo on your GitHub account.
+1. In your Heroku account, create a new app.
+1. Assuming you're using AWS, PostgreSQL and AWS, add these config variables to your new app:
+    - `AWS_ACCESS_KEY_ID` - This comes from the AWS credentials.csv file. Refer to the AWS documentation to create that file.
+    - `AWS_SECRET_ACCESS_KEY` - This comes from the AWS credentials.csv file. Refer to the AWS documentation to create that file.
+    - `DATABASE_URL` - This is the URL of your PostgreSQL database.
+    - `SECRET_KEY` - A secure secret key, different to the one in `env.py`
+    - `STRIPE_PUBLIC_KEY` - In your Stripe account, go to the Developers/API Keys page and copy/paste your publishable key.
+    - `STRIPE_SECRET_KEY` - In your Stripe account, go to the Developers/API Keys page and copy/paste your secret key.
+    - `STRIPE_WH_SECRET` - In your Stripe account, go to Developers / Webhooks and set up a destination. Please refer to the Stripe documentation for more details. The destination will have a webhook secret which you should copy in as the value for this variable.
+    - `USE_AWS` - Set this to any non-blank value so the production environment uses AWS for media and static files.
+1. Add a buildpack for Python.
+1. Connect the Heroku app to your GitHub repository.
+1. Deploy the main branch in Heroku.
+1. Wait for the site to deploy and then check that it has deployed correctly.
+
+These steps require knowledge of Heroku that is beyond the scope of this document. If you need additional information to set up your Heroku deployment, read the official [Heroku documentation](https://devcenter.heroku.com/).
 
 ## Credits 
 
