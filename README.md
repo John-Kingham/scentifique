@@ -7,7 +7,7 @@ Scentifique is a fictional manufacturer and retailer of luxury scented candles. 
 
 Previously the company had no website or shop, so candles were sold at local craft fairs. That route to market is very limited and severely restricted the company's growth potential. 
 
-To support the growth of the business, Scentifique's owner comissioned me to build a bespoke e-commerce website where the business could be promoted and orders could be received from across the UK.
+To support the growth of the business, Scentifique's owner commissioned me to build a bespoke e-commerce website where the business could be promoted and orders could be received from across the UK.
 
 ![responsive homepage](./docs/images/responsive-homepage.png)
 
@@ -106,7 +106,7 @@ In the structure plane, we begin to outline the solution at a high level. The di
 
 ![Site structure diagram](./docs/images/wireframes/page-structure-diagram.png)
 
-Each section helps to fulfill one or more user stories, and the relationship between webpage sections and user stories is explained in the Features section below.
+Each section helps to fulfil one or more user stories, and the relationship between webpage sections and user stories is explained in the Features section below.
 
 At this stage, I also started to think about the structure of the database, and this is detailed in the Data Model section below.
 
@@ -409,7 +409,7 @@ Note: The BlogPost table didn't make it into the final design, as the blog funct
 - This section contains information about Scentifique.
 - It includes a title (using the site-wide custom heading) and relevant written content.
 - The content uses the site's custom body font for body text and the custom heading font for headings.
-- This section is useful to users as they can learn more about the company behind the site and how it makes its candles, which will help build their trust in the company and its products, and (hopefully) make them more likely to purcase products from the store.
+- This section is useful to users as they can learn more about the company behind the site and how it makes its candles, which will help build their trust in the company and its products, and (hopefully) make them more likely to purchase products from the store.
 
 #### Shopping Basket
 
@@ -675,7 +675,7 @@ To maximise the number of ideal prospects entering the top of the sales funnel, 
 
 #### Mock-up of proposed Facebook page
 
-![Facebook Mockup](./docs/images/facebook-mockup.png)
+![Facebook mock-up](./docs/images/facebook-mockup.png)
 
 ### Search Engine Optimisation
 
@@ -745,7 +745,7 @@ Leads will be sent regular email updates, with the aim being to nurture them int
 
 #### Colour Palette
 
-- I used Microsoft Paint to exctract colours from images of William Morris wallpaper on [Wall Passion](https://www.wallpassion.co.uk/william-morris).
+- I used Microsoft Paint to extract colours from images of William Morris wallpaper on [Wall Passion](https://www.wallpassion.co.uk/william-morris).
 - I used the default [Bootstrap](https://getbootstrap.com/) colours for some elements, such as buttons and messages.
 
 #### Content
