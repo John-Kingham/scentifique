@@ -441,45 +441,133 @@ Note: The BlogPost table didn't make it into the final design, as the blog funct
 - The pay-now button uses Bootstrap's `btn-dark` style to remain consistent with the rest of the site. Below the pay-now button is a message, notifying users of the amount that will be charged to their card.
 - This section is useful to users as it allows them to purchase Scentifique's handmade candles online, so they don't have to visit a craft fair in person.
 
-#### Sign Up/In/Out
+#### Sign up
+
+![Sign up feature](./docs/images/features/sign-up.png)
+
+- This section enables users to sign up so they can save their delivery details and (when it's delivered in a future release) view their order history. Users can reach this section by clicking on the sign-in menu item in the site header's Account drop-down.
+- This section contains a heading which uses the site-wide custom heading font, a sign-up form and back-to-login and sign-up button.
+- The form has fields for email, username and password and each field has built-in validation rules from AllAuth.
+- The form's sign-up button uses Bootstrap's `btn-dark` colour and the back-to-login button uses `btn-outline-dark`. Both buttons change their shade on hover to provide visual feedback.
+- This section is useful to users because it enables them to sign-up to save their delivery details. Additional functionality could be added in a future release, such as the ability to view previous orders.
+
+#### Sign in
+
+![Sign in feature](./docs/images/features/sign-in.png)
+
+- This section is where signed-up users can sign-in to view and update their delivery details and have their delivery details auto-filled into the checkout form. Users can reach this section by clicking on the sign-up menu item in the site header's Account drop-down.
+- This section contains a heading which uses the site-wide custom heading font and a sign-up form and button.
+- The form has fields for email/username and password.
+- The form's sign-in button uses Bootstrap's `btn-dark` colour and it changes shade on hover to provide visual feedback.
+- This section is useful to users because it enables them to sign-in to view and update their delivery details, and to have their details auto-filled into the checkout form.
+
+#### Sign out
+
+![Sign out feature](./docs/images/features/sign-out.png)
+
+- This section is where signed-in users can sign-out to exit the site and keep their account secure. Signed-in users can reach this section by clicking on the sign-out menu item in the site header's Account drop-down (only visible to signed-in users).
+- This section contains a heading which uses the site's custom heading font and cancel and sign-out buttons.
+- The sign-out button uses Bootstrap's `btn-dark` colour and the cancel button uses `btn-outline-dark`. Both buttons change shade on hover to provide visual feedback.
+- This section is useful to signed-in users because it enables them to sign out, which helps to keep their user profile secure.
 
 #### User Profile
 
+![User profile feature](./docs/images/features/user-profile.png)
+
+- This section enables signed-in users to save and update their delivery details and (when it's delivered in a future release) view their order history. Users can reach this section by clicking on the user-profile menu item in the site header's Account drop-down (only visible to signed-in users).
+- This section contains a heading which uses the site's custom heading font, a user profile form and an update button.
+- The form has fields for phone number, street address 1, street address 2, town or city, county, postal code and country.
+- The country field uses a drop-down that restricts entry to valid countries.
+- The form's button uses Bootstrap's `btn-dark` colour and it changes shade on hover to provide visual feedback.
+- This section is useful to signed-in users as it enables them to save their delivery details, which will then be auto-populated into the checkout form when the user is logged in. Additional functionality could be added in a future release, such as the ability to view previous orders.
+
 #### 404 Error
+
+![404 error page feature](./docs/images/features/404-error.png)
+
+- The 404 error section is shown if the user enters an invalid URL.
+- This sections contain a simple error message and a continue-shopping button to return to the products page.
+- This sections is useful to users because it tells them when they've visited an invalid URL, and give them an easy way to get back to the products page.
 
 ### Future Features
 
-#### [LIST UNCOMPLETED FEATURES AND OTHER FUTURE FEATURE IDEAS]
+Due to time constraints, some of the should-have and could-have user stories were left out of the current release. These items could easily be included in future sprints and releases.
 
-- Blog
-- Order history visible from user profile page
-- Sending confirmation emails for orders and user sign-ups
+- User story #9: View order history
+- User story #10: Sort and filter products
+- User story #12: Read blog posts
+
+In addition, there are other useful features that could easily be added to future versions of the site, such as product pagination, product categories and discount coupons.
 
 ## Project Management
 
-I used Scrum to manage the development phase. You can see the full details of 
-each user story in the related [GitHub Project](https://github.com/users/John-Kingham/projects/15).
+I used Scrum to manage the iterative development phase. You can see the full details of each user story in the related [GitHub Project](https://github.com/users/John-Kingham/projects/15).
+
+In a nutshell, I broke the project down into sprints that were approximately 1 week in length. I say "approximately" because the development time had to be fitted around other personal commitments.
 
 ### Sprint 1
 
-![Sprint 1 screenshot](./docs/images/sprint-1.png)
+![Sprint 1](./docs/images/scrum/sprint-1.png)
 
 #### Sprint Goal
 
-Create the Home and About pages
+Create the Home and About pages.
 
 #### User Stories
 
-- #1 Have a good user experience
-- #2 Learn about Scentifique
+- #1 Have a good user experience (must-have)
+- #2 Learn about Scentifique (must-have)
 
 ### Sprint 2
 
+![Sprint 2](./docs/images/scrum/sprint-2.png)
+
+#### Sprint Goal
+
+Add products and shopping basket.
+
+#### User Stories
+
+- #4 See a list of products (must-have)
+- #6 Use a shopping basket (must-have)
 
 ### Sprint 3
 
+![Sprint 3](./docs/images/scrum/sprint-3.png)
 
-### Unfinished Product Backlog Items
+#### Sprint Goal
+
+Add feedback messages and a checkout.
+
+#### User Stories
+
+- #3 Get useful feedback (must-have)
+- #7 Use online checkout (must-have)
+
+### Sprint 4
+
+![Sprint 4](./docs/images/scrum/sprint-4.png)
+
+#### Sprint Goal
+
+Add marketing features, allow users to save their address and admins to CRUD products from the front end.
+
+#### User Stories
+
+- #5 Edit products on the front-end (should-have)
+- #8 Save and auto-fill address (must-have)
+- #11 Subscribe to e-newsletter (must-have)
+- #13 Find Scentifique on search engines (must-have)
+
+### Product Backlog
+
+By the project deadline, there were several could-have and should-have user stories still in the product backlog. This is a normal and expected part of agile software development.
+
+##### Unfinished User Stories in the Product Backlog
+
+- #9: View order history
+- #10: Sort and filter products
+- #12: Read blog posts
 
 ## Testing
 
