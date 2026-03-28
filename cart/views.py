@@ -28,13 +28,23 @@ def add_to_cart(request, product_id):
     quantity = int(request.POST.get("quantity"))
     cart = request.session.get("cart", {})
     cart_item_key = f"{product_id}_{colour_id}_{fragrance_id}"
+    product = get_object_or_404(Product, pk=product_id)
+
+    # Handle matching items already in the cart
     if cart_item_key in cart:
+        success_message = (
+            " Your choice of candle, colour and fragrance matched another"
+            " item in the cart, so the two items have been merged into one."
+        )
         cart[cart_item_key] += quantity
+        if cart[cart_item_key] > settings.MAX_LINE_ITEM_QUANTITY:
+            cart[cart_item_key] = settings.MAX_LINE_ITEM_QUANTITY
     else:
         cart[cart_item_key] = quantity
+        success_message = f"{quantity} x {product.name} added to cart."
+
     request.session["cart"] = cart
-    product = get_object_or_404(Product, pk=product_id)
-    messages.success(request, f"{quantity} x {product.name} added to cart.")
+    messages.success(request, success_message)
     return redirect(request.POST.get("redirect_url"))
 
 
@@ -62,7 +72,7 @@ def update_cart(request, cart_item_key):
         cart.pop(cart_item_key)
         success_message += (
             " The updated item matched another item in the"
-            " cart, so the two have been merged into one."
+            " cart, so the two items have been merged into one."
         )
     else:
         cart[new_cart_item_key] = quantity

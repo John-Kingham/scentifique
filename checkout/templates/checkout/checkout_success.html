@@ -34,6 +34,7 @@
                             <p class="my-0 mb-2"><strong>{{ item.product.name }}</strong></p>
                             <p class="my-0 small text-muted">Colour: {{ item.colour }}</p>
                             <p class="my-0 small text-muted">Fragrance: {{ item.fragrance }}</p>
+                            <p class="my-0 small text-muted">Price: £{{ item.product.price | floatformat:2 }}</p>
                             <p class="my-0 small text-muted mb-2">Quantity: {{ item.quantity }}</p>
                             <p class="my-0 small">Subtotal: £{{ item.total }}</p>
                         </div>
