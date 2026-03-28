@@ -443,7 +443,17 @@ Note: The BlogPost table didn't make it into the final design, as the blog funct
 - The pay-now button uses Bootstrap's `btn-dark` style to remain consistent with the rest of the site. Below the pay-now button is a message, notifying users of the amount that will be charged to their card.
 - This section is useful to users as it allows them to purchase Scentifique's handmade candles online, so they don't have to visit a craft fair in person.
 
-#### Sign up
+##### Checkout Order Confirmation
+
+![Checkout order confirmation screenshot](./docs/images/features/checkout-order-confirmation.png)
+
+- This page is shown after the user has successfully completed an order. It shows all of the order's details, including order number and date, the items ordered and the delivery and billing details.
+- Headings use the site's custom headings font.
+- Bolding is used to emphasise some field names or important values such as the grand total.
+- The page also contains a continue shopping button, which uses Bootstrap's default `btn-dark` style.
+- This section is useful to users as it confirms that their order has been successfully processed. Currently the page says that an order confirmation email has been sent to the user's email, but that functionality has not yet been added to this early version of the site.
+
+#### Sign Up
 
 ![Sign up feature](./docs/images/features/sign-up.png)
 
@@ -453,7 +463,7 @@ Note: The BlogPost table didn't make it into the final design, as the blog funct
 - The form's sign-up button uses Bootstrap's `btn-dark` colour and the back-to-login button uses `btn-outline-dark`. Both buttons change their shade on hover to provide visual feedback.
 - This section is useful to users because it enables them to sign-up to save their delivery details. Additional functionality could be added in a future release, such as the ability to view previous orders.
 
-#### Sign in
+#### Sign In
 
 ![Sign in feature](./docs/images/features/sign-in.png)
 
@@ -463,7 +473,7 @@ Note: The BlogPost table didn't make it into the final design, as the blog funct
 - The form's sign-in button uses Bootstrap's `btn-dark` colour and it changes shade on hover to provide visual feedback.
 - This section is useful to users because it enables them to sign-in to view and update their delivery details, and to have their details auto-filled into the checkout form.
 
-#### Sign out
+#### Sign Out
 
 ![Sign out feature](./docs/images/features/sign-out.png)
 

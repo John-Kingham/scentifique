@@ -50,7 +50,7 @@ Messages were testing during each of the relevant testing sections below.
 |---|---|---|---|---|
 |Colour, Fragrance and Quantity selectors|When clicked, the user is able to select a colour, fragrance or quantity|Clicked|As expected|![Product detail selector](./images/testing/product-detail-selector.png)|
 |Add-to-cart button|When clicked, the product is added to the cart, the user remains on the product detail page and a success message is displayed|Clicked|As expected|![Product detail add-to-cart success](./images/testing/product-detail-add-to-cart-success.png)|
-|Add-to-cart button merge|If the button is clicked when the item's product, colour and fragrance match an item already in the cart, the items are merged in the cart with their quantities combined (up to the maximum), the user remains on the product detail page and a success message is displayed|Clicked|As expected|![Product detail add-to-cart merge success](./images/testing/product-detail-add-to-cart-success.png)|
+|Merge items|If the add-to-cart button is clicked when the item matches an item already in the cart, the items are merged in the cart with their quantities combined (up to the maximum), the user remains on the product detail page and a success message is displayed|Clicked|As expected|![Product detail add-to-cart merge](./images/testing/product-detail-add-to-cart-merge.png)|
 |Edit-product button|When clicked by a logged-in admin, the admin is taken to the edit product page|Clicked|As expected|![Product detail add-to-cart success](./images/testing/product-detail-edit-delete-buttons.png)|
 |Delete button|When clicked by a logged-in admin, the product is deleted, the admin is taken to the products page and a success message is shown|Clicked|As expected|![Product detail delete success](./images/testing/product-detail-delete-success.png)|
 
@@ -76,7 +76,24 @@ Messages were testing during each of the relevant testing sections below.
 |---|---|---|---|---|
 |Empty cart|When the cart is empty, the user is informed and a continue shopping button is shown|Visited the shopping cart page when the cart was empty|As expected|![Empty cart](./images/testing/cart-empty-page.png)|
 |Non-empty cart|When the cart is not empty, a list of the products in the cart is shown, along with relevant details|Visited the shopping cart page when the cart was not empty|As expected|![Not empty cart](./images/testing/cart-not-empty-page.png)|
-|Update button|If a cart item's update button is clicked after its colour, fragrance and/or quantity have been changed, the changes are saved, the page is refreshed and a success message is shown|Changed a cart item's colour, fragrance and quantity and clicked the update button|As expected|![Updated cart item](./images/testing/cart-item-updated.png)|
-|Merging updated items|If a cart item is updated to match the colour, fragrance and product type of another cart item, the two items are combined and their quantities are summed, with a limit value of 12|Changed a cart item's colour, fragrance and quantity and clicked the update button|As expected|![Updated cart item](./images/testing/cart-item-updated-merge.png)|
-Remove button...
-etc...
+|Update item|If a cart item's update button is clicked after its colour, fragrance and/or quantity have been changed, the changes are saved, the page is refreshed and a success message is shown|Changed a cart item's colour, fragrance and quantity and clicked the update button|As expected|![Updated cart item](./images/testing/cart-item-updated.png)|
+|Merge items|If a cart item is updated to match the colour, fragrance and product type of another cart item, the two items are combined and their quantities are summed (up to the maximum)|Changed a cart item's colour, fragrance and quantity and clicked the update button|As expected|![Update cart item merge](./images/testing/cart-item-updated-merged.png)|
+|Remove item|If the user clicks the Remove button, the item is removed from the cart and a success message is shown|Clicked the remove button|As expected|![Remove cart item success](./images/testing/shopping-cart-remove-success.png)|
+
+## Checkout
+
+|Feature|Expect|Action|Result|Image|
+|---|---|---|---|---|
+|Empty cart validation|If the user tries to visit the checkout page with an empty cart, the user is redirected to the products and an error message is shown|Visited the checkout page with an empty cart|As expected|![Checkout empty cart error message](./images/testing/checkout-empty-cart-error.png)|
+|Empty field validation|If the user clicks the pay-now button when the form has empty mandatory fields, submission is blocked and a relevant error message is shown|Clicked the pay-now button when the checkout form had empty mandatory fields|As expected|![Checkout empty fields error message](./images/testing/checkout-empty-fields-error.png)|
+|Anonymous order submission|If an anonymous user enters valid data into all fields and clicks the pay-now button, the payment is processed, the order is created with no associated user profile, and the user is redirected to the checkout success page|Filled in the checkout form as an anonymous user, clicked the pay-now button|As expected|![Anonymous-order-success](./images/testing/checkout-order-confirmation.png)|
+|Signed-in order submission|If a signed-in user enters valid data into all fields and clicks the pay-now button, the payment is processed, the order is created and associated with the user's profile, and the user is redirected to the checkout success page|Filled in the checkout form as a logged-in user, clicked the pay-now button|As expected|![Anonymous-order-success](./images/testing/checkout-order-confirmation-signed-in.png)|
+|Save delivery details|If a signed-in user successfully submits the checkout form with the save-info box ticked, the delivery details are saved to the user's profile|Submitted the checkout form as a signed-in user|As Expected|![User profile page](./images/testing/user-profile.png)|
+|Load delivery details|If a signed-in user has previously saved their delivery details to their user profile, the checkout form is auto-filled with those details|Visited the checkout page as a signed-in user with a pre-saved user profile|As Expected|![Checkout with auto-filled form](./images/testing/checkout-auto-fill-form.png)|
+
+### Sign-up, Sign-in and Sign-out Sections
+
+## User Profile
+
+## 404 Error
+
