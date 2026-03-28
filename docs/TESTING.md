@@ -195,3 +195,22 @@ I tested accessibility using the [WAVE](https://wave.webaim.org/) accessibility 
 
 </details>
 
+## Responsiveness
+
+|Section|Mobile Responsive?|Tablet Responsive?|Desktop Responsive?|
+|---|---|---|---|
+|Header Nav|Yes|Yes|Yes|
+|Homepage Hero|Yes|Yes|Yes|
+|Contact Details|Yes|Yes|Yes|
+|Product List|Yes|Yes|Yes|
+|Product Detail|Yes|Yes|Yes|
+|Add Product|Yes|Yes|Yes|
+|Edit Product|Yes|Yes|Yes|
+|About|Yes|Yes|Yes|
+|Shopping Basket|Yes|Yes|Yes|
+|Checkout|Yes|Yes|Yes|
+|Order Confirmation|Yes|Yes|Yes|
+|User Profile|Yes|Yes|Yes|
+|404 Error|Yes|Yes|Yes|
+
+### Responsiveness Screenshots
