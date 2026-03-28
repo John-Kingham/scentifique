@@ -131,7 +131,9 @@ Note: The ability to save and auto-fill delivery details during checkout were te
 
 ## User Stories
 
-The functionality above, along with other features such as the sitemap and e-newsletter form, fulfills all of the implemented user stories.
+Each implemented user story has one or more acceptance criteria that has to be met before the story can be considered done. You can read the acceptance criteria for each user story in the [GitHub Project](https://github.com/users/John-Kingham/projects/15).
+
+All acceptance criteria have been met for implemented user stories, which are listed below for convenience.
 
 ### Epic 1: An attractive, trustworthy website
 - [x] #1 — As a User, I can see a website that looks good and works well on all screen sizes, so I’m not put off by a poor user experience.  
@@ -148,3 +150,48 @@ The functionality above, along with other features such as the sitemap and e-new
 
 ### Epic 3: E-newsletter
 - [x] #11 — As a User, I can sign-up to a regular email newsletter, so I can find out more about candlemaking and the latest candles and offers.  
+
+## Colour Contrast
+
+I tested colour contrasts using [WebAIM](https://webaim.org/).
+
+### White + Custom Red
+
+The header and footer sections use a custom red background and white text.
+
+All tests passed.
+
+<details>
+<summary>Screenshot</summary>
+
+![White/red contrast](./images/testing/contrast/colour-contrast-white-red.png)
+
+</details>
+
+### White + Custom Green
+
+The home page hero section uses a custom green background and white text.
+
+All tests passed.
+
+<details>
+<summary>Screenshot</summary>
+
+![White/green contrast](./images/testing/contrast/colour-contrast-white-green.png)
+
+</details>
+
+## Accessibility
+
+I tested accessibility using the [WAVE](https://wave.webaim.org/) accessibility evaluation tool from WebAIM.
+
+- 2 Errors - These were for missing form labels and were caused by the embedded e-newsletter form, the code for which is outside of my control.
+- 2 Contrast Errors - These were for Very Low Contrast and this was also caused by the embedded e-newsletter form, the styling of which is outside of my control.
+
+<details>
+<summary>Screenshot</summary>
+
+![WAVE WebAIM Report](./images/testing/contrast/wave-webaim-report.png)
+
+</details>
+
