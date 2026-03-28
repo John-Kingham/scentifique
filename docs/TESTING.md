@@ -91,9 +91,40 @@ Messages were testing during each of the relevant testing sections below.
 |Save delivery details|If a signed-in user successfully submits the checkout form with the save-info box ticked, the delivery details are saved to the user's profile|Submitted the checkout form as a signed-in user|As Expected|![User profile page](./images/testing/user-profile.png)|
 |Load delivery details|If a signed-in user has previously saved their delivery details to their user profile, the checkout form is auto-filled with those details|Visited the checkout page as a signed-in user with a pre-saved user profile|As Expected|![Checkout with auto-filled form](./images/testing/checkout-auto-fill-form.png)|
 
-### Sign-up, Sign-in and Sign-out Sections
+### Sign Up
+
+Note: New user confirmation emails are not implemented as they're outside the project's scope.
+
+|Feature|Expect|Action|Result|Image|
+|---|---|---|---|---|
+|Sign-up validation|When the sign-up form is submitted with missing or invalid data, validation messages are shown and the form is not submitted|Tried submitting the sign-up form with various missing and invalid data|As expected|![Sign-up validation](./images/testing/sign-up-validation.png)|
+|Sign-up message|After successfully submitting the sign-up form, a new user profile is created, the user is redirected to the email confirmation page and an info message is shown (but no confirmation email is sent)|Signed up as a new user|As expected|![Sign up confirmation message](./images/testing/sign-up-confirmation.png)|
+
+## Sign In
+
+|Feature|Expect|Action|Result|Image|
+|---|---|---|---|---|
+|Sign-in empty field validation|When the sign-in form is submitted with missing required fields, a validation message is shown and the form is not submitted|Tried submitting the sign-in form with required fields missing|As expected|![Sig-in with blank fields](./images/testing/sign-in-blank-fields.png)|
+|Sign-in invalid user validation|When the sign-in form is submitted with invalid user data, a validation message is shown and the form is not submitted|Tried submitting the sign-in form with invalid user data|As expected|![Sig-in with invalid data](./images/testing/sign-in-invalid-data.png)|
+|Signed-in message|After successfully submitting the sign-in form, the user is signed in, redirected to the home page and a success message is shown|Signed in|As expected|![sign-in successmessage](./images/testing/sign-in-success.png)|
+
+## Sign Out
+
+|Feature|Expect|Action|Result|Image|
+|---|---|---|---|---|
+|Sign out|When a signed-in user clicks the sign-out button on the sign-out page, the user is signed out, redirected to the home page and a success message is shown|Clicked the sign-out button|As expected|![sign-out success message](./images/testing/sign-out-success.png)|
 
 ## User Profile
 
+Note: The ability to save and auto-fill delivery details during checkout were tested in the checkout section above.
+
+|Feature|Expect|Action|Result|Image|
+|---|---|---|---|---|
+|Update delivery details|When a signed-in user updates their delivery details on the user profile page and clicks the update button, their updated details are saved and a success message is shown|Updated user profile details and clicked the update button|As expected|![User profile update success message](./images/testing/user-profile-update-success.png)|
+
 ## 404 Error
 
+|Feature|Expect|Action|Result|Image|
+|---|---|---|---|---|
+|404 error page|When an invalid path is entered, a helpful error page is shown|Entered an invalid path|As expected|![404 error page](./images/testing/404-error-page.png)|
+|continue shopping button|When the continue-shopping button is clicked, the user is taken to the products page|Clicked the button|As expected|None|

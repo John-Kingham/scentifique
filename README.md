@@ -443,6 +443,8 @@ Note: The BlogPost table didn't make it into the final design, as the blog funct
 - The pay-now button uses Bootstrap's `btn-dark` style to remain consistent with the rest of the site. Below the pay-now button is a message, notifying users of the amount that will be charged to their card.
 - This section is useful to users as it allows them to purchase Scentifique's handmade candles online, so they don't have to visit a craft fair in person.
 
+Note: The site is currently connected to a test Stripe account, so payments cannot be taken from real cards.
+
 ##### Checkout Order Confirmation
 
 ![Checkout order confirmation screenshot](./docs/images/features/checkout-order-confirmation.png)
@@ -462,6 +464,8 @@ Note: The BlogPost table didn't make it into the final design, as the blog funct
 - The form has fields for email, username and password and each field has built-in validation rules from AllAuth.
 - The form's sign-up button uses Bootstrap's `btn-dark` colour and the back-to-login button uses `btn-outline-dark`. Both buttons change their shade on hover to provide visual feedback.
 - This section is useful to users because it enables them to sign-up to save their delivery details. Additional functionality could be added in a future release, such as the ability to view previous orders.
+
+Note: After a new user signs up, they're taken to an email confirmation page asking them to confirm their email. Email confirmation processing hasn't been implemented yet as it's outside the project's scope.
 
 #### Sign In
 
@@ -509,7 +513,9 @@ Due to time constraints, some of the should-have and could-have user stories wer
 - User story #10: Sort and filter products
 - User story #12: Read blog posts
 
-In addition, there are other useful features that could easily be added to future versions of the site, such as product pagination, product categories and discount coupons.
+In addition, there are many other features that could be added to future versions of the site. These include pagination on the products page, product categories and discount coupons. 
+
+And, of course, the site would need to be connected to a live Stripe account rather than a test account, and it would need other features as well, such as the ability to send user's emails.
 
 ## Project Management
 
