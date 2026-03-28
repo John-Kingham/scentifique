@@ -1,6 +1,6 @@
 # Scentifique - Manual Testing
 
-## Front-End Functionality
+## Functionality by Section
 
 ### Header Navigation
 
@@ -21,30 +21,30 @@
 |Products link|When clicked, the user is taken to the Products page|Clicked|As expected|None|
 |Products link|When the user is on the Products page, the text is bold|Viewed from Products page|As expected|![Products page nav](./images/testing/products-nav.png)|
 
-## Messages
+### Messages
 
 Messages were testing during each of the relevant testing sections below.
 
-## Homepage Hero
+### Homepage Hero
 
 |Feature|Expect|Action|Result|Image|
 |---|---|---|---|---|
 |Shop now button|When clicked, the user is taken to the products page|Clicked|As expected|None|
 
-## Contact Details
+### Contact Details
 
 |Feature|Expect|Action|Result|Image|
 |---|---|---|---|---|
 |Social media icons|When clicked, the user is taken to the relevant social media platform|Clicked|As expected|None|
 
-## Product List
+### Product List
 
 |Feature|Expect|Action|Result|Image|
 |---|---|---|---|---|
 |Product image|When clicked, the user is taken to the product details page for that product|Clicked|As expected|None|
 |View button|When clicked, the user is taken to the product details page for that product|Clicked|As expected|None|
 
-## Product Detail
+### Product Detail
 
 |Feature|Expect|Action|Result|Image|
 |---|---|---|---|---|
@@ -54,7 +54,7 @@ Messages were testing during each of the relevant testing sections below.
 |Edit-product button|When clicked by a logged-in admin, the admin is taken to the edit product page|Clicked|As expected|![Product detail add-to-cart success](./images/testing/product-detail-edit-delete-buttons.png)|
 |Delete button|When clicked by a logged-in admin, the product is deleted, the admin is taken to the products page and a success message is shown|Clicked|As expected|![Product detail delete success](./images/testing/product-detail-delete-success.png)|
 
-## Add Product
+### Add Product
 
 |Feature|Expect|Action|Result|Image|
 |---|---|---|---|---|
@@ -62,7 +62,7 @@ Messages were testing during each of the relevant testing sections below.
 |Add product button|If the form is submitted with valid data, a product is created, the admin is redirected to the product detail page for the new product, and a success message is shown|Clicked|As expected|![Product add success](./images/testing/product-add-success.png)|
 |Authentication|If a logged in non-admin user visits the add product page, they are redirected to the home page and an error message is displayed|Clicked|As expected|![Product add authentication](./images/testing/product-add-authentication.png)|
 
-## Edit Product
+### Edit Product
 
 |Feature|Expect|Action|Result|Image|
 |---|---|---|---|---|
@@ -70,7 +70,7 @@ Messages were testing during each of the relevant testing sections below.
 |Update product button|If the form is submitted with valid data, the product is updated, the admin is redirected to the product's detail page and a success message is shown|Clicked|As expected|![Product edit success](./images/testing/product-edit-success.png)|
 |Authentication|If a logged in non-admin user visits the edit product page, they are redirected to the home page and an error message is displayed|Clicked|As expected|![Product add authentication](./images/testing/product-edit-authentication.png)|
 
-## Shopping Basket
+### Shopping Basket
 
 |Feature|Expect|Action|Result|Image|
 |---|---|---|---|---|
@@ -80,7 +80,7 @@ Messages were testing during each of the relevant testing sections below.
 |Merge items|If a cart item is updated to match the colour, fragrance and product type of another cart item, the two items are combined and their quantities are summed (up to the maximum)|Changed a cart item's colour, fragrance and quantity and clicked the update button|As expected|![Update cart item merge](./images/testing/cart-item-updated-merged.png)|
 |Remove item|If the user clicks the Remove button, the item is removed from the cart and a success message is shown|Clicked the remove button|As expected|![Remove cart item success](./images/testing/shopping-cart-remove-success.png)|
 
-## Checkout
+### Checkout
 
 |Feature|Expect|Action|Result|Image|
 |---|---|---|---|---|
@@ -100,7 +100,7 @@ Note: New user confirmation emails are not implemented as they're outside the pr
 |Sign-up validation|When the sign-up form is submitted with missing or invalid data, validation messages are shown and the form is not submitted|Tried submitting the sign-up form with various missing and invalid data|As expected|![Sign-up validation](./images/testing/sign-up-validation.png)|
 |Sign-up message|After successfully submitting the sign-up form, a new user profile is created, the user is redirected to the email confirmation page and an info message is shown (but no confirmation email is sent)|Signed up as a new user|As expected|![Sign up confirmation message](./images/testing/sign-up-confirmation.png)|
 
-## Sign In
+### Sign In
 
 |Feature|Expect|Action|Result|Image|
 |---|---|---|---|---|
@@ -108,13 +108,13 @@ Note: New user confirmation emails are not implemented as they're outside the pr
 |Sign-in invalid user validation|When the sign-in form is submitted with invalid user data, a validation message is shown and the form is not submitted|Tried submitting the sign-in form with invalid user data|As expected|![Sig-in with invalid data](./images/testing/sign-in-invalid-data.png)|
 |Signed-in message|After successfully submitting the sign-in form, the user is signed in, redirected to the home page and a success message is shown|Signed in|As expected|![sign-in successmessage](./images/testing/sign-in-success.png)|
 
-## Sign Out
+### Sign Out
 
 |Feature|Expect|Action|Result|Image|
 |---|---|---|---|---|
 |Sign out|When a signed-in user clicks the sign-out button on the sign-out page, the user is signed out, redirected to the home page and a success message is shown|Clicked the sign-out button|As expected|![sign-out success message](./images/testing/sign-out-success.png)|
 
-## User Profile
+### User Profile
 
 Note: The ability to save and auto-fill delivery details during checkout were tested in the checkout section above.
 
@@ -122,9 +122,29 @@ Note: The ability to save and auto-fill delivery details during checkout were te
 |---|---|---|---|---|
 |Update delivery details|When a signed-in user updates their delivery details on the user profile page and clicks the update button, their updated details are saved and a success message is shown|Updated user profile details and clicked the update button|As expected|![User profile update success message](./images/testing/user-profile-update-success.png)|
 
-## 404 Error
+### 404 Error
 
 |Feature|Expect|Action|Result|Image|
 |---|---|---|---|---|
 |404 error page|When an invalid path is entered, a helpful error page is shown|Entered an invalid path|As expected|![404 error page](./images/testing/404-error-page.png)|
 |continue shopping button|When the continue-shopping button is clicked, the user is taken to the products page|Clicked the button|As expected|None|
+
+## User Stories
+
+The functionality above, along with other features such as the sitemap and e-newsletter form, fulfills all of the implemented user stories.
+
+### Epic 1: An attractive, trustworthy website
+- [x] #1 — As a User, I can see a website that looks good and works well on all screen sizes, so I’m not put off by a poor user experience.  
+- [x] #2 — As a User, I can see useful information about the company, so I can decide if it’s trustworthy enough to buy from.  
+- [x] #13 — As a User, I can easily find the website through a search engine, so I can visit the site and buy its products.  
+
+### Epic 2: E-commerce capabilities
+- [x] #4 — As a User, I can see a list of products on the site, so I can choose products to buy.  
+- [x] #6 — As a User, I have a “basket” where I can add or remove multiple items, so I can purchase multiple items in one transaction.  
+- [x] #7 — As a User, I can purchase items in my “basket” using a credit/debit card, so I don’t have to send a cheque or cash.  
+- [x] #3 — As a User, I can see helpful feedback on each important action I take on the site, so that I always know whether my actions were successful or not.  
+- [x] #8 — As a Logged-in User, I can save my address, so I don’t have to enter it manually for future orders.  
+- [x] #5 — As an Admin, I can create, update and delete product information through a well-designed front end, so I don’t have to switch back and forth between the site's front-end and admin area.  
+
+### Epic 3: E-newsletter
+- [x] #11 — As a User, I can sign-up to a regular email newsletter, so I can find out more about candlemaking and the latest candles and offers.  
