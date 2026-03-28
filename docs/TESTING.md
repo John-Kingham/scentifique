@@ -50,6 +50,7 @@ Messages were testing during each of the relevant testing sections below.
 |---|---|---|---|---|
 |Colour, Fragrance and Quantity selectors|When clicked, the user is able to select a colour, fragrance or quantity|Clicked|As expected|![Product detail selector](./images/testing/product-detail-selector.png)|
 |Add-to-cart button|When clicked, the product is added to the cart, the user remains on the product detail page and a success message is displayed|Clicked|As expected|![Product detail add-to-cart success](./images/testing/product-detail-add-to-cart-success.png)|
+|Add-to-cart button merge|If the button is clicked when the item's product, colour and fragrance match an item already in the cart, the items are merged in the cart with their quantities combined (up to the maximum), the user remains on the product detail page and a success message is displayed|Clicked|As expected|![Product detail add-to-cart merge success](./images/testing/product-detail-add-to-cart-success.png)|
 |Edit-product button|When clicked by a logged-in admin, the admin is taken to the edit product page|Clicked|As expected|![Product detail add-to-cart success](./images/testing/product-detail-edit-delete-buttons.png)|
 |Delete button|When clicked by a logged-in admin, the product is deleted, the admin is taken to the products page and a success message is shown|Clicked|As expected|![Product detail delete success](./images/testing/product-detail-delete-success.png)|
 
@@ -76,6 +77,6 @@ Messages were testing during each of the relevant testing sections below.
 |Empty cart|When the cart is empty, the user is informed and a continue shopping button is shown|Visited the shopping cart page when the cart was empty|As expected|![Empty cart](./images/testing/cart-empty-page.png)|
 |Non-empty cart|When the cart is not empty, a list of the products in the cart is shown, along with relevant details|Visited the shopping cart page when the cart was not empty|As expected|![Not empty cart](./images/testing/cart-not-empty-page.png)|
 |Update button|If a cart item's update button is clicked after its colour, fragrance and/or quantity have been changed, the changes are saved, the page is refreshed and a success message is shown|Changed a cart item's colour, fragrance and quantity and clicked the update button|As expected|![Updated cart item](./images/testing/cart-item-updated.png)|
-|Limiting quantity|If a cart item is updated to match the colour, fragrance and product type of another cart item, the two items are combined and their quantities are summed, with a limit value of 12|Changed a cart item's colour, fragrance and quantity and clicked the update button|As expected|![Updated cart item](./images/testing/cart-item-updated.png)|
+|Merging updated items|If a cart item is updated to match the colour, fragrance and product type of another cart item, the two items are combined and their quantities are summed, with a limit value of 12|Changed a cart item's colour, fragrance and quantity and clicked the update button|As expected|![Updated cart item](./images/testing/cart-item-updated-merge.png)|
 Remove button...
 etc...
