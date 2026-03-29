@@ -98,7 +98,7 @@ Note: New user confirmation emails are not implemented as they're outside the pr
 |Feature|Expect|Action|Result|Image|
 |---|---|---|---|---|
 |Sign-up validation|When the sign-up form is submitted with missing or invalid data, validation messages are shown and the form is not submitted|Tried submitting the sign-up form with various missing and invalid data|As expected|![Sign-up validation](./images/testing/sign-up-validation.png)|
-|Sign-up message|After successfully submitting the sign-up form, a new user profile is created, the user is redirected to the email confirmation page and an info message is shown (but no confirmation email is sent)|Signed up as a new user|As expected|![Sign up confirmation message](./images/testing/sign-up-confirmation.png)|
+|Sign-up message|After successfully submitting the sign-up form, a new user profile is created, the user is redirected to the email confirmation page, an info message is shown and a confirmation email is sent to the command line (sending emails to users has not been implemented yet).|Signed up as a new user|As expected|![Sign up confirmation message](./images/testing/sign-up-confirmation.png)|
 
 ### Sign In
 
@@ -214,3 +214,235 @@ I tested accessibility using the [WAVE](https://wave.webaim.org/) accessibility 
 |404 Error|Yes|Yes|Yes|
 
 ### Responsiveness Screenshots
+
+<details>
+<summary>Homepage - Mobile</summary>
+
+![Home - Mobile](./images/testing/responsive/homepage-mobile.png)
+
+</details>
+
+<details>
+<summary>Homepage - Tablet</summary>
+
+![Home - Mobile](./images/testing/responsive/homepage-tablet.png)
+
+</details>
+
+<details>
+<summary>Homepage - Desktop</summary>
+
+![Home - Mobile](./images/testing/responsive/homepage-desktop.png)
+
+</details>
+
+<details>
+<summary>Product List - Mobile</summary>
+
+![Home - Mobile](./images/testing/responsive/product-list-mobile.png)
+
+</details>
+
+<details>
+<summary>Product List - Tablet</summary>
+
+![Home - Mobile](./images/testing/responsive/product-list-tablet.png)
+
+</details>
+
+<details>
+<summary>Product List - Desktop</summary>
+
+![Home - Mobile](./images/testing/responsive/product-list-desktop.png)
+
+</details>
+
+<details>
+<summary>Product Detail - Mobile</summary>
+
+![Home - Mobile](./images/testing/responsive/product-detail-mobile.png)
+
+</details>
+
+<details>
+<summary>Product Detail - Tablet</summary>
+
+![Home - Mobile](./images/testing/responsive/product-detail-tablet.png)
+
+</details>
+
+<details>
+<summary>Product Detail - Desktop</summary>
+
+![Home - Mobile](./images/testing/responsive/product-detail-desktop.png)
+
+</details>
+
+<details>
+<summary>Add Product - Mobile</summary>
+
+![Home - Mobile](./images/testing/responsive/add-product-mobile.png)
+
+</details>
+
+<details>
+<summary>Add Product - Tablet</summary>
+
+![Home - Mobile](./images/testing/responsive/add-product-tablet.png)
+
+</details>
+
+<details>
+<summary>Add Product - Desktop</summary>
+
+![Home - Mobile](./images/testing/responsive/edit-product-desktop.png)
+
+</details>
+
+<details>
+<summary>Edit Product - Mobile</summary>
+
+![Home - Mobile](./images/testing/responsive/edit-product-mobile.png)
+
+</details>
+
+<details>
+<summary>Edit Product - Tablet</summary>
+
+![Home - Mobile](./images/testing/responsive/edit-product-tablet.png)
+
+</details>
+
+<details>
+<summary>Edit Product - Desktop</summary>
+
+![Home - Mobile](./images/testing/responsive/edit-product-desktop.png)
+
+</details>
+
+<details>
+<summary>About - Mobile</summary>
+
+![Home - Mobile](./images/testing/responsive/about-mobile.png)
+
+</details>
+
+<details>
+<summary>About - Tablet</summary>
+
+![Home - Mobile](./images/testing/responsive/about-tablet.png)
+
+</details>
+
+<details>
+<summary>About - Desktop</summary>
+
+![Home - Mobile](./images/testing/responsive/about-desktop.png)
+
+</details>
+
+<details>
+<summary>Shopping Basket - Mobile</summary>
+
+![Home - Mobile](./images/testing/responsive/cart-mobile.png)
+
+</details>
+
+<details>
+<summary>Shopping Basket - Tablet</summary>
+
+![Home - Mobile](./images/testing/responsive/cart-tablet.png)
+
+</details>
+
+<details>
+<summary>Shopping Basket - Desktop</summary>
+
+![Home - Mobile](./images/testing/responsive/cart-desktop.png)
+
+</details>
+
+<details>
+<summary>Checkout - Mobile</summary>
+
+![Home - Mobile](./images/testing/responsive/checkout-mobile.png)
+
+</details>
+
+<details>
+<summary>Checkout - Tablet</summary>
+
+![Home - Mobile](./images/testing/responsive/checkout-tablet.png)
+
+</details>
+
+<details>
+<summary>Checkout - Desktop</summary>
+
+![Home - Mobile](./images/testing/responsive/checkout-desktop.png)
+
+</details>
+
+<details>
+<summary>Order Confirmation - Mobile</summary>
+
+![Home - Mobile](./images/testing/responsive/order-confirmation-mobile.png)
+
+</details>
+
+<details>
+<summary>Order Confirmation - Tablet</summary>
+
+![Home - Mobile](./images/testing/responsive/order-confirmation-tablet.png)
+
+</details>
+
+<details>
+<summary>Order Confirmation - Desktop</summary>
+
+![Home - Mobile](./images/testing/responsive/user-profile-desktop.png)
+
+</details>
+
+<details>
+<summary>User Profile - Mobile</summary>
+
+![Home - Mobile](./images/testing/responsive/user-profile-mobile.png)
+
+</details>
+
+<details>
+<summary>User Profile - Tablet</summary>
+
+![Home - Mobile](./images/testing/responsive/user-profile-tablet.png)
+
+</details>
+
+<details>
+<summary>User Profile - Desktop</summary>
+
+![Home - Mobile](./images/testing/responsive/user-profile-desktop.png)
+
+</details>
+
+<details>
+<summary>404 Error - Mobile</summary>
+
+![Home - Mobile](./images/testing/responsive/404-mobile.png)
+
+</details>
+
+<details>
+<summary>404 Error - Tablet</summary>
+
+![Home - Mobile](./images/testing/responsive/404-tablet.png)
+
+</details>
+
+<details>
+<summary>404 Error - Desktop</summary>
+
+![Home - Mobile](./images/testing/responsive/404-desktop.png)
+
+</details>
+

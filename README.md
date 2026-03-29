@@ -453,7 +453,7 @@ Note: The site is currently connected to a test Stripe account, so payments cann
 - Headings use the site's custom headings font.
 - Bolding is used to emphasise some field names or important values such as the grand total.
 - The page also contains a continue shopping button, which uses Bootstrap's default `btn-dark` style.
-- This section is useful to users as it confirms that their order has been successfully processed. Currently the page says that an order confirmation email has been sent to the user's email, but that functionality has not yet been added to this early version of the site.
+- This section is useful to users as it confirms that their order has been successfully processed.
 
 #### Sign Up
 
