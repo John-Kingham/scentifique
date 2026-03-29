@@ -568,3 +568,25 @@ There were no errors or warnings.
 
 ![Profiles css validation](./images/testing/validation/css-profiles.png)
 
+### JavaScript Validation
+
+JavaScript validation was carried out using [JSHint](https://jshint.com/).
+
+There were no errors. There were warnings related to missing variables for $ (JQuery) and stripe, and these are expected as those variables are loaded externally and are therefore not available in JSHint. 
+
+#### cart.html inline JS
+
+![cart.html JS validation](./images/testing/validation/js-cart.png)
+
+#### base.html inline JS
+
+![base.html JS validation](./images/testing/validation/js-base.png)
+
+#### stripe_elements.js
+
+![stripe_elements.js validation](./images/testing/validation/js-stripe-elements.png)
+
+#### profile.js
+
+![profile.js validation](./images/testing/validation/js-profile.png)
+
