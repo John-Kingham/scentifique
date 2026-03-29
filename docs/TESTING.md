@@ -446,3 +446,51 @@ I tested accessibility using the [WAVE](https://wave.webaim.org/) accessibility 
 
 </details>
 
+## Browsers
+
+The site's functionality and responsiveness were tested on Chrome, Edge and Firefox, as these are some of the most popular browsers.
+
+|Test|Chrome|Edge|Firefox|
+|---|---|---|---|
+|Header Nav as expected?|Yes|Yes|Yes|
+|Homepage Hero as expected?|Yes|Yes|Yes|
+|Contact Details as expected?|Yes|Yes|Yes|
+|Product List as expected?|Yes|Yes|Yes|
+|Product Detail as expected?|Yes|Yes|Yes|
+|Add Product as expected?|Yes|Yes|Yes|
+|Edit Product as expected?|Yes|Yes|Yes|
+|About as expected?|Yes|Yes|Yes|
+|Shopping Basket as expected?|Yes|Yes|Yes|
+|Checkout as expected?|Yes|Yes|Yes|
+|Order Confirmation as expected?|Yes|Yes|Yes|
+|User Profile as expected?|Yes|Yes|Yes|
+|404 Error as expected?|Yes|Yes|Yes|
+
+### Browser Screenshots
+
+All of the screenshots in the sections above were taken on Chrome. Rather than include every screenshot for every browser, here are a few screenshots from Edge and Firefox showing similar results to Chrome:
+
+<details>
+<summary>Home - Desktop - Firefox</summary>
+
+![Homepage, desktop, Firefox](./images/testing/browsers/home-desktop-firefox.png)
+</details>
+
+<details>
+<summary>Product List - Tablet - Firefox</summary>
+
+![Product List, tablet, Firefox](./images/testing/browsers/product-list-tablet-firefox.png)
+</details>
+
+<details>
+<summary>Product Detail - Mobile - Edge</summary>
+
+![Product Detail, mobile, Edge](./images/testing/browsers/product-detail-mobile-edge.png)
+</details>
+
+<details>
+<summary>Shopping Basket - Desktop - Edge</summary>
+
+![Shopping cart, desktop, Edge](./images/testing/browsers/cart-desktop-edge.png)
+</details>
+
