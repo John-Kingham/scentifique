@@ -500,46 +500,53 @@ All of the screenshots in the sections above were taken on Chrome. Rather than i
 
 HTML was validated using the [W3C Markup Validation Service](https://validator.w3.org/).
 
-There were various validation issues in the site's HTML, such as missing tags, but all issues have now been resolved.
+There were various validation errors and warnings in the site's HTML, but all errors and warnings have now been resolved.
 
 #### Homepage HTML Validation
 
-![Homepage HTML success](./images/testing/validation/html-homepage-success.png)
+![Homepage HTML validation](./images/testing/validation/html-homepage-success.png)
 
 #### Product List HTML Validation
 
-![Product list HTML issues](./images/testing/validation/html-homepage-errors.png)
+![Product list HTML validation](./images/testing/validation/html-product-list.png)
 
 #### Product Detail HTML Validation
 
-
+![Product detail HTML validation](./images/testing/validation/html-product-detail.png)
 
 #### Add Product HTML Validation
 
-
+![Add Product HTML validation](./images/testing/validation/html-add-product.png)
 
 #### Edit Product HTML Validation
 
-
+![Edit Product HTML validation](./images/testing/validation/html-edit-product.png)
 
 #### About HTML Validation
 
-
+![About HTML validation](./images/testing/validation/html-about.png)
 
 #### Shopping Basket HTML Validation
 
-
+![Cart HTML validation](./images/testing/validation/html-cart.png)
 
 #### Checkout HTML Validation
 
-
+![Checkout HTML validation](./images/testing/validation/html-checkout.png)
 
 #### Order Confirmation HTML Validation
 
+For the order confirmation page, I had to validate the source code rather than the URL, as the validator was unable to reload the page.
 
+![Order Confirmation HTML validation](./images/testing/validation/html-order-confirmation.png)
 
 #### User Profile HTML Validation
 
-
+![User Profile HTML validation](./images/testing/validation/html-user-profile.png)
 
 #### 404 Error HTML Validation
+
+For the 404 page, I had to validate the source code rather than the URL, as the validator was unable to load an invalid URL.
+
+![404 Error HTML validation](./images/testing/validation/html-404.png)
+
