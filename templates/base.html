@@ -65,7 +65,7 @@
                                 <i class="fa-solid fa-user d-none d-sm-inline {% if request.user.is_authenticated %}text-warning{% endif %}"></i>
                                 Account
                             </a>
-                            <div aria-labelledby="account" class="dropdown-menu" id="account-dropdown">
+                            <div aria-labelledby="account" class="dropdown-menu" id="account-dropdown" role="menu">
                                 {% if request.user.is_authenticated %}
                                     {% if request.user.is_superuser %}
                                         <a class="dropdown-item" href="{% url 'add_product' %}">Add product</a>
@@ -140,7 +140,7 @@
                         <!-- Contact details -->
                         <p><strong>Contact details:</strong></p>
                         Scentifique, 123 Candle Road, Candle Town<br>
-                        <i class="fa-solid fa-phone mr-1"></i>01234 567 890<br />
+                        <i class="fa-solid fa-phone mr-1"></i>01234 567 890<br>
                         <i class="fa-solid fa-envelope mr-1"></i>hello@example.com
                         <!-- Associations -->
                         <p>A member of the <a href="https://www.britishcandles.org/" target="_blank">British Candle Makers Federation</a></p>
@@ -187,7 +187,7 @@
             </div>
         </footer>
         {% block postloadjs %}
-            <script type="text/javascript">
+            <script>
                 $(".toast").toast("show");
             </script>
         {% endblock postloadjs %}
