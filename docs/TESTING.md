@@ -500,26 +500,15 @@ All of the screenshots in the sections above were taken on Chrome. Rather than i
 
 HTML was validated using the [W3C Markup Validation Service](https://validator.w3.org/).
 
+There were various validation issues in the site's HTML, such as missing tags, but all issues have now been resolved.
+
 #### Homepage HTML Validation
-
-<details>
-<summary>HTML errors and warnings</summary>
-
-![Homepage HTML issues](./images/testing/validation/html-homepage-errors.png)
-</details>
-
-There was 1 error, 1 warning and 1 info message, all of which were subsequently fixed.
 
 ![Homepage HTML success](./images/testing/validation/html-homepage-success.png)
 
 #### Product List HTML Validation
 
-<details>
-<summary>HTML errors and warnings</summary>
-
 ![Product list HTML issues](./images/testing/validation/html-homepage-errors.png)
-</details>
-
 
 #### Product Detail HTML Validation
 
