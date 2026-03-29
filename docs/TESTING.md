@@ -590,3 +590,10 @@ There were no errors. There were warnings related to missing variables for $ (JQ
 
 ![profile.js validation](./images/testing/validation/js-profile.png)
 
+### Python Validation
+
+Python code was validated using [flake8](https://pypi.org/project/flake8/).
+
+There were multiple errors relating to unused imports. These errors are acceptable as they're caused by default code Django's python files that haven't been changed as part of the project.
+
+![Python flake8 validation](./images/testing/validation/python-flake8.png)
