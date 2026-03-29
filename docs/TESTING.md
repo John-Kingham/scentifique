@@ -494,3 +494,63 @@ All of the screenshots in the sections above were taken on Chrome. Rather than i
 ![Shopping cart, desktop, Edge](./images/testing/browsers/cart-desktop-edge.png)
 </details>
 
+## Code Validation
+
+### HTML Validation
+
+HTML was validated using the [W3C Markup Validation Service](https://validator.w3.org/).
+
+#### Homepage HTML Validation
+
+<details>
+<summary>HTML errors and warnings</summary>
+
+![Homepage HTML issues](./images/testing/validation/html-homepage-errors.png)
+</details>
+
+There was 1 error, 1 warning and 1 info message, all of which were subsequently fixed.
+
+![Homepage HTML success](./images/testing/validation/html-homepage-success.png)
+
+#### Product List HTML Validation
+
+<details>
+<summary>HTML errors and warnings</summary>
+
+![Product list HTML issues](./images/testing/validation/html-homepage-errors.png)
+</details>
+
+
+#### Product Detail HTML Validation
+
+
+
+#### Add Product HTML Validation
+
+
+
+#### Edit Product HTML Validation
+
+
+
+#### About HTML Validation
+
+
+
+#### Shopping Basket HTML Validation
+
+
+
+#### Checkout HTML Validation
+
+
+
+#### Order Confirmation HTML Validation
+
+
+
+#### User Profile HTML Validation
+
+
+
+#### 404 Error HTML Validation
