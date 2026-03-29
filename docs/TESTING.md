@@ -550,3 +550,21 @@ For the 404 page, I had to validate the source code rather than the URL, as the 
 
 ![404 Error HTML validation](./images/testing/validation/html-404.png)
 
+### CSS Validation
+
+CSS validation was carried out using the [W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/).
+
+There were no errors or warnings.
+
+#### base.css Validation
+
+![Base css validation](./images/testing/validation/css-base.png)
+
+#### checkout.css Validation
+
+![Checkout css validation](./images/testing/validation/css-checkout.png)
+
+#### profile.css Validation
+
+![Profiles css validation](./images/testing/validation/css-profiles.png)
+
