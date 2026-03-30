@@ -116,7 +116,7 @@ Note: New user confirmation emails are not implemented as they're outside the pr
 
 ### User Profile
 
-Note: The ability to save and auto-fill delivery details during checkout were tested in the checkout section above.
+Note: The ability to save and auto-fill delivery details during checkout was tested in the checkout section above.
 
 |Feature|Expect|Action|Result|Image|
 |---|---|---|---|---|
@@ -185,8 +185,8 @@ All tests passed.
 
 I tested accessibility using the [WAVE](https://wave.webaim.org/) accessibility evaluation tool from WebAIM.
 
-- 2 Errors - These were for missing form labels and were caused by the embedded e-newsletter form, the code for which is outside of my control.
-- 2 Contrast Errors - These were for Very Low Contrast and this was also caused by the embedded e-newsletter form, the styling of which is outside of my control.
+- 2 Errors - These were for missing form labels. This was caused by the embedded e-newsletter form, the code for which is outside of my control.
+- 2 Contrast Errors - These were for Very Low Contrast. This was also caused by the embedded e-newsletter form, the styling of which is outside of my control.
 
 <details>
 <summary>Screenshot</summary>

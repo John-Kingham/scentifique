@@ -53,7 +53,7 @@ The strategy plane is where we begin to understand what the business owner wants
 
 - Supporting goals
   - To buy candles online, so they don’t have to go to a shop.
-  - To learn about candles, so they how the different waxes burn, which fragrances work together, etc.
+  - To learn about candles, so they know how the different waxes burn, which fragrances work together, etc.
   - To be able to select a candle's style, colour and fragrance, so their candles are bespoke and not just another off-the-shelf product.
   - To be part of a community of luxury scented candle lovers.
 
@@ -69,7 +69,7 @@ For the initial version of the site, there were three epics (high-level requirem
   - As a user, I can see a website that builds my confidence and trust in the company, so I feel safe enough to make an online purchase through the site.
 
 -  Epic: E-commerce capabilities
-  - As a user, I can select and purchase candles through the website, so I don't have to visit a craft fair to but candles from Scentifique.
+  - As a user, I can select and purchase candles through the website, so I don't have to visit a craft fair to buy candles from Scentifique.
 
 - Epic: E-newsletter
   - As a user, I can read and subscribe to blog posts covering various candle-related topics, so I can become more knowledgeable about candles and stay up to date with the latest trends and offers.
@@ -95,7 +95,7 @@ Also, the user story numbers are taken from the related [GitHub Project](https:/
   - #8 (must-have): As a Logged-in User, I can save my address, so I don’t have to enter it manually for future orders.
   - #9 (should-have): As a Logged-in User, I can see my previous orders, so I know how much I’ve spent.
   - #10 (could-have): As a User, I can sort and filter products on the website by price, size and other factors, so I can easily find the products I’m looking for.
-  - #5 (must-have): As an Admin, I can create, update and delete product information through a well-designed front end, so I don’t have to switch back and forth between the site's front-end and admin area.
+  - #5 (must-have): As an Admin, I can create, update and delete product information through a well-designed front-end, so I don’t have to switch back and forth between the site's front-end and admin area.
 
 - Epic 3: E-newsletter
   - #11 (must-have): As a User, I can sign-up to a regular email newsletter, so I can find out more about candlemaking and the latest candles and offers.
@@ -152,14 +152,14 @@ This is the final plane, where we add colour and other fine details to our bare 
 
 #### Colour Palette
 
-The site uses two primary colours, inspired by the arts & crafts wallpapers of William Morris, examples of which are available at sites like [Wall passion](https://www.wallpassion.co.uk/william-morris).
+The site uses two primary colours, inspired by the Arts & Crafts wallpapers of William Morris, examples of which are available at sites like [Wall Passion](https://www.wallpassion.co.uk/william-morris).
 
 - Red - #A15355
 - Green - #4A764B
 
 ![Colour palette](./docs/images/colour-palette.png)
 
-The site uses black for most text and white for some backgrounds. It also uses Bootstrap [Bootstrap](https://getbootstrap.com/) default colours for buttons and various feedback messages.
+The site uses black for most text and white for some backgrounds. It also uses [Bootstrap](https://getbootstrap.com/) default colours for buttons and various feedback messages.
 
 #### Custom Fonts
 
@@ -178,7 +178,7 @@ To fulfil the project's requirements, the site has a database.
 
 ### Entity Relationship Diagram
 
-During the structure and skeleton planes I sketched out the following entity relationship diagram.
+During the structure and skeleton planes, I sketched out the following entity relationship diagram.
 
 ![Entity relationship diagram](./docs/images/wireframes/erd-structure-diagram.png)
 
@@ -322,11 +322,11 @@ Note: The BlogPost table didn't make it into the final design, as the blog funct
 ![Header navigation feature](./docs/images/features/header-nav.png)
 
 - Each page contains a header navigation section.
-- This section contains the site's title in the custom headings font. All text in this section is white by default and light-grey on hover.
+- This section contains the site's title in the custom headings font. All text in this section is white by default and light grey on hover.
 - This section also contains an Account drop-down. Clicking reveals a drop-down menu with options to sign up or sign in. The drop-down menu has a white background with black text. The menu item background colour changes on hover to provide visual feedback. When a user is logged in, the menu items are user-profile and sign-out and the Account icon turns gold. When an admin is logged in, the menu includes an add-product item.
 - This section also contains a link to the user's shopping cart. When the cart isn't empty the icon turns gold.
 - This section also contains a navigation bar, with links to the site's top-level pages (Home, About, Products). These links are bold when the user is on the related page.
-- This section is useful to users for several reasons. It provides a consistent look-and-feel at the start of each page, it enables users to sign in and out, it lets users know if they're logged in or if they hve items in their cart, and it helps users navigate around the site.
+- This section is useful to users for several reasons. It provides a consistent look-and-feel at the start of each page, it enables users to sign in and out, it lets users know if they're logged in or if they have items in their cart, and it helps users navigate around the site.
 
 #### Messages
 
@@ -377,8 +377,8 @@ Note: The BlogPost table didn't make it into the final design, as the blog funct
 - The page title and product name use the site's custom heading font.
 - This section also contains select elements where users can choose the colour, fragrance and quantity for their product.
 - The page also contains an add-to-cart button, where users can add their chosen product to their shopping cart.
-- Logged in admins can also see edit-product and delete buttons, for editing or deleting products.
-- This section is useful to users because it's where they'll find detailed informative about each product, and where they can customise their handmade candles and add them to their cart. It's also useful to admins as it allows them to edit or delete products from the front-end.
+- Logged-in admins can also see edit-product and delete buttons, for editing or deleting products.
+- This section is useful to users because it's where they'll find detailed information about each product, and where they can customise their handmade candles and add them to their cart. It's also useful to admins as it allows them to edit or delete products from the front end.
 
 #### Add Product
 
@@ -419,7 +419,7 @@ Note: The BlogPost table didn't make it into the final design, as the blog funct
 
 ![Shopping cart full feature](./docs/images/features/shopping-cart-full.png)
 
-- This section is where users can find a list of items in their cart, as well as sub-totals, delivery fees, a grand total and a checkout button.
+- This section is where users can find a list of items in their cart, as well as subtotals, delivery fees, a grand total and a checkout button.
 - The page header uses the site's custom heading font.
 - When the cart is empty, this section displays a message telling users their cart is empty, along with a continue-shopping button which links back to the product page. The button uses Bootstrap's `btn-dark` style.
 - When the cart contains products, each product is listed separately. For each product in the cart, the name, image and price are shown, along with the customer's chosen colour, fragrance and quantity.
@@ -438,7 +438,7 @@ Note: The BlogPost table didn't make it into the final design, as the blog funct
 - This section contains a page title, a summary of the order, a form for entering customer details, delivery details and payment details, an option to save user details and a pay-now button.
 - The page title uses the site's custom heading font.
 - The order summary section has a heading and shows the image, product name, colour, fragrance, quantity and subtotal of each item in the cart. It also shows an overall subtotal, the delivery fee and the cart's grand total.
-- The delivery details section has a heading and has separate sub-sections for customer details, delivery address details and payment details. Each of these sections has a border with a sub-title. Each form field has a placeholder with the field's name and an asterisk if the field is mandatory.
+- The delivery details section has a heading and has separate subsections for customer details, delivery address details and payment details. Each of these sections has a border with a subtitle. Each form field has a placeholder with the field's name and an asterisk if the field is mandatory.
 - The payment details section includes a Stripe form. This form uses Stripe's default style as much as possible, to leverage user's familiarity with Stripe payment forms used on other sites. The payment details form includes all relevant payment card validation.
 - The pay-now button uses Bootstrap's `btn-dark` style to remain consistent with the rest of the site. Below the pay-now button is a message, notifying users of the amount that will be charged to their card.
 - This section is useful to users as it allows them to purchase Scentifique's handmade candles online, so they don't have to visit a craft fair in person.
@@ -451,7 +451,7 @@ Note: The site is currently connected to a test Stripe account, so payments cann
 
 - This page is shown after the user has successfully completed an order. It shows all of the order's details, including order number and date, the items ordered and the delivery and billing details.
 - Headings use the site's custom headings font.
-- Bolding is used to emphasise some field names or important values such as the grand total.
+- Bold is used to emphasise some field names or important values such as the grand total.
 - The page also contains a continue shopping button, which uses Bootstrap's default `btn-dark` style.
 - This section is useful to users as it confirms that their order has been successfully processed.
 
@@ -502,8 +502,8 @@ Note: After a new user signs up, they're taken to an email confirmation page ask
 ![404 error page feature](./docs/images/features/404-error.png)
 
 - The 404 error section is shown if the user enters an invalid URL.
-- This sections contain a simple error message and a continue-shopping button to return to the products page.
-- This sections is useful to users because it tells them when they've visited an invalid URL, and give them an easy way to get back to the products page.
+- This section contains a simple error message and a continue-shopping button to return to the products page.
+- This section is useful to users because it tells them when they've visited an invalid URL, and gives them an easy way to get back to the products page.
 
 ### Future Features
 
@@ -515,7 +515,7 @@ Due to time constraints, some of the should-have and could-have user stories wer
 
 In addition, there are many other features that could be added to future versions of the site. These include pagination on the products page, product categories and discount coupons. 
 
-And, of course, the site would need to be connected to a live Stripe account rather than a test account, and it would need other features as well, such as the ability to send user's emails.
+And, of course, the site would need to be connected to a live Stripe account rather than a test account, and it would need other features as well, such as the ability to send emails to users.
 
 ## Project Management
 
@@ -640,7 +640,7 @@ The site has been deployed using [Heroku](https://www.heroku.com/). The deployme
 
 ### Local Deployment
 
-To run the site locally, you will need use the steps below:
+To run the site locally, follow the steps below:
 
 1. Clone the remote repository to your local machine using the instructions above.
 1. Start a Python virtual environment of your choice (to avoid loading required libraries into your global environment).
@@ -662,7 +662,7 @@ To run the site locally, you will need use the steps below:
 
 ### Deployment to Heroku
 
-The production version of the site has been deployed using [Heroku](https://www.heroku.com/). To deploy a copy of the site to Heroku, following these steps:
+The production version of the site has been deployed using [Heroku](https://www.heroku.com/). To deploy a copy of the site to Heroku, follow these steps:
 
 1. Fork or clone this repository using the instructions above.
 1. If you cloned this repository, push your clone up to a remote repo on your GitHub account.
@@ -703,7 +703,7 @@ Search engines like Google and Ecosia are another important source of traffic an
 
 To rank well on search engines, sites need to contain a range of keywords that target the top, middle and bottom of the sales funnel.
 
-After some initial brainstorming and research, I came up with an initial short-list of potential keywords:
+After some initial brainstorming and research, I came up with an initial list of potential keywords:
 
 - Short‑Tail (top of the funnel)
   - handmade candles
