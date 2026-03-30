@@ -271,7 +271,7 @@ Note: The BlogPost table didn't make it into the final design, as the blog funct
 
 ### Languages
 
-- [CSS](https://developer.mozilla.org/en-US/docs/Web/HTML)
+- [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS)
 - [HTML](https://developer.mozilla.org/en-US/docs/Web/HTML)
 - [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
 - [Python](https://www.python.org/)
@@ -364,7 +364,7 @@ Note: The BlogPost table didn't make it into the final design, as the blog funct
 ![Product list feature](./docs/images/features/product-list.png)
 
 - The product page contains a page heading and a list of all products.
-- This section's main heading uses the site's custom heading font and is in black.
+- This section's headings use the site's custom heading font and are in black.
 - Individual products are shown in a "card" format, with each card containing the product's image, title, price, description and a button to view the product details page.
 - This section lacks pagination, but the site currently has relatively few products so this isn't a major issue. Pagination can easily be added in a future release.
 - This section is useful to users as it allows them to quickly scan through all products on the site, so they can quickly learn more about and (hopefully) purchase their perfect candle.

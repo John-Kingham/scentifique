@@ -400,7 +400,7 @@ I tested accessibility using the [WAVE](https://wave.webaim.org/) accessibility 
 <details>
 <summary>Order Confirmation - Desktop</summary>
 
-![Home - Mobile](./images/testing/responsive/user-profile-desktop.png)
+![Home - Mobile](./images/testing/responsive/order-confirmation-desktop.png)
 
 </details>
 
@@ -504,51 +504,106 @@ There were various validation errors and warnings in the site's HTML, but all er
 
 #### Homepage HTML Validation
 
+<details>
+<summary>Screenshot</summary>
+
 ![Homepage HTML validation](./images/testing/validation/html-homepage-success.png)
+
+</details>
 
 #### Product List HTML Validation
 
+<details>
+<summary>Screenshot</summary>
+
 ![Product list HTML validation](./images/testing/validation/html-product-list.png)
+
+</details>
 
 #### Product Detail HTML Validation
 
+<details>
+<summary>Screenshot</summary>
+
 ![Product detail HTML validation](./images/testing/validation/html-product-detail.png)
+
+</details>
 
 #### Add Product HTML Validation
 
+<details>
+<summary>Screenshot</summary>
+
 ![Add Product HTML validation](./images/testing/validation/html-add-product.png)
+
+</details>
 
 #### Edit Product HTML Validation
 
+<details>
+<summary>Screenshot</summary>
+
 ![Edit Product HTML validation](./images/testing/validation/html-edit-product.png)
+
+</details>
 
 #### About HTML Validation
 
+<details>
+<summary>Screenshot</summary>
+
 ![About HTML validation](./images/testing/validation/html-about.png)
+
+</details>
 
 #### Shopping Basket HTML Validation
 
+<details>
+<summary>Screenshot</summary>
+
 ![Cart HTML validation](./images/testing/validation/html-cart.png)
+
+</details>
 
 #### Checkout HTML Validation
 
+<details>
+<summary>Screenshot</summary>
+
 ![Checkout HTML validation](./images/testing/validation/html-checkout.png)
+
+</details>
 
 #### Order Confirmation HTML Validation
 
 For the order confirmation page, I had to validate the source code rather than the URL, as the validator was unable to reload the page.
 
+<details>
+<summary>Screenshot</summary>
+
 ![Order Confirmation HTML validation](./images/testing/validation/html-order-confirmation.png)
+
+</details>
 
 #### User Profile HTML Validation
 
+<details>
+<summary>Screenshot</summary>
+
 ![User Profile HTML validation](./images/testing/validation/html-user-profile.png)
+
+</details>
 
 #### 404 Error HTML Validation
 
 For the 404 page, I had to validate the source code rather than the URL, as the validator was unable to load an invalid URL.
 
+<details>
+<summary>Screenshot</summary>
+
 ![404 Error HTML validation](./images/testing/validation/html-404.png)
+
+</details>
 
 ### CSS Validation
 
@@ -558,15 +613,30 @@ There were no errors or warnings.
 
 #### base.css Validation
 
+<details>
+<summary>Screenshot</summary>
+
 ![Base css validation](./images/testing/validation/css-base.png)
+
+</details>
 
 #### checkout.css Validation
 
+<details>
+<summary>Screenshot</summary>
+
 ![Checkout css validation](./images/testing/validation/css-checkout.png)
+
+</details>
 
 #### profile.css Validation
 
+<details>
+<summary>Screenshot</summary>
+
 ![Profiles css validation](./images/testing/validation/css-profiles.png)
+
+</details>
 
 ### JavaScript Validation
 
@@ -576,19 +646,39 @@ There were no errors. There were warnings related to missing variables for $ (JQ
 
 #### cart.html inline JS
 
+<details>
+<summary>Screenshot</summary>
+
 ![cart.html JS validation](./images/testing/validation/js-cart.png)
+
+</details>
 
 #### base.html inline JS
 
+<details>
+<summary>Screenshot</summary>
+
 ![base.html JS validation](./images/testing/validation/js-base.png)
+
+</details>
 
 #### stripe_elements.js
 
+<details>
+<summary>Screenshot</summary>
+
 ![stripe_elements.js validation](./images/testing/validation/js-stripe-elements.png)
+
+</details>
 
 #### profile.js
 
+<details>
+<summary>Screenshot</summary>
+
 ![profile.js validation](./images/testing/validation/js-profile.png)
+
+</details>
 
 ### Python Validation
 
@@ -596,7 +686,12 @@ Python code was validated using [flake8](https://pypi.org/project/flake8/).
 
 There were multiple errors relating to unused imports. These errors are acceptable as they're caused by default code in Django's python files that haven't been changed as part of the project.
 
+<details>
+<summary>Screenshot</summary>
+
 ![Python flake8 validation](./images/testing/validation/python-flake8.png)
+
+</details>
 
 ## Lighthouse
 
