@@ -627,3 +627,28 @@ Best practice was "okay" (amber) due to the existence of third-party cookies fro
 |profile/|desktop|![Profile desktop lighthouse results](./images/testing/lighthouse/lighthouse-profile-desktop.png)|
 |<invalid_url>/|mobile|![404 mobile lighthouse results](./images/testing/lighthouse/lighthouse-404-mobile.png)|
 |<invalid_url>/|desktop|![404 desktop lighthouse results](./images/testing/lighthouse/lighthouse-404-desktop.png)|
+
+## Bugs
+
+### Fixed Bugs
+
+There were many bugs created and squashed throughout the construction phase. Many of these were fixed before the buggy code was commited, and therefore didn't make it into the commit history. Other bugs were fixed after the defect had been committed, so a separate fix commit had to be created. 
+
+Bug fix commits have a commit message prefixed with `fix`, so they're easy to identify within the commit history. These commit messages are listed below:
+
+- fix: fix product list html error
+- fix: fix several HTML validation errors
+- fix: fix HTML validation errors in base
+- fix: limit quantity of items in cart to max
+- fix: fix message when updated cart items match
+- fix: add slash to noimage url
+- fix: improve homepage SEO
+- fix: fix style of 404 error page
+- fix: spacing of product detail and login/out
+- fix: style logo and allauth buttons
+- fix: pin to major python version
+- fix: fix homepage styling on mobile
+
+### Unfixed Bugs
+
+There are no unfixed bugs that I am aware of. Having said that, even after thorough testing I cannot completely rule out the possibility of some hidden bugs.
