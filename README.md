@@ -3,7 +3,7 @@
 - [Live site](https://scentifique-f390ca153bd2.herokuapp.com/)
 - [Live admin login](https://scentifique-f390ca153bd2.herokuapp.com/admin/)
 
-Scentifique is a fictional manufacturer and retailer of luxury scented candles. Candles are handmade to order, and customers can select from a range of styles, colours and fragrances.
+Scentifique is a fictional manufacturer and retailer of luxury scented candles. Candles are handmade to order, and customers can select from a range of styles, colours and fragrances. This is a B2C business, selling candles to individuals.
 
 Previously the company had no website or shop, so candles were sold at local craft fairs. That route to market is very limited and severely restricted the company's growth potential. 
 

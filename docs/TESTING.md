@@ -594,6 +594,36 @@ There were no errors. There were warnings related to missing variables for $ (JQ
 
 Python code was validated using [flake8](https://pypi.org/project/flake8/).
 
-There were multiple errors relating to unused imports. These errors are acceptable as they're caused by default code Django's python files that haven't been changed as part of the project.
+There were multiple errors relating to unused imports. These errors are acceptable as they're caused by default code in Django's python files that haven't been changed as part of the project.
 
 ![Python flake8 validation](./images/testing/validation/python-flake8.png)
+
+## Lighthouse
+
+Performance was "okay" (amber) on some path/device combinations, mostly due to external libraries such as Amazon Web Services, Stripe and Bootstrap.
+
+Best practice was "okay" (amber) due to the existence of third-party cookies from Stripe and Google's reCAPTHCA service.
+
+|Path|Device|Result|
+|---|---|---|
+|/|Mobile|![Home mobile lighthouse results](./images/testing/lighthouse/lighthouse-home-mobile.png)|
+|/|Desktop|![Home desktop lighthouse results](./images/testing/lighthouse/lighthouse-home-desktop.png)|
+|products/|Mobile|![Products mobile lighthouse results](./images/testing/lighthouse/lighthouse-products-mobile.png)|
+|products/|Desktop|![Products desktop lighthouse results](./images/testing/lighthouse/lighthouse-products-desktop.png)|
+|products/<product_id>/|mobile|![Product detail mobile lighthouse results](./images/testing/lighthouse/lighthouse-product-detail-mobile.png)|
+|products/<product_id>/|desktop|![Product detail desktop lighthouse results](./images/testing/lighthouse/lighthouse-product-detail-desktop.png)|
+|products/add/|mobile|![Product add mobile lighthouse results](./images/testing/lighthouse/lighthouse-product-add-mobile.png)|
+|products/add/|desktop|![Product add desktop lighthouse results](./images/testing/lighthouse/lighthouse-product-add-desktop.png)|
+|products/edit/<product_id>/|mobile|![Product edit mobile lighthouse results](./images/testing/lighthouse/lighthouse-product-edit-mobile.png)|
+|products/edit/<product_id>/|desktop|![Product edit desktop lighthouse results](./images/testing/lighthouse/lighthouse-product-edit-desktop.png)|
+|about/|mobile|![About mobile lighthouse results](./images/testing/lighthouse/lighthouse-about-mobile.png)|
+|about/|desktop|![About desktop lighthouse results](./images/testing/lighthouse/lighthouse-about-desktop.png)|
+|cart/|mobile|![Cart mobile lighthouse results](./images/testing/lighthouse/lighthouse-cart-mobile.png)|
+|cart/|desktop|![Cart desktop lighthouse results](./images/testing/lighthouse/lighthouse-cart-desktop.png)|
+|checkout/|mobile|![Checkout mobile lighthouse results](./images/testing/lighthouse/lighthouse-checkout-mobile.png)|
+|checkout/|desktop|![Checkout desktop lighthouse results](./images/testing/lighthouse/lighthouse-checkout-desktop.png)|
+|checkout/success/|mobile & desktop|As expected, testing wasn't possible as Lighthouse couldn't load the page|
+|profile/|mobile|![Profile mobile lighthouse results](./images/testing/lighthouse/lighthouse-profile-mobile.png)|
+|profile/|desktop|![Profile desktop lighthouse results](./images/testing/lighthouse/lighthouse-profile-desktop.png)|
+|<invalid_url>/|mobile|![404 mobile lighthouse results](./images/testing/lighthouse/lighthouse-404-mobile.png)|
+|<invalid_url>/|desktop|![404 desktop lighthouse results](./images/testing/lighthouse/lighthouse-404-desktop.png)|
