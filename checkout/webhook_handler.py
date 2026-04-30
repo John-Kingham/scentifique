@@ -2,7 +2,11 @@ from http import HTTPStatus
 import json
 import time
 
+from django.conf import settings
+from django.core.mail import send_mail
 from django.http import HttpResponse
+from django.template.loader import render_to_string
+
 import stripe
 
 from checkout.models import Order, OrderLineItem
@@ -15,6 +19,26 @@ class StripeWebhookHandler:
 
     def __init__(self, request):
         self.request = request
+
+    def _send_confirmation_email(self, order):
+        """Send an order confirmation email to the user."""
+
+        subject_template = "checkout/emails/confirmation_email_subject.txt"
+        context = {"order": order}
+        email_subject = render_to_string(subject_template, context)
+        body_template = "checkout/emails/confirmation_email_body.txt"
+        context = {
+            "order": order,
+            "contact_email": settings.DEFAULT_FROM_EMAIL,
+        }
+        email_body = render_to_string(body_template, context)
+        to_email = order.email
+        send_mail(
+            email_subject,
+            email_body,
+            settings.DEFAULT_FROM_EMAIL,
+            [to_email],
+        )
 
     def handle_event(self, event):
         """Handle generic webhook event."""
@@ -44,8 +68,6 @@ class StripeWebhookHandler:
         # Update user profile for logged in users
         username = payment_intent.metadata.username
 
-        print("username:", username)
-
         user_is_authenticated = username != "AnonymousUser"
         profile = None
         if user_is_authenticated:
@@ -72,9 +94,10 @@ class StripeWebhookHandler:
                     original_cart=original_cart,
                     stripe_pi_id=stripe_pi_id,
                 )
-                # Order exist, so return success response
+                # Order exist
+                self._send_confirmation_email(order)
                 response_message = (
-                    f"Webhook received: {event["type"]} | "
+                    f"Webhook received: {event['type']} | "
                     "SUCCESS: Verified order is in database"
                 )
                 return HttpResponse(
@@ -121,15 +144,16 @@ class StripeWebhookHandler:
             # Order creation failed, so return error response
             if order:
                 order.delete()
-            content = f'Webhook received: {event["type"]} | ERROR: {e}'
+            content = f"Webhook received: {event['type']} | ERROR: {e}"
             return HttpResponse(
                 content=content, status=HTTPStatus.INTERNAL_SERVER_ERROR
             )
 
-        # Return order created response
+        # Order created in webhook
+        self._send_confirmation_email(order)
         return HttpResponse(
             content=(
-                f"Webhook received: {event["type"]} |"
+                f"Webhook received: {event['type']} |"
                 " SUCCESS: Created order in webhook"
             ),
             status=HTTPStatus.OK,
