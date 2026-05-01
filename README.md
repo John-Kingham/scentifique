@@ -295,6 +295,10 @@ Note: The BlogPost table didn't make it into the final design, as the blog funct
 
 - [Heroku](https://www.heroku.com/)
 
+### Email
+
+- [Gmail](https://mail.google.com/)
+
 ### Installed Python Libraries
 
 - [boto3](https://pypi.org/project/boto3/)
@@ -465,8 +469,6 @@ Note: The site is currently connected to a test Stripe account, so payments cann
 - The form's sign-up button uses Bootstrap's `btn-dark` colour and the back-to-login button uses `btn-outline-dark`. Both buttons change their shade on hover to provide visual feedback.
 - This section is useful to users because it enables them to sign-up to save their delivery details. Additional functionality could be added in a future release, such as the ability to view previous orders.
 
-Note: After a new user signs up, they're taken to an email confirmation page asking them to confirm their email. Email confirmation processing hasn't been implemented yet as it's outside the project's scope.
-
 #### Sign In
 
 ![Sign in feature](./docs/images/features/sign-in.png)
@@ -514,8 +516,6 @@ Due to time constraints, some of the should-have and could-have user stories wer
 - User story #12: Read blog posts
 
 In addition, there are many other features that could be added to future versions of the site. These include pagination on the products page, product categories and discount coupons. 
-
-And, of course, the site would need to be connected to a live Stripe account rather than a test account, and it would need other features as well, such as the ability to send emails to users.
 
 ## Project Management
 
@@ -676,6 +676,8 @@ The production version of the site has been deployed using [Heroku](https://www.
     - `STRIPE_SECRET_KEY` - In your Stripe account, go to the Developers/API Keys page and copy/paste your secret key.
     - `STRIPE_WH_SECRET` - In your Stripe account, go to Developers / Webhooks and set up a destination. Please refer to the Stripe documentation for more details. The destination will have a webhook secret which you should copy in as the value for this variable.
     - `USE_AWS` - Set this to any non-blank value so the production environment uses AWS for media and static files.
+    - `EMAIL_HOST_USER` - The email address used to send SMTP sign-up and purchase confirmation emails.
+    - `EMAIL_HOST_PASS` - The SMTP email address's "app password". Instructions on setting up an email host to send emails is beyond the scope of this document. 
 1. Add a buildpack for Python.
 1. Connect the Heroku app to your GitHub repository.
 1. Deploy the main branch in Heroku.
