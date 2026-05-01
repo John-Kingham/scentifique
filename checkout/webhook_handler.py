@@ -66,11 +66,9 @@ class StripeWebhookHandler:
                 shipping_details.address[field_name] = None
 
         # Update user profile for logged in users
-        username = payment_intent.metadata.username
-
-        user_is_authenticated = username != "AnonymousUser"
+        username = payment_intent.metadata.get("username", "")
         profile = None
-        if user_is_authenticated:
+        if username:
             profile = UserProfile.objects.get(user__username=username)
             if payment_intent.metadata.save_info:
                 self._update_user_profile(profile, shipping_details)
