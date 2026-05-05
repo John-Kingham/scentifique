@@ -35,7 +35,7 @@ paymentForm.addEventListener("submit", function (event) {
   $("#loading-overlay").fadeToggle(200);
 
   // Call cache_checkout_data view to add checkout data to the payment intent.
-  let saveInfo = Boolean($("#id-save-info").attr("checked"));
+  let saveInfo = $("#id-save-info").prop("checked");
   let csrfToken = $(`input[name="csrfmiddlewaretoken"]`).val();
   let postData = {
     csrfmiddlewaretoken: csrfToken,

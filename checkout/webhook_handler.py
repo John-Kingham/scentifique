@@ -70,7 +70,8 @@ class StripeWebhookHandler:
         profile = None
         if username:
             profile = UserProfile.objects.get(user__username=username)
-            if payment_intent.metadata.save_info:
+            save_info = payment_intent.metadata.get("save_info", "")
+            if save_info == "true":
                 self._update_user_profile(profile, shipping_details)
 
         # Check if order already exists
