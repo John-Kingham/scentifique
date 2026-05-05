@@ -677,7 +677,7 @@ The production version of the site has been deployed using [Heroku](https://www.
     - `STRIPE_WH_SECRET` - In your Stripe account, go to Developers / Webhooks and set up a destination. Please refer to the Stripe documentation for more details. The destination will have a webhook secret which you should copy in as the value for this variable.
     - `USE_AWS` - Set this to any non-blank value so the production environment uses AWS for media and static files.
     - `EMAIL_HOST_USER` - The email address used to send SMTP sign-up and purchase confirmation emails.
-    - `EMAIL_HOST_PASS` - The SMTP email address's "app password". Instructions on setting up an email host to send emails is beyond the scope of this document. 
+    - `EMAIL_HOST_PASS` - The SMTP email address's "app password". Setting up an email host to send emails is beyond the scope of this document. 
 1. Add a buildpack for Python.
 1. Connect the Heroku app to your GitHub repository.
 1. Deploy the main branch in Heroku.

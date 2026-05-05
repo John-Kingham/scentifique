@@ -93,12 +93,12 @@ Messages were testing during each of the relevant testing sections below.
 
 ### Sign Up
 
-Note: New user confirmation emails are not implemented as they're outside the project's scope.
-
 |Feature|Expect|Action|Result|Image|
 |---|---|---|---|---|
 |Sign-up validation|When the sign-up form is submitted with missing or invalid data, validation messages are shown and the form is not submitted|Tried submitting the sign-up form with various missing and invalid data|As expected|![Sign-up validation](./images/testing/sign-up-validation.png)|
-|Sign-up message|After successfully submitting the sign-up form, a new user profile is created, the user is redirected to the email confirmation page, an info message is shown and a confirmation email is sent to the command line (sending emails to users has not been implemented yet).|Signed up as a new user|As expected|![Sign up confirmation message](./images/testing/sign-up-confirmation.png)|
+|Verify email page|After submitting the sign-up form, the user is redirected to the verify email page, an info message is shown and a verification email is sent to the user's email address.|Submitted the sign up form|As expected|![Sign up verify email page](./images/testing/sign-up-verify-your-email.png)![Verification email](./images/testing/sign-up-verification-email.png)|
+|Confirm email page|When the user clicks the verify email link, the user is redirected to the confirm email page.|Clicked the link|As expected|![Sign up confirmation page](./images/testing/sign-up-confirmation.png)|
+|Confirm email|When the user clicks the Confirm button, their user profile is created, they are redirected to the sign in page and a success message is shown.|Clicked the Confirm button|As expected|![Sign up success message](./images/testing/sign-up-success.png)|
 
 ### Sign In
 
