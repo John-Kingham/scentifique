@@ -52,14 +52,14 @@ Messages were testing during each of the relevant testing sections below.
 |Add-to-cart button|When clicked, the product is added to the cart, the user remains on the product detail page and a success message is displayed|Clicked|As expected|![Product detail add-to-cart success](./images/testing/product-detail-add-to-cart-success.png)|
 |Merge items|If the add-to-cart button is clicked when the item matches an item already in the cart, the items are merged in the cart with their quantities combined (up to the maximum), the user remains on the product detail page and a success message is displayed|Clicked|As expected|![Product detail add-to-cart merge](./images/testing/product-detail-add-to-cart-merge.png)|
 |Edit-product button|When clicked by a logged-in admin, the admin is taken to the edit product page|Clicked|As expected|![Product detail add-to-cart success](./images/testing/product-detail-edit-delete-buttons.png)|
-|Delete button|When clicked by a logged-in admin, the product is deleted, the admin is taken to the products page and a success message is shown|Clicked|As expected|![Product detail delete success](./images/testing/product-detail-delete-success.png)|
+|Delete button|When clicked by a logged-in admin, the product is deleted, the admin is taken to the product list page and a success message is shown|Clicked|As expected|![Product detail delete success](./images/testing/product-detail-delete-success.png)|
 
 ### Add Product
 
 |Feature|Expect|Action|Result|Image|
 |---|---|---|---|---|
-|Validation|If the form is submitted with blank mandatory fields, submission fails and a validation error is shown|Clicked|As expected|![Product add mandatory error](./images/testing/product-add-mandatory-error.png)|
-|Add product button|If the form is submitted with valid data, a product is created, the admin is redirected to the product detail page for the new product, and a success message is shown|Clicked|As expected|![Product add success](./images/testing/product-add-success.png)|
+|Validation|If the Add Product form is submitted with blank mandatory fields, submission fails and a validation error is shown|Clicked|As expected|![Product add mandatory error](./images/testing/product-add-mandatory-error.png)|
+|Add product button|If the form is submitted with valid data, a product is created, the admin is redirected to the product detail page for the new product and a success message is shown|Clicked|As expected|![Product add success](./images/testing/product-add-success.png)|
 |Authentication|If a logged in non-admin user visits the add product page, they are redirected to the home page and an error message is displayed|Clicked|As expected|![Product add authentication](./images/testing/product-add-authentication.png)|
 
 ### Edit Product
@@ -84,11 +84,12 @@ Messages were testing during each of the relevant testing sections below.
 
 |Feature|Expect|Action|Result|Image|
 |---|---|---|---|---|
-|Empty cart validation|If the user tries to visit the checkout page with an empty cart, the user is redirected to the products and an error message is shown|Visited the checkout page with an empty cart|As expected|![Checkout empty cart error message](./images/testing/checkout-empty-cart-error.png)|
+|Empty cart validation|If the user tries to visit the checkout page with an empty cart, the user is redirected to the product list page and an error message is shown|Visited the checkout page with an empty cart|As expected|![Checkout empty cart error message](./images/testing/checkout-empty-cart-error.png)|
 |Empty field validation|If the user clicks the pay-now button when the form has empty mandatory fields, submission is blocked and a relevant error message is shown|Clicked the pay-now button when the checkout form had empty mandatory fields|As expected|![Checkout empty fields error message](./images/testing/checkout-empty-fields-error.png)|
-|Anonymous order submission|If an anonymous user enters valid data into all fields and clicks the pay-now button, the payment is processed, the order is created with no associated user profile, and the user is redirected to the checkout success page|Filled in the checkout form as an anonymous user, clicked the pay-now button|As expected|![Anonymous-order-success](./images/testing/checkout-order-confirmation.png)|
-|Signed-in order submission|If a signed-in user enters valid data into all fields and clicks the pay-now button, the payment is processed, the order is created and associated with the user's profile, and the user is redirected to the checkout success page|Filled in the checkout form as a logged-in user, clicked the pay-now button|As expected|![Anonymous-order-success](./images/testing/checkout-order-confirmation-signed-in.png)|
-|Save delivery details|If a signed-in user successfully submits the checkout form with the save-info box ticked, the delivery details are saved to the user's profile|Submitted the checkout form as a signed-in user|As Expected|![User profile page](./images/testing/user-profile.png)|
+|Anonymous order submission|If an anonymous user enters valid data into all fields and clicks the pay-now button, the payment is processed, the order is created with no associated user profile, the user is redirected to the checkout success page and a confirmation email is sent|Filled in the checkout form as an anonymous user, clicked the pay-now button|As expected|![Anonymous order created](./images/testing/order-anonymous.png) ![Anonymous order success](./images/testing/checkout-order-confirmation-anonymous.png) ![Anonymous purchase email](./images/testing/checkout-anonymous-email.png)|
+|Signed-in order submission|If a signed-in user enters valid data into all fields and clicks the pay-now button, the payment is processed, the order is created and associated with the user's profile, the user is redirected to the checkout success page and a confirmation email is sent|Filled in the checkout form as a logged-in user, clicked the pay-now button|As expected|![Signed in order](./images/testing/order-signed-in.png) ![Signed-in order success](./images/testing/checkout-order-confirmation-signed-in.png) ![Signed-in purchase email](./images/testing/checkout-signed-in-email.png)|
+|Don't save delivery details|If a signed-in user successfully submits the checkout form with the save-info box unchecked, the delivery details are not saved to the user's profile|Submitted the checkout form as a signed-in user with the save-info box unchecked|As Expected|![User profile page blank](./images/testing/user-profile-blank.png)|
+|Save delivery details|If a signed-in user successfully submits the checkout form with the save-info box checked, the delivery details are saved to the user's profile|Submitted the checkout form as a signed-in user with the save-info box checked|As Expected|![User profile page](./images/testing/user-profile.png)|
 |Load delivery details|If a signed-in user has previously saved their delivery details to their user profile, the checkout form is auto-filled with those details|Visited the checkout page as a signed-in user with a pre-saved user profile|As Expected|![Checkout with auto-filled form](./images/testing/checkout-auto-fill-form.png)|
 
 ### Sign Up
@@ -106,7 +107,7 @@ Messages were testing during each of the relevant testing sections below.
 |---|---|---|---|---|
 |Sign-in empty field validation|When the sign-in form is submitted with missing required fields, a validation message is shown and the form is not submitted|Tried submitting the sign-in form with required fields missing|As expected|![Sig-in with blank fields](./images/testing/sign-in-blank-fields.png)|
 |Sign-in invalid user validation|When the sign-in form is submitted with invalid user data, a validation message is shown and the form is not submitted|Tried submitting the sign-in form with invalid user data|As expected|![Sig-in with invalid data](./images/testing/sign-in-invalid-data.png)|
-|Signed-in message|After successfully submitting the sign-in form, the user is signed in, redirected to the home page and a success message is shown|Signed in|As expected|![sign-in successmessage](./images/testing/sign-in-success.png)|
+|Signed-in message|After successfully submitting the sign-in form, the user is signed in, redirected to the home page and a success message is shown|Signed in|As expected|![sign-in success message](./images/testing/sign-in-success.png)|
 
 ### Sign Out
 
@@ -725,9 +726,9 @@ Best practice was "okay" (amber) due to the existence of third-party cookies fro
 
 ## Bugs
 
-### Fixed Bugs
+### Fixed Bugs for Submission 1
 
-There were many bugs created and squashed throughout the construction phase. Many of these were fixed before the buggy code was commited, and therefore didn't make it into the commit history. Other bugs were fixed after the defect had been committed, so a separate fix commit had to be created. 
+There were many bugs created and squashed throughout the construction phase. Many of these were fixed before the buggy code was committed, and therefore didn't make it into the commit history. Other bugs were fixed after the defect had been committed, so a separate fix commit had to be created. 
 
 Bug fix commits have a commit message prefixed with `fix`, so they're easy to identify within the commit history. These commit messages are listed below:
 
@@ -743,6 +744,20 @@ Bug fix commits have a commit message prefixed with `fix`, so they're easy to id
 - fix: style logo and allauth buttons
 - fix: pin to major python version
 - fix: fix homepage styling on mobile
+
+### Fixed Bugs for Submission 2
+
+The project's first submission failed because sign-up and purchase confirmation emails weren't sent to the user's email inbox. This was fixed in the following commits:
+
+- fix: add sending emails via smtp
+- fix: remove smtp emails due to bug
+- fix: send confirmation email
+- fix: use correct order fields in email
+- fix: send guest purchase emails
+
+I also found a bug where delivery details were being saved even if the save-info checkbox was unchecked. This was fixed in the following commit:
+
+- fix: only save profile info if requested
 
 ### Unfixed Bugs
 
