@@ -7,20 +7,25 @@ from django.utils import timezone
 from .models import About
 
 
-class AboutViewTests(TestCase):
+class AboutTests(TestCase):
 
-    def setUp(self):
-        self.title = "Test About Title"
-        self.content = "Test about content."
-        self.about = About(title=self.title, content=self.content)
-        self.about.save()
-        self.response = self.client.get(reverse("about"))
+    @classmethod
+    def setUp(cls):
+        cls.title = "Test About Title"
+        cls.content = "Test about content."
+        cls.about = About(title=cls.title, content=cls.content)
+        cls.about.save()
 
     def test_about_view(self):
         """Test that the About page has the correct information."""
+        self.response = self.client.get(reverse("about"))
         self.assertEqual(self.response.status_code, HTTPStatus.OK)
+        self.assertTemplateUsed(self.response, "about/about.html")
         self.assertContains(self.response, self.title)
         self.assertContains(self.response, self.content)
+
+    def test_about_model(self):
+        """Test that the About model's fields have the correct values."""
         self.assertEqual(
             timezone.localtime(self.about.updated).date(),
             timezone.localdate(),
