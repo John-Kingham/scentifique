@@ -25,7 +25,7 @@ class AboutTests(TestCase):
         self.assertContains(self.response, self.content)
 
     def test_about_model(self):
-        """Test that the About model's fields have the correct values."""
+        """Test that About fields have correct auto-generated values."""
         self.assertEqual(
             timezone.localtime(self.about.updated).date(),
             timezone.localdate(),

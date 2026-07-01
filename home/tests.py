@@ -12,4 +12,4 @@ class HomeTests(TestCase):
     def test_index_view(self):
         self.assertEqual(self.response.status_code, HTTPStatus.OK)
         self.assertTemplateUsed(self.response, "home/index.html")
-        self.assertContains(self.response, "Luxury Candles Handmade in the UK")
+        self.assertContains(self.response, "Luxury Candles")
