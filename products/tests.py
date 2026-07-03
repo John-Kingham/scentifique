@@ -56,7 +56,7 @@ class ProductsTests(TestCase):
         self.assertContains(response, self.product2.name)
         self.assertContains(response, settings.MEDIA_URL + "noimage.png")
 
-    def test_product_details_view(self):
+    def test_product_detail(self):
         """
         Test that the product details page contains the correct information.
         """
@@ -73,7 +73,7 @@ class ProductsTests(TestCase):
         self.assertContains(response, self.colour.name)
         self.assertContains(response, self.fragrance.name)
 
-    def test_add_product_view(self):
+    def test_add_product(self):
         """Test that the add product page has the correct information"""
         # Test as a guest
         response = self.client.get(reverse("add_product"))
@@ -89,22 +89,26 @@ class ProductsTests(TestCase):
         self.assertContains(response, "Add Product")
         self.assertContains(response, reverse("add_product"))
 
-    def test_edit_product_view(self):
+    def test_edit_product(self):
         """Test that the edit product page has the correct information"""
         # Test as a guest
         response = self.client.get(
             reverse("edit_product", args=[self.product1.id])
         )
         self.assertEqual(response.status_code, HTTPStatus.FOUND)
+
         # Test as a logged in non-superuser
         self.client.login(
             username=self.nonadmin.username, password=self.nonadmin_password
         )
         response = self.client.get(
-            reverse("edit_product", args=[self.product1.id])
+            reverse("edit_product", args=[self.product1.id]),
+            follow=True,
         )
-        self.assertEqual(response.status_code, HTTPStatus.FOUND)
-        self.assertTemplateNotUsed(response, "products/edit_product.html")
+        self.assertEqual(response.status_code, HTTPStatus.OK)
+        self.assertTemplateUsed(response, "home/index.html")
+        self.assertContains(response, "Sorry")
+
         # Test as a logged in superuser
         self.client.login(
             username=self.admin.username, password=self.admin_password
@@ -115,6 +119,7 @@ class ProductsTests(TestCase):
         self.assertEqual(response.status_code, HTTPStatus.OK)
         self.assertTemplateUsed(response, "products/edit_product.html")
         self.assertContains(response, "Edit Product")
+
         # Test editing a product
         edited_product_name = "Edited Product Name"
         form_data = {
@@ -125,7 +130,42 @@ class ProductsTests(TestCase):
         response = self.client.post(
             reverse("edit_product", args=[self.product1.id]),
             form_data,
+            follow=True,
         )
-        self.assertEqual(response.status_code, HTTPStatus.FOUND)
+        self.assertEqual(response.status_code, HTTPStatus.OK)
+        self.assertTemplateUsed(response, "products/product_detail.html")
+        self.assertContains(response, edited_product_name)
         self.product1.refresh_from_db()
         self.assertEquals(self.product1.name, edited_product_name)
+
+    def test_delete_product(self):
+        """Test that deleting a product works correctly"""
+        # Test as a guest
+        response = self.client.get(
+            reverse("delete_product", args=[self.product1.id])
+        )
+        self.assertEqual(response.status_code, HTTPStatus.FOUND)
+
+        # Test as a logged in non-superuser
+        self.client.login(
+            username=self.nonadmin.username, password=self.nonadmin_password
+        )
+        response = self.client.get(
+            reverse("delete_product", args=[self.product1.id]),
+            follow=True,
+        )
+        self.assertEqual(response.status_code, HTTPStatus.OK)
+        self.assertTemplateUsed(response, "home/index.html")
+        self.assertContains(response, "Sorry")
+
+        # Test as a logged in superuser
+        self.client.login(
+            username=self.admin.username, password=self.admin_password
+        )
+        response = self.client.get(
+            reverse("delete_product", args=[self.product1.id]),
+            follow=True,
+        )
+        self.assertEqual(response.status_code, HTTPStatus.OK)
+        self.assertTemplateUsed(response, "products/products.html")
+        self.assertContains(response, self.product1.name)
