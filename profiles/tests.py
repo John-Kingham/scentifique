@@ -24,13 +24,12 @@ class UserProfileTests(TestCase):
         self.assertNotEqual(self.user.userprofile, None)
         self.assertEqual(UserProfile.objects.count(), 1)
 
-    def test_profile_view_get(self):
-        """Test that the profile view works correctly for get requests"""
-        # Test as a guest
+    def test_guest_cannot_view_profile(self):
         response = self.client.get(reverse("profile"))
         self.assertEqual(response.status_code, HTTPStatus.FOUND)
         self.assertTemplateNotUsed(response, "profiles/profile.html")
-        # Test as a logged in user
+
+    def test_user_can_view_profile(self):
         self.client.login(
             username=self.user.username, password=self.user_password
         )
@@ -40,31 +39,34 @@ class UserProfileTests(TestCase):
         self.assertContains(response, "User Profile")
         self.assertContains(response, reverse("profile"))
 
-    def test_profile_view_post(self):
-        """Test that the profile view works correctly for post requests"""
-        # Test as a guest
+    def test_guest_cannot_update_profile(self):
         form_data = {"default_phone_number": "123123123"}
         response = self.client.post(reverse("profile"), form_data, follow=True)
         self.assertEqual(response.status_code, HTTPStatus.OK)
         self.assertTemplateNotUsed(response, "profiles/profile.html")
         self.user.userprofile.refresh_from_db()
         self.assertIsNone(self.user.userprofile.default_phone_number)
-        # Test a valid update
+
+    def test_user_can_update_profile(self):
         self.client.login(
             username=self.user.username, password=self.user_password
         )
-        valid_phone_number = "123123123"
-        form_data = {"default_phone_number": valid_phone_number}
+        phone_number = "123123123"
+        form_data = {"default_phone_number": phone_number}
         response = self.client.post(reverse("profile"), form_data, follow=True)
         self.assertEqual(response.status_code, HTTPStatus.OK)
         self.assertTemplateUsed(response, "profiles/profile.html")
-        self.assertContains(response, valid_phone_number)
+        self.assertContains(response, phone_number)
         self.assertContains(response, "success")
         self.user.userprofile.refresh_from_db()
         self.assertEqual(
-            self.user.userprofile.default_phone_number, valid_phone_number
+            self.user.userprofile.default_phone_number, phone_number
         )
-        # Test with an invalid update
+
+    def test_profile_update_with_invalid_data(self):
+        self.client.login(
+            username=self.user.username, password=self.user_password
+        )
         invalid_phone_number = "22222222222222222222222222222222222222222222"
         form_data = {"default_phone_number": invalid_phone_number}
         response = self.client.post(reverse("profile"), form_data, follow=True)
@@ -73,6 +75,4 @@ class UserProfileTests(TestCase):
         self.assertContains(response, invalid_phone_number)
         self.assertContains(response, "fail")
         self.user.userprofile.refresh_from_db()
-        self.assertEqual(
-            self.user.userprofile.default_phone_number, valid_phone_number
-        )
+        self.assertIsNone(self.user.userprofile.default_phone_number)
