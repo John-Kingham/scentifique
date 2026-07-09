@@ -91,13 +91,13 @@ class ProductsTests(TestCase):
 
     def test_edit_product(self):
         """Test that the edit product page has the correct information"""
-        # Test as a guest
+        # Test that the page isn't found for guest users
         response = self.client.get(
             reverse("edit_product", args=[self.product1.id])
         )
         self.assertEqual(response.status_code, HTTPStatus.FOUND)
 
-        # Test as a logged in non-superuser
+        # Test that logged in non-superusers can't access the page
         self.client.login(
             username=self.nonadmin.username, password=self.nonadmin_password
         )
