@@ -73,13 +73,14 @@ class ProductsTests(TestCase):
         self.assertContains(response, self.colour.name)
         self.assertContains(response, self.fragrance.name)
 
-    def test_add_product(self):
-        """Test that the add product page has the correct information"""
-        # Test as a guest
+    def test_add_product_as_guest(self):
+        """Test that the add product page isn't available to guests"""
         response = self.client.get(reverse("add_product"))
         self.assertEqual(response.status_code, HTTPStatus.FOUND)
         self.assertTemplateNotUsed(response, "products/add_product.html")
-        # Test as a logged in superuser
+
+    def test_add_product_as_superuser(self):
+        """Test that the add product page works for superusers"""
         self.client.login(
             username=self.admin.username, password=self.admin_password
         )
@@ -89,15 +90,15 @@ class ProductsTests(TestCase):
         self.assertContains(response, "Add Product")
         self.assertContains(response, reverse("add_product"))
 
-    def test_edit_product(self):
-        """Test that the edit product page has the correct information"""
-        # Test that the page isn't found for guest users
+    def test_edit_product_no_access_for_guests(self):
+        """Test that the edit product page isn't available to guests"""
         response = self.client.get(
             reverse("edit_product", args=[self.product1.id])
         )
         self.assertEqual(response.status_code, HTTPStatus.FOUND)
 
-        # Test that logged in non-superusers can't access the page
+    def test_edit_product_no_access_for_users(self):
+        """Test that the edit product page isn't available to non-superusers"""
         self.client.login(
             username=self.nonadmin.username, password=self.nonadmin_password
         )
@@ -109,7 +110,8 @@ class ProductsTests(TestCase):
         self.assertTemplateUsed(response, "home/index.html")
         self.assertContains(response, "Sorry")
 
-        # Test as a logged in superuser
+    def test_edit_product_accessible_by_superuser(self):
+        """Test that the edit product page loads for superusers"""
         self.client.login(
             username=self.admin.username, password=self.admin_password
         )
@@ -120,7 +122,11 @@ class ProductsTests(TestCase):
         self.assertTemplateUsed(response, "products/edit_product.html")
         self.assertContains(response, "Edit Product")
 
-        # Test editing a product
+    def test_editing_a_product(self):
+        """Test that a superuser can successfully edit a product"""
+        self.client.login(
+            username=self.admin.username, password=self.admin_password
+        )
         edited_product_name = "Edited Product Name"
         form_data = {
             "name": edited_product_name,
@@ -138,15 +144,14 @@ class ProductsTests(TestCase):
         self.product1.refresh_from_db()
         self.assertEquals(self.product1.name, edited_product_name)
 
-    def test_delete_product(self):
+    def test_guest_cannot_delete_product(self):
         """Test that deleting a product works correctly"""
-        # Test as a guest
         response = self.client.get(
             reverse("delete_product", args=[self.product1.id])
         )
         self.assertEqual(response.status_code, HTTPStatus.FOUND)
 
-        # Test as a logged in non-superuser
+    def test_nonsuperuser_cannot_delete_product(self):
         self.client.login(
             username=self.nonadmin.username, password=self.nonadmin_password
         )
@@ -158,7 +163,7 @@ class ProductsTests(TestCase):
         self.assertTemplateUsed(response, "home/index.html")
         self.assertContains(response, "Sorry")
 
-        # Test as a logged in superuser
+    def test_superuser_can_delete_product(self):
         self.client.login(
             username=self.admin.username, password=self.admin_password
         )
