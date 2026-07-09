@@ -73,7 +73,7 @@ class ProductsTests(TestCase):
         self.assertContains(response, self.colour.name)
         self.assertContains(response, self.fragrance.name)
 
-    def test_add_product_as_guest(self):
+    def test_add_product_no_access_for_guests(self):
         """Test that the add product page isn't available to guests"""
         response = self.client.get(reverse("add_product"))
         self.assertEqual(response.status_code, HTTPStatus.FOUND)
