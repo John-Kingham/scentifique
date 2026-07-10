@@ -20,7 +20,7 @@
                 <p class="text-muted"><strong>Your Details</strong></p>
                 <form action="{% url 'profile' %}" class="m-3" method="POST" id="user-profile-form">
                     {% csrf_token %}
-                    {{ form| crispy }}
+                    {{ form|crispy }}
                     <button class="btn btn-dark">Update</button>
                 </form>
             </div>

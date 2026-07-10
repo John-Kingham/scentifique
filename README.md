@@ -589,7 +589,9 @@ By the project deadline, there were several could-have and should-have user stor
 
 ## Testing
 
-The website was thoroughly tested, with all tests documented in [TESTING.md](./docs/TESTING.md).
+The project includes a fairly comprehensive set of automated tests using Django's built-in testing suite.
+
+The website was also thoroughly tested manually, with all manual tests documented in [TESTING.md](./docs/TESTING.md).
 
 ## Deployment
 

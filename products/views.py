@@ -88,7 +88,7 @@ def edit_product(request, product_id):
 
 @login_required
 def delete_product(request, product_id):
-    """A fiew for deleting a product."""
+    """A view for deleting a product."""
 
     if not request.user.is_superuser:
         messages.error(request, "Sorry, only admins can delete products.")
