@@ -1,9 +1,12 @@
-from django.shortcuts import render
+from django.views.generic import DetailView
+
 from .models import About
 
 
-def about_view(request):
-    """Render the About page."""
-    template = "about/about.html"
-    context = {"about": About.objects.first()}
-    return render(request, template, context)
+class AboutView(DetailView):
+    context_object_name = "about"
+    model = About
+    template_name = "about/about.html"
+
+    def get_object(self):
+        return About.objects.first()

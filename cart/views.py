@@ -3,49 +3,51 @@ from http import HTTPStatus
 from django.conf import settings
 from django.contrib import messages
 from django.http import HttpResponse
-from django.shortcuts import get_object_or_404, redirect, render
+from django.shortcuts import get_object_or_404, redirect
 from django.urls import reverse
+from django.views.generic import TemplateView, View
 
 from products.models import Colour, Fragrance, Product
 
 
-def view_cart(request):
-    """A view for the shopping cart page."""
+class CartView(TemplateView):
+    template_name = "cart/cart.html"
 
-    context = {
-        "colours": Colour.objects.all(),
-        "fragrances": Fragrance.objects.all(),
-        "quantities": range(1, settings.MAX_LINE_ITEM_QUANTITY + 1),
-    }
-    return render(request, "cart/cart.html", context)
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context["colours"] = Colour.objects.all()
+        context["fragrances"] = Fragrance.objects.all()
+        context["quantities"] = range(1, settings.MAX_LINE_ITEM_QUANTITY + 1)
+        return context
 
 
-def add_to_cart(request, product_id):
-    """Add items to the cart."""
+class AddToCart(View):
+    def post(self, request, *args, **kwargs):
+        product_id = kwargs["product_id"]
+        colour_id = int(request.POST.get("colour_id"))
+        fragrance_id = int(request.POST.get("fragrance_id"))
+        quantity = int(request.POST.get("quantity"))
+        cart = request.session.get("cart", {})
+        cart_item_key = f"{product_id}_{colour_id}_{fragrance_id}"
+        product = get_object_or_404(Product, pk=product_id)
 
-    colour_id = int(request.POST.get("colour_id"))
-    fragrance_id = int(request.POST.get("fragrance_id"))
-    quantity = int(request.POST.get("quantity"))
-    cart = request.session.get("cart", {})
-    cart_item_key = f"{product_id}_{colour_id}_{fragrance_id}"
-    product = get_object_or_404(Product, pk=product_id)
+        # Handle matching items already in the cart
+        if cart_item_key in cart:
+            success_message = (
+                " Your choice of candle, colour and fragrance matched another"
+                " item in the cart, so the two items have been merged"
+                " into one."
+            )
+            cart[cart_item_key] += quantity
+            if cart[cart_item_key] > settings.MAX_LINE_ITEM_QUANTITY:
+                cart[cart_item_key] = settings.MAX_LINE_ITEM_QUANTITY
+        else:
+            cart[cart_item_key] = quantity
+            success_message = f"{quantity} x {product.name} added to cart."
 
-    # Handle matching items already in the cart
-    if cart_item_key in cart:
-        success_message = (
-            " Your choice of candle, colour and fragrance matched another"
-            " item in the cart, so the two items have been merged into one."
-        )
-        cart[cart_item_key] += quantity
-        if cart[cart_item_key] > settings.MAX_LINE_ITEM_QUANTITY:
-            cart[cart_item_key] = settings.MAX_LINE_ITEM_QUANTITY
-    else:
-        cart[cart_item_key] = quantity
-        success_message = f"{quantity} x {product.name} added to cart."
-
-    request.session["cart"] = cart
-    messages.success(request, success_message)
-    return redirect(request.POST.get("redirect_url"))
+        request.session["cart"] = cart
+        messages.success(request, success_message)
+        return redirect(request.POST.get("redirect_url"))
 
 
 def update_cart(request, cart_item_key):
