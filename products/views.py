@@ -3,33 +3,29 @@ from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import get_object_or_404, redirect, render
 from django.urls import reverse
+from django.views.generic import DetailView, ListView
 
 from products.forms import ProductForm
 
 from .models import Colour, Fragrance, Product
 
 
-def all_products(request):
-    """A view to show all products."""
+class ProductDetail(DetailView):
+    model = Product
+    template_name = "products/product_detail.html"
 
-    context = {"products": Product.objects.all()}
-    return render(request, "products/products.html", context)
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context["colours"] = Colour.objects.all()
+        context["fragrances"] = Fragrance.objects.all()
+        context["quantities"] = range(1, settings.MAX_LINE_ITEM_QUANTITY + 1)
+        return context
 
 
-def product_detail(request, product_id):
-    """A view to show the details of one product."""
-
-    product = get_object_or_404(Product, pk=product_id)
-    colours = Colour.objects.all()
-    fragrances = Fragrance.objects.all()
-    quantities = range(1, settings.MAX_LINE_ITEM_QUANTITY + 1)
-    context = {
-        "colours": colours,
-        "fragrances": fragrances,
-        "quantities": quantities,
-        "product": product,
-    }
-    return render(request, "products/product_detail.html", context)
+class ProductList(ListView):
+    context_object_name = "products"
+    model = Product
+    template_name = "products/products.html"
 
 
 @login_required
