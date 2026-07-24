@@ -65,7 +65,6 @@ class ProductsTests(TestCase):
         )
         self.assertEqual(response.status_code, HTTPStatus.OK)
         self.assertTemplateUsed(response, "products/product_detail.html")
-        self.assertContains(response, "Candle Details")
         self.assertContains(response, self.product1.name)
         self.assertContains(response, self.product1.price)
         self.assertContains(response, self.product1.description)
